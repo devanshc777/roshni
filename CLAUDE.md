@@ -45,6 +45,7 @@ that street at 11pm. Roshni re-sorts the queue by pedestrian exposure.
 | `docs/mvp.md` | **Scope contract.** What ships in 24 hours, the frozen data schema, the build order, definition of done. If it is not in here it is not in the build. |
 | `docs/build.md` | **How to start building.** Commands, order, working code skeletons, sanity assertions, order of abandonment. |
 | `docs/measured-2026-08-22.md` | **Authority on every number.** Confirmed / corrected / dead, plus the counterfactual and the infrastructure gotchas. Read before quoting anything. |
+| `docs/deck-start-here.md` | **Onboarding for the non-developers.** Setup, read order, build order, who-does-what, the eight key takeaways, the six traps that get you caught, definition of done. Point deck teammates here first. |
 | `docs/ppt.md` | **Build the deck from this.** Verbatim slide copy for all 16 slides, visual system, per-slide do/do-not notes, asset checklist, number provenance, generator prompts, QA pass. Non-developer can finish the deck from this file alone. |
 | `docs/deck-outline.md` | The reasoning behind the deck — why each slide exists. `ppt.md` is the buildable version. |
 | `data/pipeline.py` | Builds `out/segments.geojson` (1,164 segments), the fixture, and `out/stats.json`. pandas + networkx only — no GDAL. |
