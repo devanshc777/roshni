@@ -1,0 +1,22 @@
+{
+  "name": "roshni",
+  "version": "1.0.0",
+  "description": "**A streetlight repair queue that knows who is walking.**",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-personal:devanshc777/roshni.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
+  }
+}
