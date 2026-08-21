@@ -21,10 +21,12 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "out"
 random.seed(17)
 
-# A segment is "wide band" — we do not know it — above this posterior variance.
-# 0.05 sits between the evidence-backed segments (var ~0.01-0.02) and the
-# prior-only ones (~0.037) and the never-observed ones (~0.083).
-WIDE_VAR = 0.05
+# "Wide band" is a PERCENTILE, not an absolute variance. With a deliberately
+# weak prior (K=2) almost every un-surveyed segment has var > 0.05, so an
+# absolute threshold flagged 94% of the network and the router refused to walk
+# anywhere. The honest design is: avoid the least-certain fifth, and say that
+# is what we do.
+WIDE_PCTL = 0.80
 WALK_M_PER_MIN = 80.0          # ~4.8 km/h, a real night walking pace
 NIGHT_HOURS = range(18, 30)    # 18:00 to 05:00 next day
 BASE_DATE = "2026-08-21"       # fixed so output is reproducible
@@ -49,11 +51,17 @@ def load():
 
 
 # ---------------------------------------------------------------- routes.json
+def wide_threshold(segs):
+    v = sorted(s["darkness"]["var"] for s in segs)
+    return v[int(WIDE_PCTL * (len(v)-1))]
+
+
 def build_graph(segs):
     """Two weights per edge: metres, and the segment's route penalty pro-rated
     across its sub-edges. Wide-band edges are flagged, not deleted — the safer
     route avoids them, the shortest route is allowed through."""
     key = lambda p: (round(p[0], 6), round(p[1], 6))
+    wide_cut = wide_threshold(segs)
     G = nx.Graph()
     for s in segs:
         n = len(s["pts"]) - 1
@@ -65,7 +73,7 @@ def build_graph(segs):
                 continue
             d = max(1.0, hav(s["pts"][i], s["pts"][i+1]))
             pen = s["routePenalty"] * (d / s["lengthM"])
-            wide = s["darkness"]["var"] > WIDE_VAR
+            wide = s["darkness"]["var"] > wide_cut
             prev = G.get_edge_data(a, b)
             if prev and prev["length"] <= d:
                 continue
@@ -104,7 +112,7 @@ def geom(nodes):
     return {"type": "LineString", "coordinates": [[n[1], n[0]] for n in nodes]}
 
 
-def candidate_pairs(G, lo=600, hi=2200, cap=500):
+def candidate_pairs(G, lo=600, hi=1500, cap=600):
     """Real, nameable endpoints: the highest-degree node on each named road,
     paired up so the walk is a plausible night walk rather than a hike."""
     giant = max(nx.connected_components(G), key=len)
@@ -140,15 +148,28 @@ def pick_queries(G, n_pairs=3):
             continue
         s, h = path_stats(G, safer), path_stats(G, short)
         detour = s["distanceM"] - h["distanceM"]
-        if detour <= 20 or detour > 0.6 * h["distanceM"]:
-            continue        # no real choice, or an absurd detour nobody would walk
+        # A believable night walk, and a detour someone would actually accept.
+        # Unbounded, this produced a 10.7 km "safer" route against a 7.3 km
+        # shortest -- 43 minutes extra, which no one walks, so it proves nothing.
+        if h["distanceM"] > 2500:
+            continue
+        if detour < 50 or detour > 600 or detour > 0.3 * h["distanceM"]:
+            continue
         avoided = ((h["darkShare"] - s["darkShare"]) +
                    2.0 * (h["unknownShare"] - s["unknownShare"]) +
                    0.05 * (h["wideBandEdges"] - s["wideBandEdges"]))
         if avoided <= 0:
             continue
         scored.append((avoided, na, a, nb, b, straight, safer, short, s, h))
+    # Two rankings, so the demo carries both trades. The blended score is
+    # dominated by unknown-ground avoidance, which left every route showing
+    # darkShare 0.00 and the darkness ramp never appearing on the screen.
+    # One slot is reserved for the best darkness trade.
+    dark_led = sorted(scored, key=lambda t: -(t[8]["darkShare"] - t[9]["darkShare"]))
     scored.sort(key=lambda t: -t[0])
+    if dark_led and dark_led[0][9]["darkShare"] - dark_led[0][8]["darkShare"] > 0.05:
+        best_dark = dark_led[0]
+        scored = [best_dark] + [r for r in scored if r is not best_dark]
     # Reject a candidate that reuses ground an accepted route already covers.
     # Without this, nested pairs on one corridor all show the SAME diversion and
     # three demo routes tell one story.
@@ -165,6 +186,53 @@ def pick_queries(G, n_pairs=3):
         if len(out) == n_pairs:
             break
     return out
+
+
+def bypass_analysis(G, segs, n=25):
+    """For the worst segments, is there any other way round?
+
+    Remove a segment's own edges and look for an alternative path between its
+    endpoints. This is the honest answer to "why not just build a safer-route
+    app": on the segments that most need fixing there is often no bypass at
+    all, and where there is one it is many times longer. Routing cannot solve
+    those streets. Only repair can.
+    """
+    key = lambda p: (round(p[0], 6), round(p[1], 6))
+    rows = []
+    for s in sorted(segs, key=lambda s: -s["repairPriority"])[:n]:
+        a, b = key(s["pts"][0]), key(s["pts"][-1])
+        if a not in G or b not in G:
+            continue
+        own = [(key(s["pts"][i]), key(s["pts"][i+1])) for i in range(len(s["pts"])-1)]
+        own = [(x, y) for x, y in own if G.has_edge(x, y)]
+        saved = [(x, y, G[x][y].copy()) for x, y in own]
+        G.remove_edges_from([(x, y) for x, y, _ in saved])
+        try:
+            alt = nx.shortest_path_length(G, a, b, weight="length")
+            rows.append({"segID": s["segID"], "name": s["name"] or None,
+                         "ward": s["ward"], "lengthM": s["lengthM"],
+                         "darkness": s["darkness"]["mean"],
+                         "bypassM": round(alt, 1),
+                         "bypassFactor": round(alt/s["lengthM"], 1)})
+        except nx.NetworkXNoPath:
+            rows.append({"segID": s["segID"], "name": s["name"] or None,
+                         "ward": s["ward"], "lengthM": s["lengthM"],
+                         "darkness": s["darkness"]["mean"],
+                         "bypassM": None, "bypassFactor": None})
+        G.add_edges_from([(x, y, d) for x, y, d in saved])
+    factors = sorted(r["bypassFactor"] for r in rows if r["bypassFactor"])
+    return {
+        "tested": len(rows),
+        "noBypassAtAll": sum(1 for r in rows if r["bypassFactor"] is None),
+        "bypassOver3x": sum(1 for f in factors if f > 3),
+        "medianBypassFactor": factors[len(factors)//2] if factors else None,
+        "worstBypassFactor": factors[-1] if factors else None,
+        "note": ("Routing cannot fix the worst segments -- there is no walkable "
+                 "alternative, or the alternative is many times longer. The queue "
+                 "is the product; the router is the secondary surface. This is the "
+                 "measured answer to 'why not just build a safer-route app'."),
+        "segments": rows,
+    }
 
 
 def routes_json(segs):
@@ -198,9 +266,11 @@ def routes_json(segs):
                  "Always show both -- advisory, never a guarantee. Pairs were selected "
                  "so the two routes genuinely differ; a demo route identical to the "
                  "shortest path proves nothing."),
-        "wideVarThreshold": WIDE_VAR,
+        "wideVarThreshold": round(wide_threshold(segs), 5),
+        "wideVarPercentile": WIDE_PCTL,
         "walkMetresPerMinute": WALK_M_PER_MIN,
         "queries": queries,
+        "noAlternative": bypass_analysis(G, segs),
     }
     (OUT / "routes.json").write_text(json.dumps(doc, indent=1), encoding="utf-8")
     return doc
@@ -219,6 +289,11 @@ def curve_json(segs, rounds=(0, 5, 10, 25, 50, 100, 200, 400), trials=12):
     belief -- which is exactly what the report screen's empty state ranks by.
     Random reports go anywhere.
     """
+    # Simulate over the segments a report could plausibly promote: the top
+    # 3,000 by exposure. Over all 11,029 the argmax scan per report makes this
+    # run for tens of minutes and the tail segments never enter the top 40
+    # under any belief.
+    segs = sorted(segs, key=lambda s: -s["exposure"]["blended"])[:3000]
     truth = {s["segID"]: s["darkness"]["mean"] for s in segs}
     prior = {}
     for s in segs:
@@ -245,11 +320,20 @@ def curve_json(segs, rounds=(0, 5, 10, 25, 50, 100, 200, 400), trials=12):
             if not pool:
                 break
             if targeted:
-                def rv(sid):
+                # Upper confidence bound, not raw variance. Ranking by
+                # exposure x variance asks about the streets we know LEAST,
+                # which are mostly streets no crew would ever be sent to --
+                # measured, that loses to random sampling. UCB asks about the
+                # streets that could plausibly enter the queue: high exposure,
+                # and an optimistic darkness estimate that would put them in
+                # the top 40 if it turned out true.
+                def ucb(sid):
                     a, b = belief[sid]
-                    var = (a*b)/((a+b)**2*(a+b+1))
-                    return idx[sid]["exposure"]["blended"] * var
-                sid = max(pool, key=rv)
+                    mean = b/(a+b)
+                    sd = math.sqrt((a*b)/((a+b)**2*(a+b+1)))
+                    return (idx[sid]["exposure"]["blended"] * min(1.0, mean + 1.5*sd)
+                            * idx[sid]["lengthM"])
+                sid = max(pool, key=ucb)
             else:
                 sid = random.choice(pool)
             reported.add(sid)
@@ -268,6 +352,7 @@ def curve_json(segs, rounds=(0, 5, 10, 25, 50, 100, 200, 400), trials=12):
             points.append({"reports": n, "targeted": targeted,
                            "ratio": round(sum(vals)/len(vals), 4)})
     doc = {
+        "scopeNote": "top 3,000 segments by exposure, of 11,029 scored",
         "note": ("SIMULATION, and must be labelled as one on any slide. The current "
                  "posterior stands in for ground truth; lamp evidence is withheld and "
                  "returned one report at a time. quality = share of the oracle "

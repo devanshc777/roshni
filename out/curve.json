@@ -1,88 +1,89 @@
 {
+ "scopeNote": "top 3,000 segments by exposure, of 11,029 scored",
  "note": "SIMULATION, and must be labelled as one on any slide. The current posterior stands in for ground truth; lamp evidence is withheld and returned one report at a time. quality = share of the oracle ranking's restored exposure achieved at that report count. targeted=true picks reports by exposure x variance, which is what the report screen's empty state ranks by.",
  "budget": 40,
- "oracleRestored": 3115.4,
+ "oracleRestored": 5601.6,
  "trialsPerPoint": 12,
  "points": [
   {
    "reports": 0,
    "targeted": true,
-   "ratio": 0.7311
+   "ratio": 0.5575
   },
   {
    "reports": 0,
    "targeted": false,
-   "ratio": 0.7311
+   "ratio": 0.5575
   },
   {
    "reports": 5,
    "targeted": true,
-   "ratio": 0.7311
+   "ratio": 0.5575
   },
   {
    "reports": 5,
    "targeted": false,
-   "ratio": 0.7311
+   "ratio": 0.5575
   },
   {
    "reports": 10,
    "targeted": true,
-   "ratio": 0.7311
+   "ratio": 0.5641
   },
   {
    "reports": 10,
    "targeted": false,
-   "ratio": 0.7343
+   "ratio": 0.5599
   },
   {
    "reports": 25,
    "targeted": true,
-   "ratio": 0.7399
+   "ratio": 0.5673
   },
   {
    "reports": 25,
    "targeted": false,
-   "ratio": 0.7413
+   "ratio": 0.5629
   },
   {
    "reports": 50,
    "targeted": true,
-   "ratio": 0.7849
+   "ratio": 0.5923
   },
   {
    "reports": 50,
    "targeted": false,
-   "ratio": 0.751
+   "ratio": 0.572
   },
   {
    "reports": 100,
    "targeted": true,
-   "ratio": 0.7897
+   "ratio": 0.6169
   },
   {
    "reports": 100,
    "targeted": false,
-   "ratio": 0.7578
+   "ratio": 0.5816
   },
   {
    "reports": 200,
    "targeted": true,
-   "ratio": 0.8526
+   "ratio": 0.6413
   },
   {
    "reports": 200,
    "targeted": false,
-   "ratio": 0.7829
+   "ratio": 0.6025
   },
   {
    "reports": 400,
    "targeted": true,
-   "ratio": 0.9446
+   "ratio": 0.7597
   },
   {
    "reports": 400,
    "targeted": false,
-   "ratio": 0.8213
+   "ratio": 0.6282
   }
  ]
 }

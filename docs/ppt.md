@@ -8,7 +8,7 @@ Who this is for: whoever is building the deck, working alone, while the
 developers make the MVP real. You should not need to ask a developer anything to
 finish it.
 
-- **Numbers**: all measured 22 Aug 2026. Authority is `docs/measured-2026-08-22.md`. If any other doc in this repo disagrees with a number here, this file and that one win.
+- **Numbers**: all measured 22 Aug 2026, **after the rebuild** — authority is `docs/measured-2026-08-22.md` §10, which supersedes §5 and §6 of that same file. If any other doc in this repo disagrees with a number here, this file and that one win.
 - **UI screenshots**: prompts to generate the screens are in `docs/prompts.md`. Feed them `out/segments.fixture.geojson`.
 - **Deck-generator prompts**: Part 7 of this file. Paste-ready for Gamma / Claude / Copilot.
 - **Longer rationale** per slide, if you want the reasoning: `docs/deck-outline.md`.
@@ -364,31 +364,35 @@ won't notice. Cite Jacobs by name — it lands.
 
 **Title:** Same crew. Same budget. Different order.
 
-**Hero number:** `5.2×`
+**Hero number:** `7.7×`
 
 **Body:**
-> A crew can complete 40 repairs this week. Roshni's 40 restore **5.2× the
+> A crew can complete 40 repairs this week. Roshni's 40 restore **7.7× the
 > exposed pedestrian-kilometres** that the complaint queue's first 40 restore.
 
 **Fine print beneath, muted — volunteered, not extracted:**
 > The grievance file has no coordinates and no pole IDs. A complaint names a
 > **ward**, never a street. So the baseline is Monte-Carlo'd over 300 draws:
-> wards in complaint order, target inside the ward unknown. 5.2× is the mean.
-> Against the luckiest of the 300 draws: **3.5×**. Against a steelman BBMP that
+> wards in complaint order, target inside the ward unknown. 7.7× is the mean.
+> Against the luckiest of the 300 draws: **4.9×**. Against a steelman BBMP that
 > somehow picks the single worst segment in every ward it visits — which a
-> coordinate-free complaint log cannot do — **still 1.58×**.
+> coordinate-free complaint log cannot do — **still 1.9×**.
+>
+> And the robustness check, volunteered: restricted to the wards where we
+> actually hold lamp labels, **6.4×**. With every lamp label deleted and the
+> ranking built on the ward prior and exposure alone, **5.4×**. The win survives
+> throwing away our own best data.
 >
 > **The gain is not from being cleverer inside a ward. It is from visiting the
 > right wards.**
 
-`[VISUAL]` Two stacked horizontal bars, same axis: "Roshni's 40" = 2,582 (amber),
-"Complaint order's 40" = 470 (sodium dim), with a thin P5–P95 whisker on the
-second bar (360 → 595) and a hairline tick at the steelman value 1,631, labelled.
+`[VISUAL]` Two stacked horizontal bars, same axis: "Roshni's 40" = 4,544 (amber),
+"Complaint order's 40" = 588 (sodium dim), with a thin P5–P95 whisker on the
+second bar (461 → 735) and a hairline tick at the steelman value 2,410, labelled.
 The whisker is what makes it look measured rather than asserted.
 
-`[SOURCE]` 1,164 segments, 160.9 km, 13 wards, HSR / Bellandur / Koramangala
-corridor. Objective Σ exposure × P(dark) × length. 300 Monte-Carlo draws.
-`out/stats.json`.
+`[SOURCE]` 11,029 segments, 1,180 km, 33 wards, the locked ORR demo bbox.
+Objective Σ exposure × P(dark) × length. 300 Monte-Carlo draws. `out/stats.json`.
 
 `[SAY]` Land on the number, pause, then give the fine print **before anyone asks
 for it**. The last sentence is the thesis of the whole project — say it slowly.
@@ -396,9 +400,9 @@ for it**. The last sentence is the thesis of the whole project — say it slowly
 **THIS SLIDE IS THE PRODUCT.** If you have to cut slides for a time limit, cut
 around this one. Never cut this one.
 
-**DO NOT** quote 5.2× on its own without the steelman. A sharp judge will say
-"you're just beating random", and if you have already said 1.58× you win that
-exchange instead of losing it.
+**DO NOT** quote 7.7× on its own without the steelman. A sharp judge will say
+"you're just beating random", and if you have already said 1.9× — and then the
+5.4× with our own labels deleted — you win that exchange instead of losing it.
 
 ---
 
@@ -443,14 +447,26 @@ Must be visible:
 **Caption:** Advisory, never a guarantee. The safer route refuses to path through
 segments we are not confident about.
 
-**The measured numbers for the demo route** (`out/routes.json`, query 1 —
-4th Main Road to Sarjapur Road):
-> Shortest: 1,733 m, **43% of it dark**, 6% of it ground we have no confidence in.
-> Safer: 2,101 m, **27% dark, 0% unknown** — it routes around three wide-band
-> segments. Cost of the choice: **+368 m, about five minutes.**
+**The measured numbers for the demo route** (`out/routes.json`, query 1):
+> Shortest: 1,575 m, **63% of it across ground we are not confident about.**
+> Safer: 2,021 m, **7% unknown** — it routes around 18 low-confidence segments.
+> Cost of the choice: **+446 m, about six minutes.**
 
-Put those six numbers in the comparison strip. "Five minutes to halve the dark
-share" is a sentence a judge remembers.
+"Six minutes to walk on ground we actually have data for" is the sentence.
+
+**Then the finding that reframes the whole product — say this one slowly.**
+We ran a bypass test on the 25 worst segments in the corridor: delete the
+segment, look for another way between its endpoints.
+> **Six of them have no walkable alternative at all.** Nineteen have a bypass
+> more than three times the segment's length. Median **17.9×**. One 167 m dark
+> service road on the Outer Ring Road has exactly one alternative and it is
+> **23 kilometres.**
+>
+> On the streets that most need fixing, **there is nowhere else to walk.
+> Routing cannot solve them. Only repair can.**
+
+That is the measured answer to "why not just build a safer-route app", and it is
+why the queue is the hero screen and this one is secondary.
 
 `[SAY]` Say the duality out loud here on real geography: **Haralur Road in
 Bellandur** carries the widest confidence band in our whole corridor — no mapped
@@ -474,7 +490,7 @@ show that.
 > tonight"** — ranked by exposure × uncertainty. The app **directs** reporting
 > instead of waiting for it.
 >
-> **85% of our 1,164 segments have no lamp evidence at all** and run on the ward
+> **94% of our 11,029 segments have no lamp evidence at all** and run on the ward
 > prior alone. That is not a flaw we are hiding — it is why every segment carries
 > a variance, and it is what this screen is for. A report is worth most exactly
 > where we are least sure and most people walk.
@@ -483,16 +499,19 @@ show that.
 and already honest about where it isn't.
 
 **The learning curve, measured** (`out/curve.json`, simulation — label it as one):
-> With **zero reports**, the prior-only ranking already captures **73%** of what a
-> perfectly-informed ranking would restore. **400 targeted reports takes it to 94%.
-> 400 random reports only reach 82%.**
+> With **zero reports**, the prior-only ranking already captures **56%** of what a
+> perfectly-informed ranking would restore. **400 targeted reports takes it to 76%.
+> 400 random reports only reach 63%.**
 >
-> And the honest wrinkle: below about **50 reports, targeted reporting is no better
-> than random** — early on it chases high-variance segments that turn out to be
-> low-exposure. The gain is real but it arrives late. Say that; it is the
-> difference between a plotted curve and an understood one.
+> And say how we got there, because it is a better story than the curve. Our
+> first targeting rule asked about the streets we knew *least* — highest
+> uncertainty. Measured, it **lost to picking streets at random.** Those streets
+> are mostly ones no repair crew would ever be sent to. The rule that works asks
+> about streets whose *optimistic* darkness estimate would put them in the repair
+> queue if it turned out true. Same screen, different question, and it beats
+> random from ten reports on.
 
-`[SOURCE]` 176 of 1,164 segments carry any OSM lamp evidence. `out/stats.json`,
+`[SOURCE]` 690 of 11,029 segments carry any OSM lamp evidence. `out/stats.json`,
 `out/curve.json`.
 
 `[SAY]` This slide pre-answers the hardest question we get — "what does it do on
@@ -516,25 +535,36 @@ day one with no data" — before it is asked.
 
 | Layer | Method | Result |
 |---|---|---|
-| **Convergent** | activity estimate vs structural estimate, Spearman ρ | **ρ = +0.03. Failed.** ρ = −0.14 vs night bus departures |
+| **Convergent** | activity estimate vs structural estimate, Spearman ρ | **ρ = +0.30**, and +0.44 vs night bus departures. Passes — but read the story below |
 | **Criterion** | risk score vs night pedestrian crashes — never enters the model | **not yet measured** |
 | **Ground truth** | 8 stratified segments, 5-min counts at 21:30, rank correlation | **not yet measured** |
 | **Transfer** | fit where data exists, apply where it doesn't, report degradation | designed; degradation not quantified |
 
-**The line to say on the failure — say it with confidence, not apology:**
-> We ran convergent validation over 1,164 segments and **it failed.** ρ = 0.03,
-> and night commercial activity is slightly *anti*-correlated with night bus
-> service at −0.14. We checked it wasn't an artefact: same answer on arterials
-> alone at 0.02, same answer excluding degenerate segments, and we found and
-> fixed a graph bug before trusting either number.
+**The line to say — and it is a sequence, not a number. Rehearse it.**
+> We ran convergent validation and the first answer was **ρ = 0.03. A null.**
+> Two proxies that should have agreed didn't.
 >
-> The two proxies are not two views of one latent footfall. They are two
-> different night populations — people out near night commerce, and people
-> commuting on bus corridors. Averaging them into one exposure index would have
-> averaged away the exact population this problem statement names. So we stopped
-> blending them evenly: the structural half leads at 0.75, because the statement
-> says *late-night commuters*, and the disagreement set — structural high,
-> activity low — is the target, not the error.
+> So instead of publishing it we went looking for why — and found the bug. We
+> were keying our walk graph on rounded coordinates, so junctions where two
+> roads genuinely meet weren't merging. Our network had shattered into
+> disconnected fragments and the betweenness centrality we were feeding the
+> model was computed over **55%** of the city. Half our structural signal was
+> noise.
+>
+> Fixed it — keyed the graph on OSM node ids instead — and re-ran over eight
+> times the area. **98.4% of the network now connects, and the two disjoint
+> proxies converge at ρ = 0.30, and 0.44 against night bus departures.**
+>
+> Two proxies built from completely unrelated inputs — one from night commerce,
+> one from pure network topology plus bus service — do not agree at 0.30 by
+> accident. That is real convergent evidence. It is also a number we only
+> deserve because we didn't ship the first one.
+
+**One honesty note to carry, in case you are asked about the weights.** The
+exposure blend leans structural at 0.75. On the broken numbers that looked like
+a *finding*. On the corrected numbers it is a **choice**, made because the
+problem statement names late-night commuters. Call it a choice. It is still the
+right one, and it is a slider.
 
 **Then the two cheap things nobody else does:**
 - **Negative controls.** An industrial cul-de-sac at 01:00 must score near zero. A stretch outside a bus terminus at 22:00 must score high. A gated-layout internal road must score low on through-movement and moderate on residential. Fifteen minutes, and they catch the class of bug a correlation coefficient hides.
@@ -546,21 +576,25 @@ day one with no data" — before it is asked.
 > of daily service — and 119 of those 405 stops have no night service at all.**
 > Where the night buses stop, people walk, and nobody is counting them.
 
-`[VISUAL]` A scatter of activity rank vs structural rank, 1,164 points in muted
-grey, with the near-flat trend line in amber and "ρ = 0.03" set large beside it.
-A visibly uncorrelated cloud is a genuinely arresting slide and no other team
-will have the nerve to show one.
+`[VISUAL]` **Two scatter plots side by side, both from real data.** Left: the
+broken run — activity rank vs structural rank, 1,164 points, flat, "ρ = 0.03",
+labelled *55% of the network connected*. Right: the corrected run — 11,029
+points, visible positive slope, "ρ = 0.30", labelled *98.4% connected*.
+
+Two plots and an arrow between them is the most persuasive object in this deck.
+It is the only slide that shows the team debugging itself.
 
 `[SOURCE]` `out/stats.json`; `data/pipeline.py`; BMTC GTFS via Vonter/bmtc-gtfs.
 
-`[SAY]` This is the slide the problem author cares about — the challenge question
-is about validation, not features, and that is them telling you where the marks
-are. Lead with the failure. A team that reports a null result and changes its
-model because of it is doing science; a team that reports ρ = 0.6 is doing
-decoration.
+`[SAY]` This is the slide the problem author cares about — the challenge
+question is about validation, not features, and that is them telling you where
+the marks are. Lead with the null, then the bug, then the corrected number. A
+team that gets a null, distrusts it, finds its own bug and re-runs is doing
+science. A team that just shows you a good correlation is asking to be trusted.
 
-**DO NOT** soften "it failed" into "results were inconclusive." The whole value
-of the slide is that you said it plainly.
+**DO NOT** hide the first number. The 0.03 is the point of the slide — it is
+what makes the 0.30 believable. Showing only the good number throws away the
+whole argument and reads like every other deck.
 
 **DO NOT** claim the criterion or ground-truth rows are done if they aren't. Say
 "not yet measured" on the slide. If someone gets the crash PDFs mined or the
@@ -625,21 +659,27 @@ reframes the missing data from a weakness into a call to action, and it is true.
 
 **Title:** Four things we get wrong, on purpose, out loud
 
-> **Ward road-km is approximated** from ward polygon area × the corridor's own
-> measured road density, because we pulled named roads only. It runs optimistic
-> for dense inner wards — BTM Layout comes out at 108 lamps/km, which is 9 m pole
-> spacing and not real. Those wards read *lighter* than they are, so **Roshni is
-> currently conservative in exactly the wards that complain least.** Fix is the
-> full OSM drive network per ward.
+> **94% of our 11,029 segments have no lamp evidence** and run on a ward-level
+> prior alone. Every one of them carries a confidence band that says so, the
+> router avoids the least-certain fifth of the network, and the report screen
+> targets them. But it means most of the map is an estimate, and we would rather
+> say that than have you find it.
+>
+> **Our labelled lamps are geographically concentrated.** OSM's
+> working/not-working tags come from citizen surveys, and those surveys walked
+> some wards and not others — which is why our top forty repairs cluster. We
+> tested whether that flatters the result: restricted to the surveyed wards it
+> is 6.4×, and with every lamp label deleted it is 5.4×. It survives. But the
+> concentration is real and it shapes which streets we can be confident about.
 >
 > **OSM records `opening_hours` for 6.7% of POIs** in our corridor — 78 of 1,157.
 > So we cannot filter night activity by closing hour as designed; we weight by POI
 > class instead. And Google's review counts, which we do not have, undercount
 > thelas and tea stalls — exactly the population most exposed to dark streets.
 >
-> **The `working` tags are survey-biased.** 614 broken to 463 working inside the
-> bbox is a property of who went out mapping, not the outage rate of Bengaluru.
-> We use them as labels, never as a base rate.
+> **The `working` tags are survey-biased.** 657 broken to 471 working in our
+> snapshot is a property of who went out mapping, not the outage rate of
+> Bengaluru. We use them as labels, never as a base rate.
 >
 > **Tree canopy** is a large effect on how lit a Bengaluru street feels and we
 > have no data for it at all. **Footpath existence** is the same story — a lit road
@@ -674,7 +714,7 @@ Answer this with what you would try to **learn**, not with features.
 > The data exists, for our city, one approval away, and we already speak its
 > schema. **Approve the IUDX request.**
 
-**Then the number, one more time:** `5.2×`
+**Then the number, one more time:** `7.7×`
 
 `[SAY]` First number they hear and the last. Close on it and stop talking.
 
@@ -726,14 +766,17 @@ If a judge asks "where did that come from", these are the answers.
 | 421,113 lamps, 198 wards | `data/raw/streetlights_by_ward.csv` | sum the count column |
 | 469 lamps · 4.0% · 45.9% · 8.0% | `data/raw/streetlights_vasanthanagar_2019.csv` | crosstab the two condition columns |
 | 405 stops · 101,367 · 6,187 · 6.1% · 119 | `data/raw/bmtc_stops.geojson`, `trip_list` | `data/derived_stops_bbox.json` |
-| 1,164 segments · 160.9 km · 13 wards · 176 with lamp evidence · 84.9% prior-only · mean P(dark) 0.214 | `data/pipeline.py` | `out/stats.json` |
-| ρ +0.031 · −0.135 · 0.022 | same | same |
-| 5.16× · 3.46× · 1.58× | same | `out/stats.json` → `counterfactual.40` |
+| 7.73× · 4.88× · 1.89× | same | `out/stats.json` → `counterfactual.40` |
+| 6.4× · 5.42× (robustness) | same | `out/stats.json` → `sensitivity` |
+| 11,029 segments · 1,180 km · 33 wards · 690 with lamp evidence · 93.7% prior-only · mean P(dark) 0.276 | `data/pipeline.py` | `out/stats.json` |
+| ρ +0.302 · +0.436 | same | same |
+| bypass: 6 of 25 with no alternative · median 17.9× · worst 206.9× | `data/derive_screens.py` | `out/routes.json` → `noAlternative` |
+| curve: 56% at zero reports · 76% targeted vs 63% random at 400 | same | `out/curve.json` |
 | 1,157 POIs · 78 with hours · 6.7% | `data/derived_pois_subbbox.json` | count `opening_hours` |
 | IUDX dataset ID and sample record | iudx.org.in catalogue | public resource page |
 | 93 cities publish counts, zero coordinates | MoHUA Smart Cities portal, D24 template | `docs/national-data-landscape.md` |
 
-Rounding convention for the deck: **5.2×** on the hero slide, **5.16×** in any
+Rounding convention for the deck: **7.7×** on the hero slide, **7.73×** in any
 table. 31.4% on the hero, 31.38% in a table. Don't mix within one slide.
 
 ---
@@ -752,8 +795,11 @@ carries a GPS fix.
 **"Your ratio is just an optimiser beating random."**
 Partly — which is why we built the steelman. Same complaint-driven ward order,
 but BBMP picks the single worst segment inside every ward it visits. It still
-loses, 1.58×. The gain is in *which wards get visited*, and that is set by the
-complaint log, not by us.
+loses, 1.9×. And we checked the harder version of that objection: our labelled
+lamps are concentrated in a few wards, so we re-ran restricted to those wards
+(6.4×) and again with every lamp label deleted (5.4×). It survives both. The
+gain is in *which wards get visited*, and that is set by the complaint log, not
+by us.
 
 **"Your weights are arbitrary."**
 Two are sliders, because the municipality should own that choice, not us. The

@@ -1,306 +1,5 @@
 [
 {
-"name": "SI Apartment HSR Layout",
-"trip_count": 1187,
-"night_trips": 105,
-"lon": 77.6294,
-"lat": 12.91668
-},
-{
-"name": "Depot-25 Gate (Central Silk Board)",
-"trip_count": 1253,
-"night_trips": 101,
-"lon": 77.64294,
-"lat": 12.91952
-},
-{
-"name": "Kadubisanahalli",
-"trip_count": 1339,
-"night_trips": 100,
-"lon": 77.69704,
-"lat": 12.94259
-},
-{
-"name": "Agara Junction",
-"trip_count": 1240,
-"night_trips": 99,
-"lon": 77.65073,
-"lat": 12.92433
-},
-{
-"name": "Bellanduru City Light Appartment",
-"trip_count": 1341,
-"night_trips": 97,
-"lon": 77.67278,
-"lat": 12.92412
-},
-{
-"name": "Multiplex Marathahalli",
-"trip_count": 1237,
-"night_trips": 96,
-"lon": 77.69973,
-"lat": 12.95153
-},
-{
-"name": "Sarjapura Ring Road Junction",
-"trip_count": 1253,
-"night_trips": 92,
-"lon": 77.66825,
-"lat": 12.92203
-},
-{
-"name": "HSR Layout 14th Main",
-"trip_count": 1074,
-"night_trips": 89,
-"lon": 77.63521,
-"lat": 12.91619
-},
-{
-"name": "Sarjapura Ring Road Junction",
-"trip_count": 1327,
-"night_trips": 89,
-"lon": 77.66604,
-"lat": 12.92113
-},
-{
-"name": "Eco Space",
-"trip_count": 1306,
-"night_trips": 88,
-"lon": 77.68049,
-"lat": 12.92776
-},
-{
-"name": "New Horizon College",
-"trip_count": 1262,
-"night_trips": 88,
-"lon": 77.69063,
-"lat": 12.93516
-},
-{
-"name": "Bellanduru City light Apartment",
-"trip_count": 1290,
-"night_trips": 87,
-"lon": 77.67394,
-"lat": 12.92493
-},
-{
-"name": "Kadubisanahalli",
-"trip_count": 1387,
-"night_trips": 87,
-"lon": 77.69717,
-"lat": 12.94259
-},
-{
-"name": "Devarabisanahalli Ring Road",
-"trip_count": 1272,
-"night_trips": 86,
-"lon": 77.68686,
-"lat": 12.93145
-},
-{
-"name": "Kudure Mukha Colony",
-"trip_count": 1430,
-"night_trips": 85,
-"lon": 77.6254,
-"lat": 12.92572
-},
-{
-"name": "New Horizon College",
-"trip_count": 1318,
-"night_trips": 85,
-"lon": 77.69123,
-"lat": 12.93544
-},
-{
-"name": "Madivala",
-"trip_count": 1253,
-"night_trips": 84,
-"lon": 77.62146,
-"lat": 12.92166
-},
-{
-"name": "Bellanduru Petrol Bunk",
-"trip_count": 1211,
-"night_trips": 83,
-"lon": 77.6705,
-"lat": 12.92309
-},
-{
-"name": "Devarabisanahalli Ring Road",
-"trip_count": 1216,
-"night_trips": 83,
-"lon": 77.68729,
-"lat": 12.93218
-},
-{
-"name": "Eco Space",
-"trip_count": 1250,
-"night_trips": 81,
-"lon": 77.6812,
-"lat": 12.92838
-},
-{
-"name": "Ibbaluru",
-"trip_count": 1072,
-"night_trips": 79,
-"lon": 77.66217,
-"lat": 12.92129
-},
-{
-"name": "Krupanidhi College",
-"trip_count": 1186,
-"night_trips": 78,
-"lon": 77.62852,
-"lat": 12.92388
-},
-{
-"name": "Central Silk Board",
-"trip_count": 1291,
-"night_trips": 77,
-"lon": 77.62355,
-"lat": 12.91803
-},
-{
-"name": "Ibbaluru",
-"trip_count": 1355,
-"night_trips": 77,
-"lon": 77.66176,
-"lat": 12.9216
-},
-{
-"name": "Bommanahalli",
-"trip_count": 1051,
-"night_trips": 76,
-"lon": 77.63003,
-"lat": 12.90559
-},
-{
-"name": "Roopena Agrahara",
-"trip_count": 1257,
-"night_trips": 75,
-"lon": 77.62579,
-"lat": 12.91158
-},
-{
-"name": "Madivala",
-"trip_count": 1251,
-"night_trips": 74,
-"lon": 77.62066,
-"lat": 12.92023
-},
-{
-"name": "Bellanduru Petrol Bunk",
-"trip_count": 1189,
-"night_trips": 73,
-"lon": 77.6702,
-"lat": 12.92322
-},
-{
-"name": "Depot-25 Gate",
-"trip_count": 1142,
-"night_trips": 73,
-"lon": 77.64255,
-"lat": 12.91936
-},
-{
-"name": "Agara Junction",
-"trip_count": 1162,
-"night_trips": 72,
-"lon": 77.65028,
-"lat": 12.92452
-},
-{
-"name": "Central Silk Board Metro Station",
-"trip_count": 805,
-"night_trips": 72,
-"lon": 77.62143,
-"lat": 12.91674
-},
-{
-"name": "Bommanahalli",
-"trip_count": 1058,
-"night_trips": 68,
-"lon": 77.62999,
-"lat": 12.90477
-},
-{
-"name": "Hongasandra Metro Station",
-"trip_count": 1004,
-"night_trips": 68,
-"lon": 77.63225,
-"lat": 12.9019
-},
-{
-"name": "Koramangala Water Tank",
-"trip_count": 1174,
-"night_trips": 68,
-"lon": 77.62124,
-"lat": 12.92749
-},
-{
-"name": "St Johns Hospital",
-"trip_count": 989,
-"night_trips": 67,
-"lon": 77.61527,
-"lat": 12.92907
-},
-{
-"name": "Roopena Agrahara",
-"trip_count": 965,
-"night_trips": 66,
-"lon": 77.62613,
-"lat": 12.91197
-},
-{
-"name": "St Johns Hospital",
-"trip_count": 1231,
-"night_trips": 66,
-"lon": 77.61584,
-"lat": 12.92959
-},
-{
-"name": "Hongasandra Metro Station",
-"trip_count": 1005,
-"night_trips": 65,
-"lon": 77.63199,
-"lat": 12.9016
-},
-{
-"name": "SI Apartment HSR Layout",
-"trip_count": 1140,
-"night_trips": 64,
-"lon": 77.62942,
-"lat": 12.91677
-},
-{
-"name": "Kuvempunagara Bus Station(BTM Layout)",
-"trip_count": 758,
-"night_trips": 62,
-"lon": 77.61623,
-"lat": 12.91597
-},
-{
-"name": "Hosur Road junction",
-"trip_count": 950,
-"night_trips": 57,
-"lon": 77.61318,
-"lat": 12.93203
-},
-{
-"name": "Life Style (Sacred Heart School)",
-"trip_count": 967,
-"night_trips": 57,
-"lon": 77.61018,
-"lat": 12.96692
-},
-{
-"name": "Hosur Road Junction",
-"trip_count": 953,
-"night_trips": 56,
-"lon": 77.61323,
-"lat": 12.93215
-},
-{
 "name": "14th Main HSR Layout",
 "trip_count": 1055,
 "night_trips": 54,
@@ -308,1481 +7,11 @@
 "lat": 12.91637
 },
 {
-"name": "Marathahalli",
-"trip_count": 607,
-"night_trips": 54,
-"lon": 77.69409,
-"lat": 12.95626
-},
-{
-"name": "Ayyappaswamy Temple Madivala",
-"trip_count": 762,
-"night_trips": 52,
-"lon": 77.61791,
-"lat": 12.92478
-},
-{
-"name": "HAL Kalyana Mantap",
-"trip_count": 554,
-"night_trips": 47,
-"lon": 77.68215,
-"lat": 12.9546
-},
-{
-"name": "Kuvempunagara ( BTM Layout)",
-"trip_count": 742,
-"night_trips": 46,
-"lon": 77.6159,
-"lat": 12.91643
-},
-{
-"name": "Central Silk Board",
-"trip_count": 540,
-"night_trips": 44,
-"lon": 77.62379,
-"lat": 12.91756
-},
-{
-"name": "HAL Main Gate",
-"trip_count": 571,
-"night_trips": 44,
-"lon": 77.66821,
-"lat": 12.95821
-},
-{
-"name": "Yamalur Cross",
-"trip_count": 524,
-"night_trips": 43,
-"lon": 77.68829,
-"lat": 12.95525
-},
-{
-"name": "Central Silk Board Metro Station",
-"trip_count": 688,
-"night_trips": 42,
-"lon": 77.62136,
-"lat": 12.91691
-},
-{
-"name": "Helicopter Division",
-"trip_count": 537,
-"night_trips": 41,
-"lon": 77.67735,
-"lat": 12.95582
-},
-{
-"name": "Domlur",
-"trip_count": 572,
-"night_trips": 40,
-"lon": 77.63809,
-"lat": 12.96111
-},
-{
-"name": "HAL Admin Gate",
-"trip_count": 465,
-"night_trips": 39,
-"lon": 77.66949,
-"lat": 12.95813
-},
-{
-"name": "NAL/Manipal Hospital",
-"trip_count": 555,
-"night_trips": 39,
-"lon": 77.65076,
-"lat": 12.95964
-},
-{
-"name": "Konena Agrahara",
-"trip_count": 535,
-"night_trips": 38,
-"lon": 77.65962,
-"lat": 12.95914
-},
-{
-"name": "Murugeshpalya",
-"trip_count": 535,
-"night_trips": 38,
-"lon": 77.65618,
-"lat": 12.95936
-},
-{
-"name": "Commando Hospital",
-"trip_count": 573,
-"night_trips": 37,
-"lon": 77.62641,
-"lat": 12.96364
-},
-{
-"name": "Military Accounts Office",
-"trip_count": 573,
-"night_trips": 37,
-"lon": 77.62089,
-"lat": 12.96694
-},
-{
-"name": "Kodihalli",
-"trip_count": 539,
-"night_trips": 36,
-"lon": 77.64758,
-"lat": 12.96
-},
-{
-"name": "Domlur Flyover",
-"trip_count": 538,
-"night_trips": 32,
-"lon": 77.64352,
-"lat": 12.96048
-},
-{
-"name": "Military Accounts Office",
-"trip_count": 526,
-"night_trips": 31,
-"lon": 77.62117,
-"lat": 12.96691
-},
-{
-"name": "Commando Hospital",
-"trip_count": 548,
-"night_trips": 30,
-"lon": 77.62756,
-"lat": 12.96268
-},
-{
-"name": "Domlur",
-"trip_count": 547,
-"night_trips": 29,
-"lon": 77.63667,
-"lat": 12.96122
-},
-{
-"name": "Doddakannalli",
-"trip_count": 415,
-"night_trips": 28,
-"lon": 77.69556,
-"lat": 12.90731
-},
-{
-"name": "Junnasandra Gate Wipro Regional Office",
-"trip_count": 390,
-"night_trips": 27,
-"lon": 77.68439,
-"lat": 12.91086
-},
-{
-"name": "Hosmat Hospital (DIG Office)",
-"trip_count": 441,
-"night_trips": 26,
-"lon": 77.61529,
-"lat": 12.96893
-},
-{
-"name": "Kaikondrahalli",
-"trip_count": 427,
-"night_trips": 26,
-"lon": 77.67711,
-"lat": 12.91419
-},
-{
-"name": "Koramangala 1st Block",
-"trip_count": 450,
-"night_trips": 26,
-"lon": 77.63448,
-"lat": 12.92501
-},
-{
-"name": "Radhareddy Layout",
-"trip_count": 383,
-"night_trips": 26,
-"lon": 77.6897,
-"lat": 12.90883
-},
-{
-"name": "Bellanduru Gate SJP Road",
-"trip_count": 422,
-"night_trips": 25,
-"lon": 77.66991,
-"lat": 12.91858
-},
-{
-"name": "Bellanduru Gate SJP Road",
-"trip_count": 446,
-"night_trips": 25,
-"lon": 77.66931,
-"lat": 12.91864
-},
-{
-"name": "Hosmat Hospital",
-"trip_count": 475,
-"night_trips": 24,
-"lon": 77.61333,
-"lat": 12.96879
-},
-{
-"name": "Kaikondrahalli",
-"trip_count": 421,
-"night_trips": 24,
-"lon": 77.67714,
-"lat": 12.91402
-},
-{
-"name": "Kodihalli",
-"trip_count": 525,
-"night_trips": 24,
-"lon": 77.64687,
-"lat": 12.95997
-},
-{
-"name": "Kuvempunagara Bus station (BTM Layout)",
-"trip_count": 248,
-"night_trips": 24,
-"lon": 77.61575,
-"lat": 12.91608
-},
-{
-"name": "Domlur Flyover",
-"trip_count": 506,
-"night_trips": 23,
-"lon": 77.64251,
-"lat": 12.96045
-},
-{
-"name": "Marathahalli",
-"trip_count": 573,
-"night_trips": 23,
-"lon": 77.69372,
-"lat": 12.95611
-},
-{
-"name": "NAL Manipal Hospital",
-"trip_count": 525,
-"night_trips": 23,
-"lon": 77.64991,
-"lat": 12.95961
-},
-{
-"name": "HAL Main Gate",
-"trip_count": 529,
-"night_trips": 21,
-"lon": 77.66505,
-"lat": 12.95854
-},
-{
-"name": "Junnasandra Gate Wipro Regional Office",
-"trip_count": 385,
-"night_trips": 21,
-"lon": 77.68451,
-"lat": 12.91068
-},
-{
-"name": "Konena Agrahara",
-"trip_count": 522,
-"night_trips": 21,
-"lon": 77.65946,
-"lat": 12.95902
-},
-{
-"name": "Murugeshpalya",
-"trip_count": 522,
-"night_trips": 21,
-"lon": 77.65611,
-"lat": 12.95927
-},
-{
-"name": "Doddakannalli",
-"trip_count": 392,
-"night_trips": 20,
-"lon": 77.69554,
-"lat": 12.90715
-},
-{
-"name": "HAL Admin Gate",
-"trip_count": 509,
-"night_trips": 20,
-"lon": 77.6693,
-"lat": 12.95801
-},
-{
-"name": "HAL Kalyana Mantap",
-"trip_count": 521,
-"night_trips": 20,
-"lon": 77.68225,
-"lat": 12.95448
-},
-{
-"name": "Helicopter Division",
-"trip_count": 526,
-"night_trips": 20,
-"lon": 77.67535,
-"lat": 12.95662
-},
-{
-"name": "Jakkasandra",
-"trip_count": 350,
-"night_trips": 20,
-"lon": 77.63802,
-"lat": 12.92481
-},
-{
-"name": "Koramangala Bus Station",
-"trip_count": 235,
-"night_trips": 20,
-"lon": 77.6247,
-"lat": 12.94072
-},
-{
-"name": "Military Bridge",
-"trip_count": 272,
-"night_trips": 20,
-"lon": 77.64015,
-"lat": 12.94599
-},
-{
-"name": "Radhareddy Layout",
-"trip_count": 378,
-"night_trips": 20,
-"lon": 77.68985,
-"lat": 12.90869
-},
-{
-"name": "Yamalur Cross",
-"trip_count": 505,
-"night_trips": 20,
-"lon": 77.68756,
-"lat": 12.95498
-},
-{
-"name": "Koramangala 1st Block",
-"trip_count": 471,
-"night_trips": 19,
-"lon": 77.63458,
-"lat": 12.9249
-},
-{
-"name": "Central Silk Board",
-"trip_count": 514,
-"night_trips": 18,
-"lon": 77.62384,
-"lat": 12.91591
-},
-{
-"name": "Deccan",
-"trip_count": 200,
-"night_trips": 18,
-"lon": 77.62745,
-"lat": 12.90255
-},
-{
-"name": "Domlur Flyover",
-"trip_count": 272,
-"night_trips": 18,
-"lon": 77.64146,
-"lat": 12.95799
-},
-{
-"name": "Jakkasandra",
-"trip_count": 357,
-"night_trips": 18,
-"lon": 77.63826,
-"lat": 12.92454
-},
-{
-"name": "Bommanahalli",
-"trip_count": 232,
-"night_trips": 17,
-"lon": 77.62847,
-"lat": 12.90678
-},
-{
-"name": "Kendriya Vidyalaya ASC Center",
-"trip_count": 347,
-"night_trips": 17,
-"lon": 77.61259,
-"lat": 12.96676
-},
-{
-"name": "Sony World 80ft Road Koramangala",
-"trip_count": 201,
-"night_trips": 17,
-"lon": 77.62734,
-"lat": 12.93694
-},
-{
-"name": "Central Silk Board",
-"trip_count": 203,
-"night_trips": 16,
-"lon": 77.62237,
-"lat": 12.91819
-},
-{
-"name": "Jeevanbheema Nagara",
-"trip_count": 226,
-"night_trips": 16,
-"lon": 77.65763,
-"lat": 12.96576
-},
-{
-"name": "Koramangala Water Tank",
-"trip_count": 257,
-"night_trips": 16,
-"lon": 77.62123,
-"lat": 12.92789
-},
-{
-"name": "Roopena Agrahara",
-"trip_count": 245,
-"night_trips": 16,
-"lon": 77.626,
-"lat": 12.91185
-},
-{
-"name": "BDA Complex Koramangala",
-"trip_count": 239,
-"night_trips": 15,
-"lon": 77.62237,
-"lat": 12.93074
-},
-{
-"name": "Canara Bank Koramangala",
-"trip_count": 275,
-"night_trips": 15,
-"lon": 77.62375,
-"lat": 12.93411
-},
-{
-"name": "Domlur Flyover",
-"trip_count": 277,
-"night_trips": 15,
-"lon": 77.64133,
-"lat": 12.9577
-},
-{
-"name": "Sony World 100ft Road  Koramangala",
-"trip_count": 275,
-"night_trips": 15,
-"lon": 77.62659,
-"lat": 12.93685
-},
-{
-"name": "Dell",
-"trip_count": 279,
-"night_trips": 14,
-"lon": 77.64044,
-"lat": 12.95275
-},
-{
-"name": "Ibbaluru",
-"trip_count": 320,
-"night_trips": 14,
-"lon": 77.66195,
-"lat": 12.92135
-},
-{
-"name": "Military Bridge",
-"trip_count": 280,
-"night_trips": 14,
-"lon": 77.63992,
-"lat": 12.9459
-},
-{
-"name": "Sony World 100ft Road  Koramangala",
-"trip_count": 282,
-"night_trips": 14,
-"lon": 77.62766,
-"lat": 12.93793
-},
-{
-"name": "Agara Junction",
-"trip_count": 310,
-"night_trips": 13,
-"lon": 77.64937,
-"lat": 12.92464
-},
-{
-"name": "Agara Junction",
-"trip_count": 304,
-"night_trips": 13,
-"lon": 77.64998,
-"lat": 12.92468
-},
-{
-"name": "Depot-25 Gate",
-"trip_count": 147,
-"night_trips": 13,
-"lon": 77.64495,
-"lat": 12.91956
-},
-{
-"name": "Forum Mall",
-"trip_count": 281,
-"night_trips": 13,
-"lon": 77.61228,
-"lat": 12.9346
-},
-{
-"name": "Hosur Road junction",
-"trip_count": 174,
-"night_trips": 13,
-"lon": 77.6128,
-"lat": 12.93337
-},
-{
-"name": "Indiranagara 100ft Road",
-"trip_count": 242,
-"night_trips": 13,
-"lon": 77.64141,
-"lat": 12.96658
-},
-{
-"name": "New Horizon School",
-"trip_count": 244,
-"night_trips": 13,
-"lon": 77.64129,
-"lat": 12.9689
-},
-{
-"name": "Dell Domluru",
-"trip_count": 233,
-"night_trips": 12,
-"lon": 77.64065,
-"lat": 12.95291
-},
-{
-"name": "Dhoopanahalli",
-"trip_count": 244,
-"night_trips": 12,
-"lon": 77.64156,
-"lat": 12.96354
-},
-{
-"name": "HSR Lay Out Police Station",
-"trip_count": 155,
-"night_trips": 12,
-"lon": 77.65158,
-"lat": 12.92014
-},
-{
-"name": "Shrinivagilu Ejipura",
-"trip_count": 233,
-"night_trips": 12,
-"lon": 77.63291,
-"lat": 12.93842
-},
-{
-"name": "Agara Junction",
-"trip_count": 139,
-"night_trips": 11,
-"lon": 77.65172,
-"lat": 12.9239
-},
-{
-"name": "Canara Bank Koramangala",
-"trip_count": 291,
-"night_trips": 11,
-"lon": 77.62399,
-"lat": 12.93487
-},
-{
-"name": "Indoor Stadium",
-"trip_count": 98,
-"night_trips": 11,
-"lon": 77.62259,
-"lat": 12.94272
-},
-{
-"name": "National Games Village Gate",
-"trip_count": 97,
-"night_trips": 11,
-"lon": 77.62039,
-"lat": 12.94928
-},
-{
-"name": "Passport Office Koramangala",
-"trip_count": 100,
-"night_trips": 11,
-"lon": 77.61899,
-"lat": 12.94558
-},
-{
-"name": "Roopena Agrahara FLY",
-"trip_count": 157,
-"night_trips": 11,
-"lon": 77.62604,
-"lat": 12.9116
-},
-{
-"name": "BDA Complex HSR Layout",
-"trip_count": 52,
-"night_trips": 10,
-"lon": 77.63814,
-"lat": 12.91293
-},
-{
-"name": "BDA Complex Koramangala",
-"trip_count": 291,
-"night_trips": 10,
-"lon": 77.62212,
-"lat": 12.93076
-},
-{
-"name": "HSR Layout KEB",
-"trip_count": 102,
-"night_trips": 10,
-"lon": 77.64961,
-"lat": 12.90361
-},
-{
-"name": "Indiranagara 100ft Road",
-"trip_count": 240,
-"night_trips": 10,
-"lon": 77.64154,
-"lat": 12.96711
-},
-{
-"name": "Kendriya Sadana Koramangala",
-"trip_count": 260,
-"night_trips": 10,
-"lon": 77.62026,
-"lat": 12.92596
-},
-{
-"name": "Koramangala Water Tank",
-"trip_count": 291,
-"night_trips": 10,
-"lon": 77.62122,
-"lat": 12.92834
-},
-{
-"name": "Koramangala Water Tank",
-"trip_count": 226,
-"night_trips": 10,
-"lon": 77.62067,
-"lat": 12.92754
-},
-{
-"name": "Kudure Mukha Colony",
-"trip_count": 251,
-"night_trips": 10,
-"lon": 77.62563,
-"lat": 12.92553
-},
-{
-"name": "MC Donald",
-"trip_count": 112,
-"night_trips": 10,
-"lon": 77.63799,
-"lat": 12.91226
-},
-{
-"name": "MC Donald",
-"trip_count": 112,
-"night_trips": 10,
-"lon": 77.63796,
-"lat": 12.91231
-},
-{
-"name": "Mangammanapalya",
-"trip_count": 112,
-"night_trips": 10,
-"lon": 77.63505,
-"lat": 12.90725
-},
-{
-"name": "New Horizon School",
-"trip_count": 240,
-"night_trips": 10,
-"lon": 77.64142,
-"lat": 12.96897
-},
-{
-"name": "Ravi Tent",
-"trip_count": 116,
-"night_trips": 10,
-"lon": 77.62148,
-"lat": 12.95169
-},
-{
-"name": "Sarjapura Road Ibbaluru Junction",
-"trip_count": 180,
-"night_trips": 10,
-"lon": 77.66585,
-"lat": 12.9204
-},
-{
-"name": "Shrinivagilu Ejipura",
-"trip_count": 240,
-"night_trips": 10,
-"lon": 77.63265,
-"lat": 12.93859
-},
-{
-"name": "Srirangam Silk House HSR Layout",
-"trip_count": 112,
-"night_trips": 10,
-"lon": 77.63527,
-"lat": 12.9124
-},
-{
-"name": "Srirangam Silk House HSR Layout",
-"trip_count": 112,
-"night_trips": 10,
-"lon": 77.63521,
-"lat": 12.91245
-},
-{
-"name": "St Johns Hospital",
-"trip_count": 228,
-"night_trips": 10,
-"lon": 77.61594,
-"lat": 12.92933
-},
-{
-"name": "St francis College",
-"trip_count": 257,
-"night_trips": 10,
-"lon": 77.63124,
-"lat": 12.92432
-},
-{
-"name": "Dhoopanahalli",
-"trip_count": 233,
-"night_trips": 9,
-"lon": 77.64169,
-"lat": 12.96342
-},
-{
-"name": "Jyothi Nivas College",
-"trip_count": 132,
-"night_trips": 9,
-"lon": 77.61415,
-"lat": 12.93533
-},
-{
-"name": "Kalyana Mantapa Koramangala",
-"trip_count": 133,
-"night_trips": 9,
-"lon": 77.61839,
-"lat": 12.93739
-},
-{
-"name": "Koramangala Police Station",
-"trip_count": 133,
-"night_trips": 9,
-"lon": 77.62151,
-"lat": 12.94167
-},
-{
-"name": "Madivala Masidi",
-"trip_count": 262,
-"night_trips": 9,
-"lon": 77.61852,
-"lat": 12.92479
-},
-{
-"name": "Maharaja Signal",
-"trip_count": 163,
-"night_trips": 9,
-"lon": 77.62968,
-"lat": 12.93455
-},
-{
-"name": "St francis College",
-"trip_count": 249,
-"night_trips": 9,
-"lon": 77.63086,
-"lat": 12.92441
-},
-{
-"name": "Wipro Park Koramangala",
-"trip_count": 163,
-"night_trips": 9,
-"lon": 77.63327,
-"lat": 12.92945
-},
-{
-"name": "Austin Town",
-"trip_count": 193,
-"night_trips": 8,
-"lon": 77.61254,
-"lat": 12.9616
-},
-{
-"name": "CPWD Quarters HSR Layout",
-"trip_count": 107,
-"night_trips": 8,
-"lon": 77.65181,
-"lat": 12.914
-},
-{
-"name": "Central Silk Board",
-"trip_count": 199,
-"night_trips": 8,
-"lon": 77.62208,
-"lat": 12.91802
-},
-{
-"name": "Depot-15 Koramangala",
-"trip_count": 145,
-"night_trips": 8,
-"lon": 77.62487,
-"lat": 12.9414
-},
-{
-"name": "Garuda Mall",
-"trip_count": 163,
-"night_trips": 8,
-"lon": 77.61042,
-"lat": 12.96969
-},
-{
-"name": "Hosur Road junction 1",
-"trip_count": 182,
-"night_trips": 8,
-"lon": 77.61363,
-"lat": 12.93214
-},
-{
-"name": "Jeevan bhima nagar Petrol Bunk",
-"trip_count": 207,
-"night_trips": 8,
-"lon": 77.65613,
-"lat": 12.9675
-},
-{
-"name": "Koramangala Bus Station",
-"trip_count": 157,
-"night_trips": 8,
-"lon": 77.62502,
-"lat": 12.94087
-},
-{
-"name": "Philomenas Hospital",
-"trip_count": 228,
-"night_trips": 8,
-"lon": 77.61007,
-"lat": 12.96506
-},
-{
-"name": "D Souza Circle",
-"trip_count": 117,
-"night_trips": 7,
-"lon": 77.61106,
-"lat": 12.96755
-},
-{
-"name": "Depot-25 HSR Layout",
-"trip_count": 134,
-"night_trips": 7,
-"lon": 77.64457,
-"lat": 12.91986
-},
-{
-"name": "NIFT College",
-"trip_count": 102,
-"night_trips": 7,
-"lon": 77.65182,
-"lat": 12.91197
-},
-{
-"name": "Neelasandra Bus Stand",
-"trip_count": 118,
-"night_trips": 7,
-"lon": 77.61444,
-"lat": 12.95746
-},
-{
-"name": "Parangipalya",
-"trip_count": 130,
-"night_trips": 7,
-"lon": 77.64929,
-"lat": 12.90868
-},
-{
-"name": "BDA Complex HSR Layout",
-"trip_count": 72,
-"night_trips": 6,
-"lon": 77.63807,
-"lat": 12.91294
-},
-{
-"name": "Bommanahalli",
-"trip_count": 210,
-"night_trips": 6,
-"lon": 77.6285,
-"lat": 12.90696
-},
-{
-"name": "HSR Layout KEB",
-"trip_count": 122,
-"night_trips": 6,
-"lon": 77.64963,
-"lat": 12.90356
-},
-{
-"name": "Kodihalli",
-"trip_count": 210,
-"night_trips": 6,
-"lon": 77.64976,
-"lat": 12.96851
-},
-{
-"name": "Kodihalli",
-"trip_count": 115,
-"night_trips": 6,
-"lon": 77.64962,
-"lat": 12.96857
-},
-{
-"name": "Koramangala Bus Station",
-"trip_count": 259,
-"night_trips": 6,
-"lon": 77.62479,
-"lat": 12.9405
-},
-{
-"name": "Military Accounts Office",
-"trip_count": 86,
-"night_trips": 6,
-"lon": 77.6203,
-"lat": 12.96707
-},
-{
-"name": "NIFT College",
-"trip_count": 116,
-"night_trips": 6,
-"lon": 77.65192,
-"lat": 12.91191
-},
-{
-"name": "Neelasandra Bus Stand",
-"trip_count": 272,
-"night_trips": 6,
-"lon": 77.61429,
-"lat": 12.95766
-},
-{
-"name": "Neelasandra Rose Garden",
-"trip_count": 106,
-"night_trips": 6,
-"lon": 77.61737,
-"lat": 12.95379
-},
-{
-"name": "Sony World 80ft Road Koramangala",
-"trip_count": 230,
-"night_trips": 6,
-"lon": 77.62639,
-"lat": 12.93782
-},
-{
-"name": "ASC Centre",
-"trip_count": 104,
-"night_trips": 5,
-"lon": 77.61892,
-"lat": 12.96239
-},
-{
-"name": "Agara Junction",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.65075,
-"lat": 12.92417
-},
-{
-"name": "Amruth Sweets",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.64153,
-"lat": 12.90921
-},
-{
-"name": "Amruth Sweets",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.64147,
-"lat": 12.90926
-},
-{
-"name": "Born Babies",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.63806,
-"lat": 12.90929
-},
-{
-"name": "Born Babies",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.63804,
-"lat": 12.90929
-},
-{
-"name": "CPWD Quarters HSR Layout",
-"trip_count": 104,
-"night_trips": 5,
-"lon": 77.65182,
-"lat": 12.91413
-},
-{
-"name": "HSR Layout Police Station",
-"trip_count": 98,
-"night_trips": 5,
-"lon": 77.65161,
-"lat": 12.92025
-},
-{
-"name": "MTR Hotel",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.64477,
-"lat": 12.91696
-},
-{
-"name": "MTR Hotel",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.64485,
-"lat": 12.91703
-},
-{
-"name": "Maharaja Signal",
-"trip_count": 173,
-"night_trips": 5,
-"lon": 77.62965,
-"lat": 12.93434
-},
-{
-"name": "Nandini Cool Joint",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.64461,
-"lat": 12.91264
-},
-{
-"name": "Nandini Cool Joint",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.64466,
-"lat": 12.91267
-},
-{
-"name": "National Games Village Gate",
-"trip_count": 112,
-"night_trips": 5,
-"lon": 77.61997,
-"lat": 12.94868
-},
-{
-"name": "Parangipalya",
-"trip_count": 58,
-"night_trips": 5,
-"lon": 77.64934,
-"lat": 12.90873
-},
-{
-"name": "Ravi Tent",
-"trip_count": 133,
-"night_trips": 5,
-"lon": 77.62138,
-"lat": 12.95166
-},
-{
-"name": "Salarpuria Apartment",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.63254,
-"lat": 12.90692
-},
-{
-"name": "Salarpuria Apartment",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.63256,
-"lat": 12.90696
-},
-{
-"name": "Swabhiman Park",
-"trip_count": 57,
-"night_trips": 5,
-"lon": 77.64151,
-"lat": 12.9122
-},
-{
-"name": "Swabiman Park",
-"trip_count": 57,
-"night_trips": 5,
-"lon": 77.6414,
-"lat": 12.91229
-},
-{
-"name": "The HSR Club",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.64464,
-"lat": 12.90907
-},
-{
-"name": "Thirumala Theatre",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.64899,
-"lat": 12.91946
-},
-{
-"name": "Vasudev Adigas Hotel",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.63244,
-"lat": 12.91066
-},
-{
-"name": "Vasudev Adigas Hotel",
-"trip_count": 56,
-"night_trips": 5,
-"lon": 77.63247,
-"lat": 12.91069
-},
-{
-"name": "Vivek Nagara Cross",
-"trip_count": 98,
-"night_trips": 5,
-"lon": 77.62069,
-"lat": 12.95457
-},
-{
-"name": "Wipro Park Koramangala",
-"trip_count": 173,
-"night_trips": 5,
-"lon": 77.63319,
-"lat": 12.92897
-},
-{
-"name": "Deccan",
-"trip_count": 178,
-"night_trips": 4,
-"lon": 77.62741,
-"lat": 12.90247
-},
-{
-"name": "Dr BR Ambedkar Bus Terminal (Domlur)",
-"trip_count": 29,
-"night_trips": 4,
-"lon": 77.63853,
-"lat": 12.96191
-},
-{
-"name": "HAL Main Gate",
-"trip_count": 39,
-"night_trips": 4,
-"lon": 77.66629,
-"lat": 12.95852
-},
-{
-"name": "Indoor Stadium",
-"trip_count": 113,
-"night_trips": 4,
-"lon": 77.62251,
-"lat": 12.94262
-},
-{
-"name": "JBN Petrol Bunk",
-"trip_count": 116,
-"night_trips": 4,
-"lon": 77.65645,
-"lat": 12.96739
-},
-{
-"name": "Jeevan Bheemanagara Cross",
-"trip_count": 138,
-"night_trips": 4,
-"lon": 77.66134,
-"lat": 12.96679
-},
-{
-"name": "Jeevanbheema Nagara Cross",
-"trip_count": 26,
-"night_trips": 4,
-"lon": 77.66166,
-"lat": 12.96686
-},
-{
-"name": "Nandas Hotel",
-"trip_count": 56,
-"night_trips": 4,
-"lon": 77.64503,
-"lat": 12.92173
-},
-{
-"name": "Passport Office Koramangala",
-"trip_count": 111,
-"night_trips": 4,
-"lon": 77.61863,
-"lat": 12.94595
-},
-{
-"name": "The HSR Club",
-"trip_count": 56,
-"night_trips": 4,
-"lon": 77.64467,
-"lat": 12.90905
-},
-{
-"name": "Vannarapet",
-"trip_count": 104,
-"night_trips": 4,
-"lon": 77.62095,
-"lat": 12.95625
-},
-{
-"name": "Vivek Nagara Cross",
-"trip_count": 102,
-"night_trips": 4,
-"lon": 77.62074,
-"lat": 12.95469
-},
-{
-"name": "Austin Town",
-"trip_count": 233,
-"night_trips": 3,
-"lon": 77.61459,
-"lat": 12.96152
-},
-{
-"name": "Basavanagara",
-"trip_count": 55,
-"night_trips": 3,
-"lon": 77.68279,
-"lat": 12.96664
-},
-{
-"name": "Basavanagara",
-"trip_count": 49,
-"night_trips": 3,
-"lon": 77.68276,
-"lat": 12.96682
-},
-{
-"name": "Dhoopanahalli",
-"trip_count": 11,
-"night_trips": 3,
-"lon": 77.64146,
-"lat": 12.96336
-},
-{
-"name": "HAL Main Gate",
+"name": "19th Main 13th Cross HSR Layout",
 "trip_count": 21,
-"night_trips": 3,
-"lon": 77.6664,
-"lat": 12.95862
-},
-{
-"name": "HP Petrol Bunk Haraluru Road",
-"trip_count": 46,
-"night_trips": 3,
-"lon": 77.66704,
-"lat": 12.91473
-},
-{
-"name": "HP Petrol Bunk Haraluru Road",
-"trip_count": 47,
-"night_trips": 3,
-"lon": 77.66702,
-"lat": 12.91479
-},
-{
-"name": "Haraluru",
-"trip_count": 48,
-"night_trips": 3,
-"lon": 77.66041,
-"lat": 12.90146
-},
-{
-"name": "Haraluru",
-"trip_count": 56,
-"night_trips": 3,
-"lon": 77.66039,
-"lat": 12.90149
-},
-{
-"name": "Haraluru Cross",
-"trip_count": 52,
-"night_trips": 3,
-"lon": 77.66866,
-"lat": 12.91863
-},
-{
-"name": "Haraluru Cross",
-"trip_count": 48,
-"night_trips": 3,
-"lon": 77.66876,
-"lat": 12.91861
-},
-{
-"name": "Ozone Apartment",
-"trip_count": 46,
-"night_trips": 3,
-"lon": 77.66376,
-"lat": 12.90839
-},
-{
-"name": "Ozone Apartment",
-"trip_count": 47,
-"night_trips": 3,
-"lon": 77.6637,
-"lat": 12.9083
-},
-{
-"name": "Philomenas Hospital",
-"trip_count": 233,
-"night_trips": 3,
-"lon": 77.61005,
-"lat": 12.96481
-},
-{
-"name": "Prestige Apartment",
-"trip_count": 46,
-"night_trips": 3,
-"lon": 77.66171,
-"lat": 12.90332
-},
-{
-"name": "Prestige Apartment",
-"trip_count": 47,
-"night_trips": 3,
-"lon": 77.66172,
-"lat": 12.90341
-},
-{
-"name": "Rameshnagara",
-"trip_count": 31,
-"night_trips": 3,
-"lon": 77.68217,
-"lat": 12.96409
-},
-{
-"name": "Rameshnagara",
-"trip_count": 61,
-"night_trips": 3,
-"lon": 77.68213,
-"lat": 12.96411
-},
-{
-"name": "Roopena Agrahara FLY",
-"trip_count": 197,
-"night_trips": 3,
-"lon": 77.62589,
-"lat": 12.91212
-},
-{
-"name": "Roopena Agrahara Toll",
-"trip_count": 208,
-"night_trips": 3,
-"lon": 77.62617,
-"lat": 12.91166
-},
-{
-"name": "ASC Centre",
-"trip_count": 94,
-"night_trips": 2,
-"lon": 77.61903,
-"lat": 12.96248
-},
-{
-"name": "BTM Layout 12th Main 7th Cross",
-"trip_count": 21,
-"night_trips": 2,
-"lon": 77.61007,
-"lat": 12.91393
-},
-{
-"name": "BTM Layout 16th Main",
-"trip_count": 17,
-"night_trips": 2,
-"lon": 77.61014,
-"lat": 12.91627
-},
-{
-"name": "Balaji Apartment HSR Layout",
-"trip_count": 30,
-"night_trips": 2,
-"lon": 77.64899,
-"lat": 12.90497
-},
-{
-"name": "Bommanahalli Fly Over",
-"trip_count": 97,
-"night_trips": 2,
-"lon": 77.62985,
-"lat": 12.90557
-},
-{
-"name": "Bommanahalli Fly Over",
-"trip_count": 104,
-"night_trips": 2,
-"lon": 77.63017,
-"lat": 12.90488
-},
-{
-"name": "Dr BR Ambedkar Bus Terminal (Domlur)",
-"trip_count": 30,
-"night_trips": 2,
-"lon": 77.63881,
-"lat": 12.96163
-},
-{
-"name": "Jeevan Bheemanagara Cross1",
-"trip_count": 40,
-"night_trips": 2,
-"lon": 77.66151,
-"lat": 12.96687
-},
-{
-"name": "Kasavanahalli",
-"trip_count": 45,
-"night_trips": 2,
-"lon": 77.67599,
-"lat": 12.90495
-},
-{
-"name": "Mahadeshwara Nagara",
-"trip_count": 21,
-"night_trips": 2,
-"lon": 77.61094,
-"lat": 12.90779
-},
-{
-"name": "SVR College",
-"trip_count": 33,
-"night_trips": 2,
-"lon": 77.65058,
-"lat": 12.90225
-},
-{
-"name": "SVR College",
-"trip_count": 38,
-"night_trips": 2,
-"lon": 77.65071,
-"lat": 12.90217
-},
-{
-"name": "Sarjapura Road Ibbaluru Junction",
-"trip_count": 86,
-"night_trips": 2,
-"lon": 77.66518,
-"lat": 12.92043
-},
-{
-"name": "Vannarapet",
-"trip_count": 94,
-"night_trips": 2,
-"lon": 77.6211,
-"lat": 12.95645
-},
-{
-"name": "Vivek Nagara",
-"trip_count": 16,
-"night_trips": 2,
-"lon": 77.62303,
-"lat": 12.95417
+"night_trips": 0,
+"lon": 77.65176,
+"lat": 12.91593
 },
 {
 "name": "19th Main 13th Cross HSR Layout",
@@ -1792,221 +21,18 @@
 "lat": 12.91582
 },
 {
-"name": "B Nagasandra",
-"trip_count": 4,
-"night_trips": 1,
-"lon": 77.65279,
-"lat": 12.94436
-},
-{
-"name": "Balaji Apartment HSR Layout",
-"trip_count": 26,
-"night_trips": 1,
-"lon": 77.64895,
-"lat": 12.90496
-},
-{
-"name": "Challaghatta",
-"trip_count": 4,
-"night_trips": 1,
-"lon": 77.64913,
-"lat": 12.94603
-},
-{
-"name": "Devarabisanahalli Village(Ambedkar Circle)",
-"trip_count": 12,
-"night_trips": 1,
-"lon": 77.69492,
-"lat": 12.92434
-},
-{
-"name": "Dodda Nekkundi Cross",
-"trip_count": 19,
-"night_trips": 1,
-"lon": 77.6933,
-"lat": 12.96793
-},
-{
-"name": "Dodda Nekkundi Junction",
-"trip_count": 7,
-"night_trips": 1,
-"lon": 77.69166,
-"lat": 12.95607
-},
-{
-"name": "Doddakannalli",
-"trip_count": 22,
-"night_trips": 1,
-"lon": 77.69558,
-"lat": 12.90703
-},
-{
-"name": "Domlur Flyover",
-"trip_count": 16,
-"night_trips": 1,
-"lon": 77.64155,
-"lat": 12.9606
-},
-{
-"name": "Embassy Tech Village",
-"trip_count": 12,
-"night_trips": 1,
-"lon": 77.69465,
-"lat": 12.92913
-},
-{
-"name": "GBJ Colony Gate Doddanekkundi",
-"trip_count": 8,
-"night_trips": 1,
-"lon": 77.69134,
-"lat": 12.95753
-},
-{
-"name": "Garuda Mall",
-"trip_count": 24,
-"night_trips": 1,
-"lon": 77.61052,
-"lat": 12.96973
-},
-{
-"name": "Golf Club HAL",
-"trip_count": 4,
-"night_trips": 1,
-"lon": 77.65257,
-"lat": 12.95262
-},
-{
-"name": "HSR Layout 22nd Cross (Parangipalya Cross)",
-"trip_count": 25,
-"night_trips": 1,
-"lon": 77.65163,
-"lat": 12.90857
-},
-{
-"name": "HSR Layout Petrol Bunk",
-"trip_count": 46,
-"night_trips": 1,
-"lon": 77.65163,
-"lat": 12.91976
-},
-{
-"name": "Halanayakanahalli",
-"trip_count": 3,
-"night_trips": 1,
-"lon": 77.6883,
-"lat": 12.90147
-},
-{
-"name": "Halanayakanahalli",
-"trip_count": 11,
-"night_trips": 1,
-"lon": 77.68829,
-"lat": 12.90152
-},
-{
-"name": "Jyothi Nivas College",
-"trip_count": 138,
-"night_trips": 1,
-"lon": 77.61453,
-"lat": 12.93542
-},
-{
-"name": "Kasavanahalli",
-"trip_count": 45,
-"night_trips": 1,
-"lon": 77.67605,
-"lat": 12.90489
-},
-{
-"name": "Kaverinagara Kodichikkanahalli",
-"trip_count": 32,
-"night_trips": 1,
-"lon": 77.6227,
-"lat": 12.90045
-},
-{
-"name": "Koramangala Kalyana Mantapa",
-"trip_count": 139,
-"night_trips": 1,
-"lon": 77.61849,
-"lat": 12.93724
-},
-{
-"name": "Koramangala Police Station",
-"trip_count": 139,
-"night_trips": 1,
-"lon": 77.62179,
-"lat": 12.94172
-},
-{
-"name": "Lakshman Rao Nagara Anepalya",
-"trip_count": 10,
-"night_trips": 1,
-"lon": 77.61751,
-"lat": 12.9504
-},
-{
-"name": "Neelasandra BDA Complex",
-"trip_count": 89,
-"night_trips": 1,
-"lon": 77.61498,
-"lat": 12.95723
-},
-{
-"name": "Neelasandra Rose Garden",
-"trip_count": 111,
-"night_trips": 1,
-"lon": 77.61752,
-"lat": 12.95371
-},
-{
-"name": "Parangipalya Cross",
-"trip_count": 14,
-"night_trips": 1,
-"lon": 77.65178,
-"lat": 12.90835
-},
-{
-"name": "Parangipalya Cross",
-"trip_count": 25,
-"night_trips": 1,
-"lon": 77.65182,
-"lat": 12.9084
-},
-{
-"name": "Petrol Bunk Koppa begur Road",
-"trip_count": 32,
-"night_trips": 1,
-"lon": 77.62713,
-"lat": 12.90351
-},
-{
-"name": "Ramesh Nagara Cross",
-"trip_count": 14,
-"night_trips": 1,
-"lon": 77.67995,
-"lat": 12.95467
-},
-{
-"name": "Vivek Nagara",
-"trip_count": 20,
-"night_trips": 1,
-"lon": 77.62302,
-"lat": 12.95443
-},
-{
-"name": "Wind Tunnel Road (Murugeshpalya)",
-"trip_count": 4,
-"night_trips": 1,
-"lon": 77.65427,
-"lat": 12.9592
-},
-{
-"name": "19th Main 13th Cross HSR Layout",
-"trip_count": 21,
+"name": "1st Main Kodichikkanahalli",
+"trip_count": 34,
 "night_trips": 0,
-"lon": 77.65176,
-"lat": 12.91593
+"lon": 77.61543,
+"lat": 12.89854
+},
+{
+"name": "1st Main Kodichikkanahalli",
+"trip_count": 33,
+"night_trips": 1,
+"lon": 77.6155,
+"lat": 12.89847
 },
 {
 "name": "AET Junction",
@@ -2023,11 +49,172 @@
 "lat": 12.91558
 },
 {
+"name": "ASC Centre",
+"trip_count": 104,
+"night_trips": 5,
+"lon": 77.61892,
+"lat": 12.96239
+},
+{
+"name": "ASC Centre",
+"trip_count": 94,
+"night_trips": 2,
+"lon": 77.61903,
+"lat": 12.96248
+},
+{
+"name": "Adugodi",
+"trip_count": 281,
+"night_trips": 11,
+"lon": 77.6077,
+"lat": 12.94387
+},
+{
+"name": "Adugodi",
+"trip_count": 124,
+"night_trips": 2,
+"lon": 77.60748,
+"lat": 12.94397
+},
+{
+"name": "Adugodi",
+"trip_count": 155,
+"night_trips": 14,
+"lon": 77.60761,
+"lat": 12.94384
+},
+{
+"name": "Adugodi Police Station",
+"trip_count": 279,
+"night_trips": 14,
+"lon": 77.60976,
+"lat": 12.93897
+},
+{
+"name": "Adugodi Police Station",
+"trip_count": 281,
+"night_trips": 13,
+"lon": 77.6095,
+"lat": 12.93985
+},
+{
+"name": "Agara Junction",
+"trip_count": 1240,
+"night_trips": 99,
+"lon": 77.65073,
+"lat": 12.92433
+},
+{
+"name": "Agara Junction",
+"trip_count": 1162,
+"night_trips": 72,
+"lon": 77.65028,
+"lat": 12.92452
+},
+{
+"name": "Agara Junction",
+"trip_count": 310,
+"night_trips": 13,
+"lon": 77.64937,
+"lat": 12.92464
+},
+{
+"name": "Agara Junction",
+"trip_count": 304,
+"night_trips": 13,
+"lon": 77.64998,
+"lat": 12.92468
+},
+{
+"name": "Agara Junction",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.65075,
+"lat": 12.92417
+},
+{
+"name": "Agara Junction",
+"trip_count": 139,
+"night_trips": 11,
+"lon": 77.65172,
+"lat": 12.9239
+},
+{
 "name": "Airtel office Koramangala",
 "trip_count": 2,
 "night_trips": 0,
 "lon": 77.61551,
 "lat": 12.9359
+},
+{
+"name": "Akkithimmanahalli",
+"trip_count": 119,
+"night_trips": 0,
+"lon": 77.59789,
+"lat": 12.96186
+},
+{
+"name": "Akkithimmanahalli",
+"trip_count": 113,
+"night_trips": 2,
+"lon": 77.5978,
+"lat": 12.96194
+},
+{
+"name": "Amruth Sweets",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.64153,
+"lat": 12.90921
+},
+{
+"name": "Amruth Sweets",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.64147,
+"lat": 12.90926
+},
+{
+"name": "Amrutha Engineering College",
+"trip_count": 45,
+"night_trips": 1,
+"lon": 77.6752,
+"lat": 12.8968
+},
+{
+"name": "Amrutha Engineering College",
+"trip_count": 45,
+"night_trips": 2,
+"lon": 77.67517,
+"lat": 12.89689
+},
+{
+"name": "Ananda Ashrama (BG Rd)",
+"trip_count": 693,
+"night_trips": 48,
+"lon": 77.60062,
+"lat": 12.9275
+},
+{
+"name": "Ananda Ashrama (BG Rd)",
+"trip_count": 683,
+"night_trips": 41,
+"lon": 77.60037,
+"lat": 12.92644
+},
+{
+"name": "Anepalya",
+"trip_count": 235,
+"night_trips": 13,
+"lon": 77.60532,
+"lat": 12.95289
+},
+{
+"name": "Anepalya",
+"trip_count": 221,
+"night_trips": 20,
+"lon": 77.60518,
+"lat": 12.95303
 },
 {
 "name": "Anjanadri High School Doddakannahalli",
@@ -2072,11 +259,81 @@
 "lat": 12.96044
 },
 {
+"name": "Anugraha Badavane (Bilekahalli)",
+"trip_count": 22,
+"night_trips": 0,
+"lon": 77.60895,
+"lat": 12.90328
+},
+{
+"name": "Apollo Hospital",
+"trip_count": 803,
+"night_trips": 59,
+"lon": 77.6,
+"lat": 12.89662
+},
+{
+"name": "Apollo Hospital",
+"trip_count": 827,
+"night_trips": 40,
+"lon": 77.59972,
+"lat": 12.89635
+},
+{
+"name": "Arakere Gate",
+"trip_count": 789,
+"night_trips": 63,
+"lon": 77.59811,
+"lat": 12.89024
+},
+{
+"name": "Arakere Gate",
+"trip_count": 781,
+"night_trips": 38,
+"lon": 77.59793,
+"lat": 12.89042
+},
+{
+"name": "Arakere Gate",
+"trip_count": 8,
+"night_trips": 0,
+"lon": 77.5978,
+"lat": 12.89059
+},
+{
 "name": "Austin Town",
 "trip_count": 35,
 "night_trips": 0,
 "lon": 77.61345,
 "lat": 12.96157
+},
+{
+"name": "Austin Town",
+"trip_count": 233,
+"night_trips": 3,
+"lon": 77.61459,
+"lat": 12.96152
+},
+{
+"name": "Austin Town",
+"trip_count": 193,
+"night_trips": 8,
+"lon": 77.61254,
+"lat": 12.9616
+},
+{
+"name": "Ayyappaswamy Temple Madivala",
+"trip_count": 762,
+"night_trips": 52,
+"lon": 77.61791,
+"lat": 12.92478
+},
+{
+"name": "B Nagasandra",
+"trip_count": 4,
+"night_trips": 1,
+"lon": 77.65279,
+"lat": 12.94436
 },
 {
 "name": "B Nagasandra",
@@ -2086,11 +343,116 @@
 "lat": 12.94429
 },
 {
+"name": "BDA Complex HSR Layout",
+"trip_count": 72,
+"night_trips": 6,
+"lon": 77.63807,
+"lat": 12.91294
+},
+{
+"name": "BDA Complex HSR Layout",
+"trip_count": 52,
+"night_trips": 10,
+"lon": 77.63814,
+"lat": 12.91293
+},
+{
+"name": "BDA Complex Koramangala",
+"trip_count": 239,
+"night_trips": 15,
+"lon": 77.62237,
+"lat": 12.93074
+},
+{
+"name": "BDA Complex Koramangala",
+"trip_count": 291,
+"night_trips": 10,
+"lon": 77.62212,
+"lat": 12.93076
+},
+{
+"name": "BEML Factory",
+"trip_count": 15,
+"night_trips": 0,
+"lon": 77.65908,
+"lat": 12.97146
+},
+{
+"name": "BEML Gate",
+"trip_count": 110,
+"night_trips": 8,
+"lon": 77.65859,
+"lat": 12.97146
+},
+{
+"name": "BEML Gate",
+"trip_count": 173,
+"night_trips": 6,
+"lon": 77.6588,
+"lat": 12.9713
+},
+{
+"name": "BPL",
+"trip_count": 752,
+"night_trips": 62,
+"lon": 77.59697,
+"lat": 12.88702
+},
+{
+"name": "BPL",
+"trip_count": 770,
+"night_trips": 38,
+"lon": 77.59676,
+"lat": 12.88691
+},
+{
+"name": "BTM 4th Stage Circle",
+"trip_count": 32,
+"night_trips": 0,
+"lon": 77.61507,
+"lat": 12.8868
+},
+{
+"name": "BTM 4th Stage Circle",
+"trip_count": 32,
+"night_trips": 2,
+"lon": 77.61506,
+"lat": 12.88669
+},
+{
+"name": "BTM Layout 12th Main 7th Cross",
+"trip_count": 21,
+"night_trips": 2,
+"lon": 77.61007,
+"lat": 12.91393
+},
+{
 "name": "BTM Layout 12th Main 7th Cross",
 "trip_count": 19,
 "night_trips": 0,
 "lon": 77.61002,
 "lat": 12.914
+},
+{
+"name": "BTM Layout 16th Main",
+"trip_count": 852,
+"night_trips": 63,
+"lon": 77.60928,
+"lat": 12.91644
+},
+{
+"name": "BTM Layout 16th Main",
+"trip_count": 833,
+"night_trips": 50,
+"lon": 77.60912,
+"lat": 12.91669
+},
+{
+"name": "BTM Layout 16th Main",
+"trip_count": 17,
+"night_trips": 2,
+"lon": 77.61014,
+"lat": 12.91627
 },
 {
 "name": "BTM Layout 16th Main Hopcoms",
@@ -2107,11 +469,305 @@
 "lat": 12.91953
 },
 {
+"name": "BTM Layout 4th Phase (ELC RTO Office)",
+"trip_count": 7,
+"night_trips": 0,
+"lon": 77.61115,
+"lat": 12.88683
+},
+{
+"name": "BTM Layout 4th Phase (ELC RTO Office)",
+"trip_count": 32,
+"night_trips": 0,
+"lon": 77.6104,
+"lat": 12.88678
+},
+{
+"name": "BTM Layout 4th Phase (ELC RTO Office)",
+"trip_count": 32,
+"night_trips": 2,
+"lon": 77.61055,
+"lat": 12.88672
+},
+{
+"name": "BTM Layout Water Tank",
+"trip_count": 851,
+"night_trips": 64,
+"lon": 77.60711,
+"lat": 12.91654
+},
+{
+"name": "BTM Layout Water Tank",
+"trip_count": 854,
+"night_trips": 51,
+"lon": 77.60713,
+"lat": 12.91673
+},
+{
+"name": "BTR Garden",
+"trip_count": 54,
+"night_trips": 4,
+"lon": 77.64645,
+"lat": 12.89033
+},
+{
+"name": "BTR Garden",
+"trip_count": 56,
+"night_trips": 2,
+"lon": 77.64662,
+"lat": 12.89028
+},
+{
+"name": "Balaji Apartment HSR Layout",
+"trip_count": 30,
+"night_trips": 2,
+"lon": 77.64899,
+"lat": 12.90497
+},
+{
+"name": "Balaji Apartment HSR Layout",
+"trip_count": 26,
+"night_trips": 1,
+"lon": 77.64895,
+"lat": 12.90496
+},
+{
+"name": "Basavanagara",
+"trip_count": 55,
+"night_trips": 3,
+"lon": 77.68279,
+"lat": 12.96664
+},
+{
+"name": "Basavanagara",
+"trip_count": 49,
+"night_trips": 3,
+"lon": 77.68276,
+"lat": 12.96682
+},
+{
+"name": "Belenus Hospital",
+"trip_count": 3,
+"night_trips": 0,
+"lon": 77.70891,
+"lat": 12.90247
+},
+{
+"name": "Belenus Hospital",
+"trip_count": 4,
+"night_trips": 0,
+"lon": 77.709,
+"lat": 12.90255
+},
+{
+"name": "Bellanduru City Light Appartment",
+"trip_count": 1341,
+"night_trips": 97,
+"lon": 77.67278,
+"lat": 12.92412
+},
+{
+"name": "Bellanduru City light Apartment",
+"trip_count": 1290,
+"night_trips": 87,
+"lon": 77.67394,
+"lat": 12.92493
+},
+{
+"name": "Bellanduru Gate SJP Road",
+"trip_count": 422,
+"night_trips": 25,
+"lon": 77.66991,
+"lat": 12.91858
+},
+{
+"name": "Bellanduru Gate SJP Road",
+"trip_count": 446,
+"night_trips": 25,
+"lon": 77.66931,
+"lat": 12.91864
+},
+{
+"name": "Bellanduru Petrol Bunk",
+"trip_count": 1211,
+"night_trips": 83,
+"lon": 77.6705,
+"lat": 12.92309
+},
+{
+"name": "Bellanduru Petrol Bunk",
+"trip_count": 1189,
+"night_trips": 73,
+"lon": 77.6702,
+"lat": 12.92322
+},
+{
+"name": "Bengaluru Dairy Circle",
+"trip_count": 961,
+"night_trips": 62,
+"lon": 77.60105,
+"lat": 12.93709
+},
+{
+"name": "Bengaluru Dairy Circle",
+"trip_count": 960,
+"night_trips": 50,
+"lon": 77.60176,
+"lat": 12.9372
+},
+{
+"name": "Bengaluru Dairy Circle",
+"trip_count": 636,
+"night_trips": 36,
+"lon": 77.60129,
+"lat": 12.93528
+},
+{
+"name": "Bengaluru Dairy Circle",
+"trip_count": 703,
+"night_trips": 47,
+"lon": 77.60143,
+"lat": 12.93535
+},
+{
+"name": "Bengaluru Dairy Circle",
+"trip_count": 161,
+"night_trips": 10,
+"lon": 77.6021,
+"lat": 12.93909
+},
+{
+"name": "Bhoganahalli",
+"trip_count": 16,
+"night_trips": 0,
+"lon": 77.70108,
+"lat": 12.92644
+},
+{
+"name": "Bilekahalli",
+"trip_count": 830,
+"night_trips": 59,
+"lon": 77.60112,
+"lat": 12.90079
+},
+{
+"name": "Bilekahalli",
+"trip_count": 828,
+"night_trips": 41,
+"lon": 77.6009,
+"lat": 12.90051
+},
+{
+"name": "Birla Circle Haralur Road",
+"trip_count": 75,
+"night_trips": 5,
+"lon": 77.6571,
+"lat": 12.8942
+},
+{
+"name": "Birla Circle Haralur Road",
+"trip_count": 25,
+"night_trips": 1,
+"lon": 77.65715,
+"lat": 12.89416
+},
+{
+"name": "Bishop Coton Girls High School",
+"trip_count": 14,
+"night_trips": 0,
+"lon": 77.6014,
+"lat": 12.96889
+},
+{
+"name": "Bommanahalli",
+"trip_count": 1051,
+"night_trips": 76,
+"lon": 77.63003,
+"lat": 12.90559
+},
+{
+"name": "Bommanahalli",
+"trip_count": 1058,
+"night_trips": 68,
+"lon": 77.62999,
+"lat": 12.90477
+},
+{
+"name": "Bommanahalli",
+"trip_count": 210,
+"night_trips": 6,
+"lon": 77.6285,
+"lat": 12.90696
+},
+{
+"name": "Bommanahalli",
+"trip_count": 232,
+"night_trips": 17,
+"lon": 77.62847,
+"lat": 12.90678
+},
+{
+"name": "Bommanahalli Fly Over",
+"trip_count": 97,
+"night_trips": 2,
+"lon": 77.62985,
+"lat": 12.90557
+},
+{
+"name": "Bommanahalli Fly Over",
+"trip_count": 104,
+"night_trips": 2,
+"lon": 77.63017,
+"lat": 12.90488
+},
+{
+"name": "Born Babies",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.63806,
+"lat": 12.90929
+},
+{
+"name": "Born Babies",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.63804,
+"lat": 12.90929
+},
+{
+"name": "Brigade Road",
+"trip_count": 315,
+"night_trips": 18,
+"lon": 77.60675,
+"lat": 12.97145
+},
+{
 "name": "CMP Centre and School",
 "trip_count": 1,
 "night_trips": 0,
 "lon": 77.6122,
 "lat": 12.95908
+},
+{
+"name": "CPWD Quarters HSR Layout",
+"trip_count": 104,
+"night_trips": 5,
+"lon": 77.65182,
+"lat": 12.91413
+},
+{
+"name": "CPWD Quarters HSR Layout",
+"trip_count": 107,
+"night_trips": 8,
+"lon": 77.65181,
+"lat": 12.914
+},
+{
+"name": "CS- Bengaluru Club",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.59838,
+"lat": 12.96638
 },
 {
 "name": "CS-Airtel office Koramangala",
@@ -2121,11 +777,60 @@
 "lat": 12.93591
 },
 {
+"name": "CS-Ambedkar Nagara",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.71013,
+"lat": 12.90058
+},
+{
+"name": "CS-Arakere Gate",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.59802,
+"lat": 12.89051
+},
+{
+"name": "CS-BEML Factory",
+"trip_count": 61,
+"night_trips": 6,
+"lon": 77.65928,
+"lat": 12.97154
+},
+{
+"name": "CS-BPL Arekere",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.59714,
+"lat": 12.88755
+},
+{
 "name": "CS-Basavanagara",
 "trip_count": 4,
 "night_trips": 0,
 "lon": 77.68276,
 "lat": 12.96677
+},
+{
+"name": "CS-Belenus Hospital",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.7085,
+"lat": 12.9022
+},
+{
+"name": "CS-Bishop Coton Girls High School",
+"trip_count": 16,
+"night_trips": 0,
+"lon": 77.60157,
+"lat": 12.96916
+},
+{
+"name": "CS-Bishop Coton Girls High School 1",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.60252,
+"lat": 12.96967
 },
 {
 "name": "CS-Bommanahalli Bosch",
@@ -2156,11 +861,32 @@
 "lat": 12.92585
 },
 {
+"name": "CS-Cafe Coffee Day (Vijaya Bank Layout)",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.60818,
+"lat": 12.89157
+},
+{
+"name": "CS-Cathedral School",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.60779,
+"lat": 12.96639
+},
+{
 "name": "CS-Chinmaya Vidyalaya Koramangala",
 "trip_count": 6,
 "night_trips": 0,
 "lon": 77.62816,
 "lat": 12.93488
+},
+{
+"name": "CS-Devarachikkanahalli",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.61571,
+"lat": 12.88885
 },
 {
 "name": "CS-Doddakannalli",
@@ -2175,6 +901,13 @@
 "night_trips": 0,
 "lon": 77.63381,
 "lat": 12.96205
+},
+{
+"name": "CS-East End Jayanagara",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.59681,
+"lat": 12.91703
 },
 {
 "name": "CS-Ejipura",
@@ -2247,6 +980,13 @@
 "lat": 12.95649
 },
 {
+"name": "CS-Hadosiddapura",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.70111,
+"lat": 12.89456
+},
+{
 "name": "CS-ISRO Karthik Nagara",
 "trip_count": 2,
 "night_trips": 0,
@@ -2261,11 +1001,32 @@
 "lat": 12.95959
 },
 {
+"name": "CS-Indiranagara 12th Main",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.64128,
+"lat": 12.9702
+},
+{
+"name": "CS-Kastruriba Road",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.59504,
+"lat": 12.97323
+},
+{
 "name": "CS-Kendriya Vidyalaya ASC Center",
 "trip_count": 26,
 "night_trips": 0,
 "lon": 77.61232,
 "lat": 12.96701
+},
+{
+"name": "CS-Kodathi Village",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.7055,
+"lat": 12.89509
 },
 {
 "name": "CS-Koramangala TTMC",
@@ -2280,6 +1041,27 @@
 "night_trips": 0,
 "lon": 77.6515,
 "lat": 12.96813
+},
+{
+"name": "CS-Muneshwara Devasthana",
+"trip_count": 1,
+"night_trips": 0,
+"lon": 77.60663,
+"lat": 12.93646
+},
+{
+"name": "CS-Munnekolalu",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.70804,
+"lat": 12.94857
+},
+{
+"name": "CS-Munnekolalu Cross",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.70854,
+"lat": 12.95637
 },
 {
 "name": "CS-NGV Koramangala",
@@ -2303,11 +1085,39 @@
 "lat": 12.94593
 },
 {
+"name": "CS-PAPAS Trading PVT LTD",
+"trip_count": 4,
+"night_trips": 0,
+"lon": 77.59408,
+"lat": 12.89131
+},
+{
+"name": "CS-Poorva Fountain Apartment",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.70595,
+"lat": 12.95681
+},
+{
 "name": "CS-Ravi Tent",
 "trip_count": 2,
 "night_trips": 0,
 "lon": 77.62108,
 "lat": 12.95186
+},
+{
+"name": "CS-SJS CBSE Gate-2",
+"trip_count": 6,
+"night_trips": 0,
+"lon": 77.5942,
+"lat": 12.97086
+},
+{
+"name": "CS-Sapthagiri Vidya Mandir",
+"trip_count": 4,
+"night_trips": 0,
+"lon": 77.70544,
+"lat": 12.90739
 },
 {
 "name": "CS-Senior Officers Quaters",
@@ -2331,6 +1141,20 @@
 "lat": 12.92875
 },
 {
+"name": "CS-St Johns Wood Apartment Tavarekere",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.60971,
+"lat": 12.93016
+},
+{
+"name": "CS-St Joseph Boys High School Musuem Road",
+"trip_count": 26,
+"night_trips": 0,
+"lon": 77.60448,
+"lat": 12.97169
+},
+{
 "name": "CS-Stanley Boutique Domlur",
 "trip_count": 2,
 "night_trips": 0,
@@ -2345,11 +1169,242 @@
 "lat": 12.92402
 },
 {
+"name": "CS-Wilson Garden 10th Cross",
+"trip_count": 1,
+"night_trips": 0,
+"lon": 77.59613,
+"lat": 12.94671
+},
+{
+"name": "CS-Wilson Garden 10th Cross",
+"trip_count": 1,
+"night_trips": 0,
+"lon": 77.597,
+"lat": 12.948
+},
+{
+"name": "Cafe Coffee Day (Vijaya Bank Layout)",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.60817,
+"lat": 12.89156
+},
+{
+"name": "Cambridge Hospital",
+"trip_count": 4,
+"night_trips": 0,
+"lon": 77.62726,
+"lat": 12.97191
+},
+{
+"name": "Cambridge Hospital",
+"trip_count": 5,
+"night_trips": 0,
+"lon": 77.6273,
+"lat": 12.97187
+},
+{
+"name": "Canara Bank Koramangala",
+"trip_count": 275,
+"night_trips": 15,
+"lon": 77.62375,
+"lat": 12.93411
+},
+{
+"name": "Canara Bank Koramangala",
+"trip_count": 291,
+"night_trips": 11,
+"lon": 77.62399,
+"lat": 12.93487
+},
+{
+"name": "Carmel Convent Jayanagara",
+"trip_count": 10,
+"night_trips": 0,
+"lon": 77.59722,
+"lat": 12.92711
+},
+{
+"name": "Carmel Convent Jayanagara",
+"trip_count": 9,
+"night_trips": 0,
+"lon": 77.59711,
+"lat": 12.92708
+},
+{
+"name": "Carmel Convent Jayanagara",
+"trip_count": 231,
+"night_trips": 10,
+"lon": 77.59713,
+"lat": 12.9268
+},
+{
+"name": "Carmel Convent Jayanagara",
+"trip_count": 223,
+"night_trips": 11,
+"lon": 77.59724,
+"lat": 12.92643
+},
+{
+"name": "Carmelaram Railway Station",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.70537,
+"lat": 12.9072
+},
+{
+"name": "Carmelram",
+"trip_count": 20,
+"night_trips": 1,
+"lon": 77.70408,
+"lat": 12.90364
+},
+{
+"name": "Carmelram",
+"trip_count": 20,
+"night_trips": 1,
+"lon": 77.70417,
+"lat": 12.90367
+},
+{
+"name": "Carmelram Gate",
+"trip_count": 406,
+"night_trips": 28,
+"lon": 77.70401,
+"lat": 12.90352
+},
+{
+"name": "Carmelram Gate",
+"trip_count": 392,
+"night_trips": 20,
+"lon": 77.70399,
+"lat": 12.90343
+},
+{
+"name": "Carmelram School Railway Gate",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.7059,
+"lat": 12.9095
+},
+{
+"name": "Carmelram School Railway Gate",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.70602,
+"lat": 12.90975
+},
+{
+"name": "Cathedral School",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.60781,
+"lat": 12.96632
+},
+{
+"name": "Central Silk Board",
+"trip_count": 1291,
+"night_trips": 77,
+"lon": 77.62355,
+"lat": 12.91803
+},
+{
+"name": "Central Silk Board",
+"trip_count": 514,
+"night_trips": 18,
+"lon": 77.62384,
+"lat": 12.91591
+},
+{
+"name": "Central Silk Board",
+"trip_count": 203,
+"night_trips": 16,
+"lon": 77.62237,
+"lat": 12.91819
+},
+{
+"name": "Central Silk Board",
+"trip_count": 199,
+"night_trips": 8,
+"lon": 77.62208,
+"lat": 12.91802
+},
+{
+"name": "Central Silk Board",
+"trip_count": 540,
+"night_trips": 44,
+"lon": 77.62379,
+"lat": 12.91756
+},
+{
+"name": "Central Silk Board Metro Station",
+"trip_count": 805,
+"night_trips": 72,
+"lon": 77.62143,
+"lat": 12.91674
+},
+{
+"name": "Central Silk Board Metro Station",
+"trip_count": 688,
+"night_trips": 42,
+"lon": 77.62136,
+"lat": 12.91691
+},
+{
+"name": "Challaghatta",
+"trip_count": 4,
+"night_trips": 1,
+"lon": 77.64913,
+"lat": 12.94603
+},
+{
 "name": "Challaghatta",
 "trip_count": 3,
 "night_trips": 0,
 "lon": 77.64913,
 "lat": 12.94606
+},
+{
+"name": "Chandrappanagara",
+"trip_count": 165,
+"night_trips": 7,
+"lon": 77.60247,
+"lat": 12.9412
+},
+{
+"name": "Chandrappanagara",
+"trip_count": 64,
+"night_trips": 5,
+"lon": 77.60255,
+"lat": 12.9413
+},
+{
+"name": "Chikka Adugodi",
+"trip_count": 8,
+"night_trips": 0,
+"lon": 77.60943,
+"lat": 12.92899
+},
+{
+"name": "Chikka Adugodi",
+"trip_count": 11,
+"night_trips": 0,
+"lon": 77.60939,
+"lat": 12.92894
+},
+{
+"name": "Chikkanayakanahalli",
+"trip_count": 22,
+"night_trips": 1,
+"lon": 77.69454,
+"lat": 12.89228
+},
+{
+"name": "Chikkanayakanahalli",
+"trip_count": 22,
+"night_trips": 1,
+"lon": 77.69445,
+"lat": 12.89232
 },
 {
 "name": "Chinmaya Vidyalaya Koramangala",
@@ -2359,11 +1414,270 @@
 "lat": 12.93491
 },
 {
+"name": "Choodasandra Circle",
+"trip_count": 70,
+"night_trips": 3,
+"lon": 77.67299,
+"lat": 12.88853
+},
+{
+"name": "Choodasandra Circle",
+"trip_count": 73,
+"night_trips": 2,
+"lon": 77.67294,
+"lat": 12.88855
+},
+{
+"name": "Commando Hospital",
+"trip_count": 573,
+"night_trips": 37,
+"lon": 77.62641,
+"lat": 12.96364
+},
+{
+"name": "Commando Hospital",
+"trip_count": 548,
+"night_trips": 30,
+"lon": 77.62756,
+"lat": 12.96268
+},
+{
+"name": "D Souza Circle",
+"trip_count": 117,
+"night_trips": 7,
+"lon": 77.61106,
+"lat": 12.96755
+},
+{
+"name": "DUO Heights Layout",
+"trip_count": 10,
+"night_trips": 0,
+"lon": 77.61468,
+"lat": 12.89486
+},
+{
+"name": "DUO Heights Layout",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.61463,
+"lat": 12.89486
+},
+{
+"name": "Dalmia Circle",
+"trip_count": 36,
+"night_trips": 2,
+"lon": 77.59505,
+"lat": 12.90639
+},
+{
+"name": "Dalmia Circle",
+"trip_count": 3,
+"night_trips": 0,
+"lon": 77.59504,
+"lat": 12.90618
+},
+{
+"name": "Dalmia Circle",
+"trip_count": 105,
+"night_trips": 6,
+"lon": 77.595,
+"lat": 12.90697
+},
+{
+"name": "Dalmia Circle",
+"trip_count": 32,
+"night_trips": 1,
+"lon": 77.59493,
+"lat": 12.90611
+},
+{
+"name": "Deccan",
+"trip_count": 178,
+"night_trips": 4,
+"lon": 77.62741,
+"lat": 12.90247
+},
+{
+"name": "Deccan",
+"trip_count": 200,
+"night_trips": 18,
+"lon": 77.62745,
+"lat": 12.90255
+},
+{
+"name": "Dell",
+"trip_count": 279,
+"night_trips": 14,
+"lon": 77.64044,
+"lat": 12.95275
+},
+{
+"name": "Dell Domluru",
+"trip_count": 233,
+"night_trips": 12,
+"lon": 77.64065,
+"lat": 12.95291
+},
+{
+"name": "Depot-02 Shanthinagara",
+"trip_count": 155,
+"night_trips": 15,
+"lon": 77.59488,
+"lat": 12.95442
+},
+{
+"name": "Depot-03 Shanthinagara",
+"trip_count": 123,
+"night_trips": 13,
+"lon": 77.596,
+"lat": 12.95532
+},
+{
+"name": "Depot-04 Jayanagara",
+"trip_count": 140,
+"night_trips": 15,
+"lon": 77.59346,
+"lat": 12.92489
+},
+{
+"name": "Depot-15 Koramangala",
+"trip_count": 145,
+"night_trips": 8,
+"lon": 77.62487,
+"lat": 12.9414
+},
+{
+"name": "Depot-25 Gate",
+"trip_count": 1142,
+"night_trips": 73,
+"lon": 77.64255,
+"lat": 12.91936
+},
+{
+"name": "Depot-25 Gate",
+"trip_count": 147,
+"night_trips": 13,
+"lon": 77.64495,
+"lat": 12.91956
+},
+{
+"name": "Depot-25 Gate (Central Silk Board)",
+"trip_count": 1253,
+"night_trips": 101,
+"lon": 77.64294,
+"lat": 12.91952
+},
+{
+"name": "Depot-25 HSR Layout",
+"trip_count": 134,
+"night_trips": 7,
+"lon": 77.64457,
+"lat": 12.91986
+},
+{
+"name": "Depot-42 Gate  Arrival",
+"trip_count": 73,
+"night_trips": 0,
+"lon": 77.70565,
+"lat": 12.89538
+},
+{
+"name": "Depot-42 Gate Departure",
+"trip_count": 77,
+"night_trips": 0,
+"lon": 77.7057,
+"lat": 12.89553
+},
+{
+"name": "Depot-42 Kodathi",
+"trip_count": 72,
+"night_trips": 1,
+"lon": 77.7041,
+"lat": 12.89596
+},
+{
+"name": "Devarabisanahalli Ring Road",
+"trip_count": 1272,
+"night_trips": 86,
+"lon": 77.68686,
+"lat": 12.93145
+},
+{
+"name": "Devarabisanahalli Ring Road",
+"trip_count": 1216,
+"night_trips": 83,
+"lon": 77.68729,
+"lat": 12.93218
+},
+{
 "name": "Devarabisanahalli Village(Ambedkar Circle)",
 "trip_count": 12,
 "night_trips": 0,
 "lon": 77.69499,
 "lat": 12.92447
+},
+{
+"name": "Devarabisanahalli Village(Ambedkar Circle)",
+"trip_count": 12,
+"night_trips": 1,
+"lon": 77.69492,
+"lat": 12.92434
+},
+{
+"name": "Devarachikkanahalli",
+"trip_count": 66,
+"night_trips": 0,
+"lon": 77.61556,
+"lat": 12.88887
+},
+{
+"name": "Devarachikkanahalli",
+"trip_count": 71,
+"night_trips": 4,
+"lon": 77.61555,
+"lat": 12.88899
+},
+{
+"name": "Dhoopanahalli",
+"trip_count": 233,
+"night_trips": 9,
+"lon": 77.64169,
+"lat": 12.96342
+},
+{
+"name": "Dhoopanahalli",
+"trip_count": 11,
+"night_trips": 3,
+"lon": 77.64146,
+"lat": 12.96336
+},
+{
+"name": "Dhoopanahalli",
+"trip_count": 244,
+"night_trips": 12,
+"lon": 77.64156,
+"lat": 12.96354
+},
+{
+"name": "Dodda Nekkundi",
+"trip_count": 9,
+"night_trips": 0,
+"lon": 77.69429,
+"lat": 12.97154
+},
+{
+"name": "Dodda Nekkundi",
+"trip_count": 21,
+"night_trips": 1,
+"lon": 77.69418,
+"lat": 12.97146
+},
+{
+"name": "Dodda Nekkundi Bridge/Rainbow Hospital",
+"trip_count": 1007,
+"night_trips": 61,
+"lon": 77.69764,
+"lat": 12.97499
 },
 {
 "name": "Dodda Nekkundi Cross",
@@ -2373,11 +1687,60 @@
 "lat": 12.96796
 },
 {
+"name": "Dodda Nekkundi Cross",
+"trip_count": 19,
+"night_trips": 1,
+"lon": 77.6933,
+"lat": 12.96793
+},
+{
+"name": "Dodda Nekkundi Junction",
+"trip_count": 7,
+"night_trips": 1,
+"lon": 77.69166,
+"lat": 12.95607
+},
+{
 "name": "Dodda Nekkundi Junction",
 "trip_count": 11,
 "night_trips": 0,
 "lon": 77.69173,
 "lat": 12.95617
+},
+{
+"name": "Doddakannalli",
+"trip_count": 22,
+"night_trips": 1,
+"lon": 77.69558,
+"lat": 12.90703
+},
+{
+"name": "Doddakannalli",
+"trip_count": 415,
+"night_trips": 28,
+"lon": 77.69556,
+"lat": 12.90731
+},
+{
+"name": "Doddakannalli",
+"trip_count": 392,
+"night_trips": 20,
+"lon": 77.69554,
+"lat": 12.90715
+},
+{
+"name": "Domlur",
+"trip_count": 547,
+"night_trips": 29,
+"lon": 77.63667,
+"lat": 12.96122
+},
+{
+"name": "Domlur",
+"trip_count": 572,
+"night_trips": 40,
+"lon": 77.63809,
+"lat": 12.96111
 },
 {
 "name": "Domlur Bridge",
@@ -2387,11 +1750,116 @@
 "lat": 12.96356
 },
 {
+"name": "Domlur Flyover",
+"trip_count": 506,
+"night_trips": 23,
+"lon": 77.64251,
+"lat": 12.96045
+},
+{
+"name": "Domlur Flyover",
+"trip_count": 277,
+"night_trips": 15,
+"lon": 77.64133,
+"lat": 12.9577
+},
+{
+"name": "Domlur Flyover",
+"trip_count": 538,
+"night_trips": 32,
+"lon": 77.64352,
+"lat": 12.96048
+},
+{
+"name": "Domlur Flyover",
+"trip_count": 272,
+"night_trips": 18,
+"lon": 77.64146,
+"lat": 12.95799
+},
+{
+"name": "Domlur Flyover",
+"trip_count": 16,
+"night_trips": 1,
+"lon": 77.64155,
+"lat": 12.9606
+},
+{
 "name": "Domlur Marriad Accomodation",
 "trip_count": 2,
 "night_trips": 0,
 "lon": 77.63378,
 "lat": 12.96186
+},
+{
+"name": "Dr BR Ambedkar Bus Terminal (Domlur)",
+"trip_count": 30,
+"night_trips": 2,
+"lon": 77.63881,
+"lat": 12.96163
+},
+{
+"name": "Dr BR Ambedkar Bus Terminal (Domlur)",
+"trip_count": 29,
+"night_trips": 4,
+"lon": 77.63853,
+"lat": 12.96191
+},
+{
+"name": "ESI Hospital Indiranagara",
+"trip_count": 6,
+"night_trips": 0,
+"lon": 77.63603,
+"lat": 12.97106
+},
+{
+"name": "ESI Hospital Indiranagara",
+"trip_count": 5,
+"night_trips": 0,
+"lon": 77.63594,
+"lat": 12.97094
+},
+{
+"name": "East End Jayanagara",
+"trip_count": 739,
+"night_trips": 60,
+"lon": 77.59855,
+"lat": 12.91665
+},
+{
+"name": "East End Jayanagara",
+"trip_count": 868,
+"night_trips": 52,
+"lon": 77.59802,
+"lat": 12.9169
+},
+{
+"name": "East End Jayanagara",
+"trip_count": 3,
+"night_trips": 0,
+"lon": 77.59508,
+"lat": 12.91721
+},
+{
+"name": "East End Jayanagara",
+"trip_count": 231,
+"night_trips": 10,
+"lon": 77.59683,
+"lat": 12.91709
+},
+{
+"name": "Eco Space",
+"trip_count": 1306,
+"night_trips": 88,
+"lon": 77.68049,
+"lat": 12.92776
+},
+{
+"name": "Eco Space",
+"trip_count": 1250,
+"night_trips": 81,
+"lon": 77.6812,
+"lat": 12.92838
 },
 {
 "name": "Ejipura",
@@ -2422,6 +1890,41 @@
 "lat": 12.94257
 },
 {
+"name": "Electric B Station",
+"trip_count": 93,
+"night_trips": 8,
+"lon": 77.61394,
+"lat": 12.97405
+},
+{
+"name": "Electric B Station MG Road",
+"trip_count": 3,
+"night_trips": 0,
+"lon": 77.61279,
+"lat": 12.97403
+},
+{
+"name": "Elgin Floor Mill",
+"trip_count": 325,
+"night_trips": 22,
+"lon": 77.6061,
+"lat": 12.95873
+},
+{
+"name": "Elgin Floor Mill",
+"trip_count": 226,
+"night_trips": 13,
+"lon": 77.60612,
+"lat": 12.95814
+},
+{
+"name": "Embassy Tech Village",
+"trip_count": 12,
+"night_trips": 1,
+"lon": 77.69465,
+"lat": 12.92913
+},
+{
 "name": "Embassy Tech Village",
 "trip_count": 12,
 "night_trips": 0,
@@ -2443,6 +1946,13 @@
 "lat": 12.95041
 },
 {
+"name": "Forum Mall",
+"trip_count": 281,
+"night_trips": 13,
+"lon": 77.61228,
+"lat": 12.9346
+},
+{
 "name": "GBJ Colony Gate Doddanekkundi",
 "trip_count": 6,
 "night_trips": 0,
@@ -2450,11 +1960,53 @@
 "lat": 12.95769
 },
 {
+"name": "GBJ Colony Gate Doddanekkundi",
+"trip_count": 8,
+"night_trips": 1,
+"lon": 77.69134,
+"lat": 12.95753
+},
+{
+"name": "GM Palya",
+"trip_count": 96,
+"night_trips": 7,
+"lon": 77.66602,
+"lat": 12.9751
+},
+{
+"name": "GM palya",
+"trip_count": 95,
+"night_trips": 4,
+"lon": 77.66605,
+"lat": 12.97509
+},
+{
+"name": "Galaxy Paradise (Tent)",
+"trip_count": 178,
+"night_trips": 4,
+"lon": 77.62585,
+"lat": 12.89162
+},
+{
+"name": "Galaxy Paradise (Tent)",
+"trip_count": 196,
+"night_trips": 18,
+"lon": 77.62588,
+"lat": 12.89167
+},
+{
 "name": "Ganapathi Enclave",
 "trip_count": 2,
 "night_trips": 0,
 "lon": 77.64092,
 "lat": 12.94739
+},
+{
+"name": "Ganesha Temple Thippasandra",
+"trip_count": 101,
+"night_trips": 5,
+"lon": 77.65412,
+"lat": 12.97206
 },
 {
 "name": "Gangothri Circle",
@@ -2469,6 +2021,41 @@
 "night_trips": 0,
 "lon": 77.61291,
 "lat": 12.91967
+},
+{
+"name": "Garuda Mall",
+"trip_count": 163,
+"night_trips": 8,
+"lon": 77.61042,
+"lat": 12.96969
+},
+{
+"name": "Garuda Mall",
+"trip_count": 10,
+"night_trips": 0,
+"lon": 77.61066,
+"lat": 12.97026
+},
+{
+"name": "Garuda Mall",
+"trip_count": 24,
+"night_trips": 1,
+"lon": 77.61052,
+"lat": 12.96973
+},
+{
+"name": "Garvebhavipalya",
+"trip_count": 1041,
+"night_trips": 82,
+"lon": 77.63566,
+"lat": 12.8964
+},
+{
+"name": "Garvebhavipalya",
+"trip_count": 1053,
+"night_trips": 65,
+"lon": 77.63534,
+"lat": 12.89609
 },
 {
 "name": "Gear School",
@@ -2492,6 +2079,48 @@
 "lat": 12.95262
 },
 {
+"name": "Golf Club HAL",
+"trip_count": 4,
+"night_trips": 1,
+"lon": 77.65257,
+"lat": 12.95262
+},
+{
+"name": "Govt Hospital Arakere",
+"trip_count": 8,
+"night_trips": 2,
+"lon": 77.60321,
+"lat": 12.88724
+},
+{
+"name": "Govt Hospital Arakere",
+"trip_count": 14,
+"night_trips": 1,
+"lon": 77.60317,
+"lat": 12.88719
+},
+{
+"name": "Gurappanapalya",
+"trip_count": 791,
+"night_trips": 55,
+"lon": 77.6002,
+"lat": 12.91988
+},
+{
+"name": "Gurappanapalya",
+"trip_count": 683,
+"night_trips": 39,
+"lon": 77.59999,
+"lat": 12.9191
+},
+{
+"name": "Gurudwara/Lido",
+"trip_count": 73,
+"night_trips": 4,
+"lon": 77.6201,
+"lat": 12.97506
+},
+{
 "name": "HAL ARDC",
 "trip_count": 4,
 "night_trips": 0,
@@ -2499,11 +2128,67 @@
 "lat": 12.96185
 },
 {
+"name": "HAL Admin Gate",
+"trip_count": 465,
+"night_trips": 39,
+"lon": 77.66949,
+"lat": 12.95813
+},
+{
+"name": "HAL Admin Gate",
+"trip_count": 509,
+"night_trips": 20,
+"lon": 77.6693,
+"lat": 12.95801
+},
+{
 "name": "HAL Gnanajyothi School",
 "trip_count": 2,
 "night_trips": 0,
 "lon": 77.69327,
 "lat": 12.96063
+},
+{
+"name": "HAL Kalyana Mantap",
+"trip_count": 554,
+"night_trips": 47,
+"lon": 77.68215,
+"lat": 12.9546
+},
+{
+"name": "HAL Kalyana Mantap",
+"trip_count": 521,
+"night_trips": 20,
+"lon": 77.68225,
+"lat": 12.95448
+},
+{
+"name": "HAL Main Gate",
+"trip_count": 571,
+"night_trips": 44,
+"lon": 77.66821,
+"lat": 12.95821
+},
+{
+"name": "HAL Main Gate",
+"trip_count": 529,
+"night_trips": 21,
+"lon": 77.66505,
+"lat": 12.95854
+},
+{
+"name": "HAL Main Gate",
+"trip_count": 21,
+"night_trips": 3,
+"lon": 77.6664,
+"lat": 12.95862
+},
+{
+"name": "HAL Main Gate",
+"trip_count": 39,
+"night_trips": 4,
+"lon": 77.66629,
+"lat": 12.95852
 },
 {
 "name": "HAL Market/SBI Bank",
@@ -2520,6 +2205,62 @@
 "lat": 12.95679
 },
 {
+"name": "HP Petrol Bunk Haraluru Road",
+"trip_count": 46,
+"night_trips": 3,
+"lon": 77.66704,
+"lat": 12.91473
+},
+{
+"name": "HP Petrol Bunk Haraluru Road",
+"trip_count": 47,
+"night_trips": 3,
+"lon": 77.66702,
+"lat": 12.91479
+},
+{
+"name": "HSBC",
+"trip_count": 61,
+"night_trips": 0,
+"lon": 77.5992,
+"lat": 12.89269
+},
+{
+"name": "HSBC",
+"trip_count": 774,
+"night_trips": 61,
+"lon": 77.59882,
+"lat": 12.89202
+},
+{
+"name": "HSBC",
+"trip_count": 755,
+"night_trips": 39,
+"lon": 77.59876,
+"lat": 12.89261
+},
+{
+"name": "HSBC",
+"trip_count": 47,
+"night_trips": 2,
+"lon": 77.59915,
+"lat": 12.89273
+},
+{
+"name": "HSR Lay Out Police Station",
+"trip_count": 155,
+"night_trips": 12,
+"lon": 77.65158,
+"lat": 12.92014
+},
+{
+"name": "HSR Layout 14th Main",
+"trip_count": 1074,
+"night_trips": 89,
+"lon": 77.63521,
+"lat": 12.91619
+},
+{
 "name": "HSR Layout 14th Main",
 "trip_count": 2,
 "night_trips": 0,
@@ -2532,6 +2273,13 @@
 "night_trips": 0,
 "lon": 77.63831,
 "lat": 12.91966
+},
+{
+"name": "HSR Layout 22nd Cross (Parangipalya Cross)",
+"trip_count": 25,
+"night_trips": 1,
+"lon": 77.65163,
+"lat": 12.90857
 },
 {
 "name": "HSR Layout 2nd Sector",
@@ -2562,6 +2310,27 @@
 "lat": 12.9119
 },
 {
+"name": "HSR Layout KEB",
+"trip_count": 102,
+"night_trips": 10,
+"lon": 77.64961,
+"lat": 12.90361
+},
+{
+"name": "HSR Layout KEB",
+"trip_count": 122,
+"night_trips": 6,
+"lon": 77.64963,
+"lat": 12.90356
+},
+{
+"name": "HSR Layout Petrol Bunk",
+"trip_count": 46,
+"night_trips": 1,
+"lon": 77.65163,
+"lat": 12.91976
+},
+{
 "name": "HSR Layout Petrol Bunk",
 "trip_count": 20,
 "night_trips": 0,
@@ -2569,11 +2338,319 @@
 "lat": 12.91964
 },
 {
+"name": "HSR Layout Police Station",
+"trip_count": 98,
+"night_trips": 5,
+"lon": 77.65161,
+"lat": 12.92025
+},
+{
+"name": "Hadosiddapura",
+"trip_count": 67,
+"night_trips": 0,
+"lon": 77.70109,
+"lat": 12.89493
+},
+{
+"name": "Halanayakanahalli",
+"trip_count": 3,
+"night_trips": 1,
+"lon": 77.6883,
+"lat": 12.90147
+},
+{
+"name": "Halanayakanahalli",
+"trip_count": 11,
+"night_trips": 1,
+"lon": 77.68829,
+"lat": 12.90152
+},
+{
+"name": "Halasuru Police Station",
+"trip_count": 6,
+"night_trips": 0,
+"lon": 77.62533,
+"lat": 12.97492
+},
+{
+"name": "Haralur Junction",
+"trip_count": 49,
+"night_trips": 3,
+"lon": 77.65828,
+"lat": 12.89815
+},
+{
+"name": "Haralur Junction",
+"trip_count": 48,
+"night_trips": 3,
+"lon": 77.65834,
+"lat": 12.89818
+},
+{
+"name": "Haraluru",
+"trip_count": 48,
+"night_trips": 3,
+"lon": 77.66041,
+"lat": 12.90146
+},
+{
+"name": "Haraluru",
+"trip_count": 56,
+"night_trips": 3,
+"lon": 77.66039,
+"lat": 12.90149
+},
+{
+"name": "Haraluru Cross",
+"trip_count": 52,
+"night_trips": 3,
+"lon": 77.66866,
+"lat": 12.91863
+},
+{
+"name": "Haraluru Cross",
+"trip_count": 48,
+"night_trips": 3,
+"lon": 77.66876,
+"lat": 12.91861
+},
+{
+"name": "Helicopter Division",
+"trip_count": 537,
+"night_trips": 41,
+"lon": 77.67735,
+"lat": 12.95582
+},
+{
+"name": "Helicopter Division",
+"trip_count": 526,
+"night_trips": 20,
+"lon": 77.67535,
+"lat": 12.95662
+},
+{
+"name": "Hongasandra",
+"trip_count": 178,
+"night_trips": 4,
+"lon": 77.62618,
+"lat": 12.89713
+},
+{
+"name": "Hongasandra",
+"trip_count": 200,
+"night_trips": 18,
+"lon": 77.62623,
+"lat": 12.89726
+},
+{
+"name": "Hongasandra MICO Layout",
+"trip_count": 10,
+"night_trips": 0,
+"lon": 77.63036,
+"lat": 12.88994
+},
+{
+"name": "Hongasandra Metro Station",
+"trip_count": 1005,
+"night_trips": 65,
+"lon": 77.63199,
+"lat": 12.9016
+},
+{
+"name": "Hongasandra Metro Station",
+"trip_count": 1004,
+"night_trips": 68,
+"lon": 77.63225,
+"lat": 12.9019
+},
+{
+"name": "Hosapalya Kudlu Gate",
+"trip_count": 22,
+"night_trips": 2,
+"lon": 77.64534,
+"lat": 12.89735
+},
+{
+"name": "Hosapalya Kudlu Gate",
+"trip_count": 4,
+"night_trips": 0,
+"lon": 77.64538,
+"lat": 12.89737
+},
+{
+"name": "Hosmat Hospital",
+"trip_count": 475,
+"night_trips": 24,
+"lon": 77.61333,
+"lat": 12.96879
+},
+{
+"name": "Hosmat Hospital (DIG Office)",
+"trip_count": 441,
+"night_trips": 26,
+"lon": 77.61529,
+"lat": 12.96893
+},
+{
+"name": "Hosur Road Junction",
+"trip_count": 953,
+"night_trips": 56,
+"lon": 77.61323,
+"lat": 12.93215
+},
+{
+"name": "Hosur Road junction",
+"trip_count": 950,
+"night_trips": 57,
+"lon": 77.61318,
+"lat": 12.93203
+},
+{
+"name": "Hosur Road junction",
+"trip_count": 174,
+"night_trips": 13,
+"lon": 77.6128,
+"lat": 12.93337
+},
+{
+"name": "Hosur Road junction 1",
+"trip_count": 182,
+"night_trips": 8,
+"lon": 77.61363,
+"lat": 12.93214
+},
+{
 "name": "ISRO Murugeshpalya",
 "trip_count": 4,
 "night_trips": 0,
 "lon": 77.65453,
 "lat": 12.95961
+},
+{
+"name": "Ibbaluru",
+"trip_count": 1072,
+"night_trips": 79,
+"lon": 77.66217,
+"lat": 12.92129
+},
+{
+"name": "Ibbaluru",
+"trip_count": 1355,
+"night_trips": 77,
+"lon": 77.66176,
+"lat": 12.9216
+},
+{
+"name": "Ibbaluru",
+"trip_count": 320,
+"night_trips": 14,
+"lon": 77.66195,
+"lat": 12.92135
+},
+{
+"name": "Indiranagara 100ft Road",
+"trip_count": 240,
+"night_trips": 10,
+"lon": 77.64154,
+"lat": 12.96711
+},
+{
+"name": "Indiranagara 100ft Road",
+"trip_count": 242,
+"night_trips": 13,
+"lon": 77.64141,
+"lat": 12.96658
+},
+{
+"name": "Indiranagara 12th Main",
+"trip_count": 244,
+"night_trips": 14,
+"lon": 77.64122,
+"lat": 12.97026
+},
+{
+"name": "Indiranagara 12th Main",
+"trip_count": 240,
+"night_trips": 9,
+"lon": 77.64134,
+"lat": 12.97035
+},
+{
+"name": "Indiranagara 6th Main",
+"trip_count": 240,
+"night_trips": 9,
+"lon": 77.64118,
+"lat": 12.974
+},
+{
+"name": "Indiranagara 6th Main",
+"trip_count": 244,
+"night_trips": 15,
+"lon": 77.64103,
+"lat": 12.974
+},
+{
+"name": "Indoor Stadium",
+"trip_count": 98,
+"night_trips": 11,
+"lon": 77.62259,
+"lat": 12.94272
+},
+{
+"name": "Indoor Stadium",
+"trip_count": 113,
+"night_trips": 4,
+"lon": 77.62251,
+"lat": 12.94262
+},
+{
+"name": "JBN Petrol Bunk",
+"trip_count": 116,
+"night_trips": 4,
+"lon": 77.65645,
+"lat": 12.96739
+},
+{
+"name": "JP Nagara 3rd Phase",
+"trip_count": 34,
+"night_trips": 1,
+"lon": 77.59991,
+"lat": 12.90716
+},
+{
+"name": "JP Nagara 3rd Phase",
+"trip_count": 803,
+"night_trips": 58,
+"lon": 77.60045,
+"lat": 12.90809
+},
+{
+"name": "JP Nagara 3rd Phase",
+"trip_count": 140,
+"night_trips": 7,
+"lon": 77.60015,
+"lat": 12.90707
+},
+{
+"name": "JP Nagara 3rd Phase",
+"trip_count": 702,
+"night_trips": 37,
+"lon": 77.60035,
+"lat": 12.90765
+},
+{
+"name": "JP Nagara 3rd Phase",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.60073,
+"lat": 12.90854
+},
+{
+"name": "JP Nagara Water Tank",
+"trip_count": 104,
+"night_trips": 6,
+"lon": 77.59503,
+"lat": 12.91374
 },
 {
 "name": "Jai Bheema Nagara",
@@ -2590,11 +2667,165 @@
 "lat": 12.91944
 },
 {
+"name": "Jakkasandra",
+"trip_count": 350,
+"night_trips": 20,
+"lon": 77.63802,
+"lat": 12.92481
+},
+{
+"name": "Jakkasandra",
+"trip_count": 357,
+"night_trips": 18,
+"lon": 77.63826,
+"lat": 12.92454
+},
+{
+"name": "Jalabhavan",
+"trip_count": 618,
+"night_trips": 40,
+"lon": 77.60036,
+"lat": 12.92316
+},
+{
+"name": "Jayanagara 4th T Block",
+"trip_count": 102,
+"night_trips": 6,
+"lon": 77.59363,
+"lat": 12.92317
+},
+{
+"name": "Jayanagara 4th T Block",
+"trip_count": 107,
+"night_trips": 5,
+"lon": 77.59341,
+"lat": 12.9229
+},
+{
+"name": "Jayanagara 9th block",
+"trip_count": 4,
+"night_trips": 0,
+"lon": 77.59284,
+"lat": 12.91957
+},
+{
+"name": "Jayanagara 9th block",
+"trip_count": 5,
+"night_trips": 0,
+"lon": 77.59283,
+"lat": 12.9197
+},
+{
+"name": "Jayanagara Pump House",
+"trip_count": 231,
+"night_trips": 10,
+"lon": 77.59699,
+"lat": 12.92161
+},
+{
+"name": "Jayanagara Pump House",
+"trip_count": 223,
+"night_trips": 12,
+"lon": 77.5971,
+"lat": 12.92172
+},
+{
+"name": "Jeevan Bheemanagara Cross",
+"trip_count": 138,
+"night_trips": 4,
+"lon": 77.66134,
+"lat": 12.96679
+},
+{
+"name": "Jeevan Bheemanagara Cross1",
+"trip_count": 40,
+"night_trips": 2,
+"lon": 77.66151,
+"lat": 12.96687
+},
+{
+"name": "Jeevan bhima nagar Petrol Bunk",
+"trip_count": 207,
+"night_trips": 8,
+"lon": 77.65613,
+"lat": 12.9675
+},
+{
+"name": "Jeevanbheema Nagara",
+"trip_count": 226,
+"night_trips": 16,
+"lon": 77.65763,
+"lat": 12.96576
+},
+{
+"name": "Jeevanbheema Nagara Cross",
+"trip_count": 26,
+"night_trips": 4,
+"lon": 77.66166,
+"lat": 12.96686
+},
+{
 "name": "Jnana Shrushti School",
 "trip_count": 1,
 "night_trips": 0,
 "lon": 77.64456,
 "lat": 12.91207
+},
+{
+"name": "Johnson Market",
+"trip_count": 325,
+"night_trips": 23,
+"lon": 77.60672,
+"lat": 12.96336
+},
+{
+"name": "Johnson Market",
+"trip_count": 226,
+"night_trips": 13,
+"lon": 77.60681,
+"lat": 12.96351
+},
+{
+"name": "Junnasandra Gate Wipro Regional Office",
+"trip_count": 390,
+"night_trips": 27,
+"lon": 77.68439,
+"lat": 12.91086
+},
+{
+"name": "Junnasandra Gate Wipro Regional Office",
+"trip_count": 385,
+"night_trips": 21,
+"lon": 77.68451,
+"lat": 12.91068
+},
+{
+"name": "Jyothi Nivas College",
+"trip_count": 138,
+"night_trips": 1,
+"lon": 77.61453,
+"lat": 12.93542
+},
+{
+"name": "Jyothi Nivas College",
+"trip_count": 132,
+"night_trips": 9,
+"lon": 77.61415,
+"lat": 12.93533
+},
+{
+"name": "KH Road",
+"trip_count": 1311,
+"night_trips": 77,
+"lon": 77.59286,
+"lat": 12.95759
+},
+{
+"name": "KH Road",
+"trip_count": 1311,
+"night_trips": 84,
+"lon": 77.59299,
+"lat": 12.95815
 },
 {
 "name": "KPWD Quaters",
@@ -2618,6 +2849,20 @@
 "lat": 12.93934
 },
 {
+"name": "Kadubisanahalli",
+"trip_count": 1387,
+"night_trips": 87,
+"lon": 77.69717,
+"lat": 12.94259
+},
+{
+"name": "Kadubisanahalli",
+"trip_count": 1339,
+"night_trips": 100,
+"lon": 77.69704,
+"lat": 12.94259
+},
+{
 "name": "Kaikondrahalli",
 "trip_count": 6,
 "night_trips": 0,
@@ -2625,11 +2870,102 @@
 "lat": 12.91384
 },
 {
+"name": "Kaikondrahalli",
+"trip_count": 427,
+"night_trips": 26,
+"lon": 77.67711,
+"lat": 12.91419
+},
+{
+"name": "Kaikondrahalli",
+"trip_count": 421,
+"night_trips": 24,
+"lon": 77.67714,
+"lat": 12.91402
+},
+{
+"name": "Kalamandira Marathahalli Bridge",
+"trip_count": 1387,
+"night_trips": 105,
+"lon": 77.70135,
+"lat": 12.96038
+},
+{
+"name": "Kalamandira Marathahalli Bridge",
+"trip_count": 1043,
+"night_trips": 65,
+"lon": 77.70143,
+"lat": 12.95993
+},
+{
+"name": "Kalyana Mantapa Koramangala",
+"trip_count": 133,
+"night_trips": 9,
+"lon": 77.61839,
+"lat": 12.93739
+},
+{
+"name": "Kalyanamantapa (Oxford College)",
+"trip_count": 200,
+"night_trips": 18,
+"lon": 77.62691,
+"lat": 12.89976
+},
+{
+"name": "Kalyanamantapa (Oxford College)",
+"trip_count": 178,
+"night_trips": 4,
+"lon": 77.62682,
+"lat": 12.89968
+},
+{
+"name": "Karthik Nagara",
+"trip_count": 907,
+"night_trips": 49,
+"lon": 77.7017,
+"lat": 12.96821
+},
+{
+"name": "Karthik Nagara",
+"trip_count": 882,
+"night_trips": 63,
+"lon": 77.70147,
+"lat": 12.96818
+},
+{
+"name": "Kasavanahalli",
+"trip_count": 45,
+"night_trips": 2,
+"lon": 77.67599,
+"lat": 12.90495
+},
+{
+"name": "Kasavanahalli",
+"trip_count": 45,
+"night_trips": 1,
+"lon": 77.67605,
+"lat": 12.90489
+},
+{
+"name": "Kasturiba Road",
+"trip_count": 1,
+"night_trips": 0,
+"lon": 77.59498,
+"lat": 12.97318
+},
+{
 "name": "Kaverinagara Kodichikkanahalli",
 "trip_count": 32,
 "night_trips": 0,
 "lon": 77.62266,
 "lat": 12.90049
+},
+{
+"name": "Kaverinagara Kodichikkanahalli",
+"trip_count": 32,
+"night_trips": 1,
+"lon": 77.6227,
+"lat": 12.90045
 },
 {
 "name": "Kempapura",
@@ -2646,11 +2982,340 @@
 "lat": 12.94653
 },
 {
+"name": "Kendriya Sadana Koramangala",
+"trip_count": 260,
+"night_trips": 10,
+"lon": 77.62026,
+"lat": 12.92596
+},
+{
+"name": "Kendriya Vidyalaya ASC Center",
+"trip_count": 347,
+"night_trips": 17,
+"lon": 77.61259,
+"lat": 12.96676
+},
+{
+"name": "Kodandaramanagara",
+"trip_count": 7,
+"night_trips": 0,
+"lon": 77.68483,
+"lat": 12.8995
+},
+{
+"name": "Kodandaramanagara",
+"trip_count": 7,
+"night_trips": 2,
+"lon": 77.68479,
+"lat": 12.89948
+},
+{
+"name": "Kodichikkanahalli",
+"trip_count": 37,
+"night_trips": 1,
+"lon": 77.61801,
+"lat": 12.89823
+},
+{
+"name": "Kodichikkanahalli",
+"trip_count": 39,
+"night_trips": 0,
+"lon": 77.61804,
+"lat": 12.89826
+},
+{
+"name": "Kodichikkanahalli Cross",
+"trip_count": 6,
+"night_trips": 0,
+"lon": 77.62151,
+"lat": 12.89793
+},
+{
+"name": "Kodihalli",
+"trip_count": 539,
+"night_trips": 36,
+"lon": 77.64758,
+"lat": 12.96
+},
+{
+"name": "Kodihalli",
+"trip_count": 525,
+"night_trips": 24,
+"lon": 77.64687,
+"lat": 12.95997
+},
+{
+"name": "Kodihalli",
+"trip_count": 210,
+"night_trips": 6,
+"lon": 77.64976,
+"lat": 12.96851
+},
+{
+"name": "Kodihalli",
+"trip_count": 115,
+"night_trips": 6,
+"lon": 77.64962,
+"lat": 12.96857
+},
+{
+"name": "Konena Agrahara",
+"trip_count": 535,
+"night_trips": 38,
+"lon": 77.65962,
+"lat": 12.95914
+},
+{
+"name": "Konena Agrahara",
+"trip_count": 522,
+"night_trips": 21,
+"lon": 77.65946,
+"lat": 12.95902
+},
+{
+"name": "Koramangala 1st Block",
+"trip_count": 471,
+"night_trips": 19,
+"lon": 77.63458,
+"lat": 12.9249
+},
+{
+"name": "Koramangala 1st Block",
+"trip_count": 450,
+"night_trips": 26,
+"lon": 77.63448,
+"lat": 12.92501
+},
+{
+"name": "Koramangala Bus Station",
+"trip_count": 157,
+"night_trips": 8,
+"lon": 77.62502,
+"lat": 12.94087
+},
+{
+"name": "Koramangala Bus Station",
+"trip_count": 259,
+"night_trips": 6,
+"lon": 77.62479,
+"lat": 12.9405
+},
+{
+"name": "Koramangala Bus Station",
+"trip_count": 235,
+"night_trips": 20,
+"lon": 77.6247,
+"lat": 12.94072
+},
+{
+"name": "Koramangala Kalyana Mantapa",
+"trip_count": 139,
+"night_trips": 1,
+"lon": 77.61849,
+"lat": 12.93724
+},
+{
+"name": "Koramangala Police Station",
+"trip_count": 139,
+"night_trips": 1,
+"lon": 77.62179,
+"lat": 12.94172
+},
+{
+"name": "Koramangala Police Station",
+"trip_count": 133,
+"night_trips": 9,
+"lon": 77.62151,
+"lat": 12.94167
+},
+{
+"name": "Koramangala Water Tank",
+"trip_count": 1174,
+"night_trips": 68,
+"lon": 77.62124,
+"lat": 12.92749
+},
+{
+"name": "Koramangala Water Tank",
+"trip_count": 257,
+"night_trips": 16,
+"lon": 77.62123,
+"lat": 12.92789
+},
+{
+"name": "Koramangala Water Tank",
+"trip_count": 291,
+"night_trips": 10,
+"lon": 77.62122,
+"lat": 12.92834
+},
+{
+"name": "Koramangala Water Tank",
+"trip_count": 226,
+"night_trips": 10,
+"lon": 77.62067,
+"lat": 12.92754
+},
+{
+"name": "Krupanidhi College",
+"trip_count": 1186,
+"night_trips": 78,
+"lon": 77.62852,
+"lat": 12.92388
+},
+{
+"name": "Kudlu",
+"trip_count": 7,
+"night_trips": 1,
+"lon": 77.65505,
+"lat": 12.88951
+},
+{
+"name": "Kudlu",
+"trip_count": 7,
+"night_trips": 0,
+"lon": 77.6552,
+"lat": 12.88955
+},
+{
+"name": "Kudlu",
+"trip_count": 21,
+"night_trips": 2,
+"lon": 77.65656,
+"lat": 12.88965
+},
+{
+"name": "Kudlu",
+"trip_count": 22,
+"night_trips": 1,
+"lon": 77.65649,
+"lat": 12.88966
+},
+{
+"name": "Kudlu Gate",
+"trip_count": 1040,
+"night_trips": 84,
+"lon": 77.63969,
+"lat": 12.88985
+},
+{
+"name": "Kudlu Gate",
+"trip_count": 1058,
+"night_trips": 63,
+"lon": 77.63918,
+"lat": 12.88977
+},
+{
+"name": "Kudlu Gate",
+"trip_count": 29,
+"night_trips": 2,
+"lon": 77.64046,
+"lat": 12.88931
+},
+{
+"name": "Kudlu Gate",
+"trip_count": 38,
+"night_trips": 2,
+"lon": 77.64028,
+"lat": 12.88939
+},
+{
+"name": "Kudlu Gate Flyover",
+"trip_count": 97,
+"night_trips": 2,
+"lon": 77.63955,
+"lat": 12.8898
+},
+{
+"name": "Kudlu Gate Flyover",
+"trip_count": 104,
+"night_trips": 2,
+"lon": 77.63945,
+"lat": 12.88976
+},
+{
+"name": "Kudlu Panchayath Office",
+"trip_count": 59,
+"night_trips": 2,
+"lon": 77.64904,
+"lat": 12.88965
+},
+{
+"name": "Kudlu Panchayath Office",
+"trip_count": 52,
+"night_trips": 4,
+"lon": 77.64895,
+"lat": 12.88973
+},
+{
+"name": "Kudlu Slum Board",
+"trip_count": 4,
+"night_trips": 0,
+"lon": 77.65635,
+"lat": 12.88957
+},
+{
+"name": "Kudure Mukha Colony",
+"trip_count": 1430,
+"night_trips": 85,
+"lon": 77.6254,
+"lat": 12.92572
+},
+{
+"name": "Kudure Mukha Colony",
+"trip_count": 251,
+"night_trips": 10,
+"lon": 77.62563,
+"lat": 12.92553
+},
+{
+"name": "Kuvempunagara ( BTM Layout)",
+"trip_count": 742,
+"night_trips": 46,
+"lon": 77.6159,
+"lat": 12.91643
+},
+{
+"name": "Kuvempunagara Bus Station(BTM Layout)",
+"trip_count": 758,
+"night_trips": 62,
+"lon": 77.61623,
+"lat": 12.91597
+},
+{
+"name": "Kuvempunagara Bus station (BTM Layout)",
+"trip_count": 248,
+"night_trips": 24,
+"lon": 77.61575,
+"lat": 12.91608
+},
+{
+"name": "Lakkasandra",
+"trip_count": 1768,
+"night_trips": 89,
+"lon": 77.59735,
+"lat": 12.94318
+},
+{
+"name": "Lakkasandra",
+"trip_count": 1656,
+"night_trips": 109,
+"lon": 77.59713,
+"lat": 12.94383
+},
+{
 "name": "Lakshman Rao Nagara Anepalya",
 "trip_count": 10,
 "night_trips": 0,
 "lon": 77.61754,
 "lat": 12.95029
+},
+{
+"name": "Lakshman Rao Nagara Anepalya",
+"trip_count": 10,
+"night_trips": 1,
+"lon": 77.61751,
+"lat": 12.9504
 },
 {
 "name": "Lal Bahaddur Shastri Nagara",
@@ -2660,11 +3325,354 @@
 "lat": 12.96927
 },
 {
+"name": "Lido Talkies",
+"trip_count": 573,
+"night_trips": 29,
+"lon": 77.62141,
+"lat": 12.97277
+},
+{
+"name": "Lido Talkies",
+"trip_count": 409,
+"night_trips": 12,
+"lon": 77.62005,
+"lat": 12.97346
+},
+{
+"name": "Lido Talkies",
+"trip_count": 147,
+"night_trips": 10,
+"lon": 77.62074,
+"lat": 12.97277
+},
+{
+"name": "Life Style (Sacred Heart School)",
+"trip_count": 967,
+"night_trips": 57,
+"lon": 77.61018,
+"lat": 12.96692
+},
+{
+"name": "MC Donald",
+"trip_count": 112,
+"night_trips": 10,
+"lon": 77.63799,
+"lat": 12.91226
+},
+{
+"name": "MC Donald",
+"trip_count": 112,
+"night_trips": 10,
+"lon": 77.63796,
+"lat": 12.91231
+},
+{
+"name": "MICO Factory Junction",
+"trip_count": 67,
+"night_trips": 5,
+"lon": 77.60293,
+"lat": 12.94427
+},
+{
+"name": "MICO Factory Junction",
+"trip_count": 170,
+"night_trips": 8,
+"lon": 77.60273,
+"lat": 12.94452
+},
+{
+"name": "MICO Factory Junction",
+"trip_count": 113,
+"night_trips": 4,
+"lon": 77.60304,
+"lat": 12.94444
+},
+{
+"name": "MICO Gate Adugodi",
+"trip_count": 124,
+"night_trips": 2,
+"lon": 77.60532,
+"lat": 12.94399
+},
+{
+"name": "MICO Gate Adugodi",
+"trip_count": 113,
+"night_trips": 4,
+"lon": 77.60458,
+"lat": 12.94426
+},
+{
+"name": "MICO Layout BTM",
+"trip_count": 853,
+"night_trips": 64,
+"lon": 77.60427,
+"lat": 12.91657
+},
+{
+"name": "MICO Layout BTM",
+"trip_count": 854,
+"night_trips": 51,
+"lon": 77.60407,
+"lat": 12.91682
+},
+{
+"name": "MICO Layout Checkpost Gopalan mall",
+"trip_count": 805,
+"night_trips": 57,
+"lon": 77.60001,
+"lat": 12.91413
+},
+{
+"name": "MICO Layout Checkpost Gopalan mall",
+"trip_count": 702,
+"night_trips": 38,
+"lon": 77.5998,
+"lat": 12.91354
+},
+{
+"name": "MICO Shramajeevi Colony Arakere",
+"trip_count": 8,
+"night_trips": 0,
+"lon": 77.59391,
+"lat": 12.88958
+},
+{
+"name": "MTR Hotel",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.64477,
+"lat": 12.91696
+},
+{
+"name": "MTR Hotel",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.64485,
+"lat": 12.91703
+},
+{
+"name": "Madivala",
+"trip_count": 1253,
+"night_trips": 84,
+"lon": 77.62146,
+"lat": 12.92166
+},
+{
+"name": "Madivala",
+"trip_count": 1251,
+"night_trips": 74,
+"lon": 77.62066,
+"lat": 12.92023
+},
+{
+"name": "Madivala Masidi",
+"trip_count": 262,
+"night_trips": 9,
+"lon": 77.61852,
+"lat": 12.92479
+},
+{
 "name": "Mahadeshwara Nagara",
 "trip_count": 21,
 "night_trips": 0,
 "lon": 77.61076,
 "lat": 12.90784
+},
+{
+"name": "Mahadeshwara Nagara",
+"trip_count": 21,
+"night_trips": 2,
+"lon": 77.61094,
+"lat": 12.90779
+},
+{
+"name": "Maharaja Signal",
+"trip_count": 163,
+"night_trips": 9,
+"lon": 77.62968,
+"lat": 12.93455
+},
+{
+"name": "Maharaja Signal",
+"trip_count": 173,
+"night_trips": 5,
+"lon": 77.62965,
+"lat": 12.93434
+},
+{
+"name": "Malleshpalya",
+"trip_count": 94,
+"night_trips": 4,
+"lon": 77.67028,
+"lat": 12.97477
+},
+{
+"name": "Malleshpalya",
+"trip_count": 95,
+"night_trips": 7,
+"lon": 77.67025,
+"lat": 12.97481
+},
+{
+"name": "Malleshpalya New Bus Station(Vignananagar)",
+"trip_count": 146,
+"night_trips": 8,
+"lon": 77.67796,
+"lat": 12.97274
+},
+{
+"name": "Malleshpalya New Bus Station(Vignananagar)",
+"trip_count": 43,
+"night_trips": 2,
+"lon": 77.67765,
+"lat": 12.97269
+},
+{
+"name": "Mangammanapalya",
+"trip_count": 112,
+"night_trips": 10,
+"lon": 77.63505,
+"lat": 12.90725
+},
+{
+"name": "Manipal Centre",
+"trip_count": 132,
+"night_trips": 4,
+"lon": 77.61436,
+"lat": 12.97493
+},
+{
+"name": "Marathahalli",
+"trip_count": 607,
+"night_trips": 54,
+"lon": 77.69409,
+"lat": 12.95626
+},
+{
+"name": "Marathahalli",
+"trip_count": 573,
+"night_trips": 23,
+"lon": 77.69372,
+"lat": 12.95611
+},
+{
+"name": "Marathahalli Bridge",
+"trip_count": 589,
+"night_trips": 22,
+"lon": 77.70062,
+"lat": 12.95694
+},
+{
+"name": "Marathahalli Bridge",
+"trip_count": 989,
+"night_trips": 90,
+"lon": 77.70215,
+"lat": 12.9569
+},
+{
+"name": "Marathahalli Bridge",
+"trip_count": 339,
+"night_trips": 26,
+"lon": 77.70053,
+"lat": 12.95488
+},
+{
+"name": "Marathahalli Bridge",
+"trip_count": 385,
+"night_trips": 20,
+"lon": 77.70131,
+"lat": 12.95671
+},
+{
+"name": "Marathahalli Bridge",
+"trip_count": 66,
+"night_trips": 1,
+"lon": 77.70096,
+"lat": 12.95715
+},
+{
+"name": "Maruthinagara Malleshpalya",
+"trip_count": 94,
+"night_trips": 3,
+"lon": 77.67504,
+"lat": 12.97332
+},
+{
+"name": "Maruthinagara Malleshpalya",
+"trip_count": 68,
+"night_trips": 4,
+"lon": 77.675,
+"lat": 12.97337
+},
+{
+"name": "Mayohall",
+"trip_count": 698,
+"night_trips": 36,
+"lon": 77.6099,
+"lat": 12.97336
+},
+{
+"name": "Mayohall",
+"trip_count": 370,
+"night_trips": 23,
+"lon": 77.61051,
+"lat": 12.97349
+},
+{
+"name": "Mayohall",
+"trip_count": 65,
+"night_trips": 2,
+"lon": 77.61083,
+"lat": 12.97266
+},
+{
+"name": "Mayohall G-2",
+"trip_count": 306,
+"night_trips": 11,
+"lon": 77.61116,
+"lat": 12.97389
+},
+{
+"name": "Military Accounts Office",
+"trip_count": 573,
+"night_trips": 37,
+"lon": 77.62089,
+"lat": 12.96694
+},
+{
+"name": "Military Accounts Office",
+"trip_count": 526,
+"night_trips": 31,
+"lon": 77.62117,
+"lat": 12.96691
+},
+{
+"name": "Military Accounts Office",
+"trip_count": 86,
+"night_trips": 6,
+"lon": 77.6203,
+"lat": 12.96707
+},
+{
+"name": "Military Bridge",
+"trip_count": 272,
+"night_trips": 20,
+"lon": 77.64015,
+"lat": 12.94599
+},
+{
+"name": "Military Bridge",
+"trip_count": 280,
+"night_trips": 14,
+"lon": 77.63992,
+"lat": 12.9459
+},
+{
+"name": "Milk Booth JP Nagara",
+"trip_count": 105,
+"night_trips": 6,
+"lon": 77.59514,
+"lat": 12.91002
 },
 {
 "name": "Miranda School",
@@ -2674,11 +3682,235 @@
 "lat": 12.96826
 },
 {
+"name": "Multiplex Marathahalli",
+"trip_count": 1292,
+"night_trips": 75,
+"lon": 77.70002,
+"lat": 12.95227
+},
+{
+"name": "Multiplex Marathahalli",
+"trip_count": 1237,
+"night_trips": 96,
+"lon": 77.69973,
+"lat": 12.95153
+},
+{
+"name": "Muneshwara Devasthana",
+"trip_count": 961,
+"night_trips": 50,
+"lon": 77.6066,
+"lat": 12.93646
+},
+{
+"name": "Muneshwara Devasthana",
+"trip_count": 961,
+"night_trips": 61,
+"lon": 77.60651,
+"lat": 12.93638
+},
+{
+"name": "Munnekolalu",
+"trip_count": 18,
+"night_trips": 2,
+"lon": 77.70802,
+"lat": 12.94854
+},
+{
+"name": "Munnekolalu Cross (Spice Garden)",
+"trip_count": 950,
+"night_trips": 39,
+"lon": 77.70928,
+"lat": 12.95628
+},
+{
+"name": "Munnekolalu Cross (Spice Garden)",
+"trip_count": 958,
+"night_trips": 86,
+"lon": 77.70927,
+"lat": 12.9564
+},
+{
+"name": "Munnekolalu Junction",
+"trip_count": 12,
+"night_trips": 1,
+"lon": 77.7049,
+"lat": 12.95646
+},
+{
+"name": "Munnekolalu Junction",
+"trip_count": 6,
+"night_trips": 1,
+"lon": 77.7049,
+"lat": 12.9565
+},
+{
+"name": "Murugeshpalya",
+"trip_count": 535,
+"night_trips": 38,
+"lon": 77.65618,
+"lat": 12.95936
+},
+{
+"name": "Murugeshpalya",
+"trip_count": 522,
+"night_trips": 21,
+"lon": 77.65611,
+"lat": 12.95927
+},
+{
+"name": "Museum",
+"trip_count": 501,
+"night_trips": 31,
+"lon": 77.59585,
+"lat": 12.97397
+},
+{
+"name": "Museum",
+"trip_count": 181,
+"night_trips": 6,
+"lon": 77.59569,
+"lat": 12.97409
+},
+{
+"name": "NAL Manipal Hospital",
+"trip_count": 525,
+"night_trips": 23,
+"lon": 77.64991,
+"lat": 12.95961
+},
+{
+"name": "NAL/Manipal Hospital",
+"trip_count": 555,
+"night_trips": 39,
+"lon": 77.65076,
+"lat": 12.95964
+},
+{
 "name": "NGV Koramangala",
 "trip_count": 2,
 "night_trips": 0,
 "lon": 77.62327,
 "lat": 12.94473
+},
+{
+"name": "NIFT College",
+"trip_count": 116,
+"night_trips": 6,
+"lon": 77.65192,
+"lat": 12.91191
+},
+{
+"name": "NIFT College",
+"trip_count": 102,
+"night_trips": 7,
+"lon": 77.65182,
+"lat": 12.91197
+},
+{
+"name": "NS Palya",
+"trip_count": 4,
+"night_trips": 0,
+"lon": 77.60332,
+"lat": 12.90862
+},
+{
+"name": "Nandas Hotel",
+"trip_count": 56,
+"night_trips": 4,
+"lon": 77.64503,
+"lat": 12.92173
+},
+{
+"name": "Nandini Cool Joint",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.64461,
+"lat": 12.91264
+},
+{
+"name": "Nandini Cool Joint",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.64466,
+"lat": 12.91267
+},
+{
+"name": "Nanjappa Circle",
+"trip_count": 113,
+"night_trips": 2,
+"lon": 77.60095,
+"lat": 12.96064
+},
+{
+"name": "Nanjappa Circle",
+"trip_count": 119,
+"night_trips": 0,
+"lon": 77.60095,
+"lat": 12.96058
+},
+{
+"name": "National Games Village Gate",
+"trip_count": 97,
+"night_trips": 11,
+"lon": 77.62039,
+"lat": 12.94928
+},
+{
+"name": "National Games Village Gate",
+"trip_count": 112,
+"night_trips": 5,
+"lon": 77.61997,
+"lat": 12.94868
+},
+{
+"name": "National Public School Kudlu",
+"trip_count": 25,
+"night_trips": 1,
+"lon": 77.66885,
+"lat": 12.89018
+},
+{
+"name": "National Public School Kudlu",
+"trip_count": 28,
+"night_trips": 1,
+"lon": 77.66884,
+"lat": 12.89009
+},
+{
+"name": "Neelasandra BDA Complex",
+"trip_count": 89,
+"night_trips": 1,
+"lon": 77.61498,
+"lat": 12.95723
+},
+{
+"name": "Neelasandra Bus Stand",
+"trip_count": 272,
+"night_trips": 6,
+"lon": 77.61429,
+"lat": 12.95766
+},
+{
+"name": "Neelasandra Bus Stand",
+"trip_count": 118,
+"night_trips": 7,
+"lon": 77.61444,
+"lat": 12.95746
+},
+{
+"name": "Neelasandra Rose Garden",
+"trip_count": 111,
+"night_trips": 1,
+"lon": 77.61752,
+"lat": 12.95371
+},
+{
+"name": "Neelasandra Rose Garden",
+"trip_count": 106,
+"night_trips": 6,
+"lon": 77.61737,
+"lat": 12.95379
 },
 {
 "name": "Nethravathi Block-05",
@@ -2688,11 +3920,193 @@
 "lat": 12.94553
 },
 {
+"name": "New Horizon College",
+"trip_count": 1318,
+"night_trips": 85,
+"lon": 77.69123,
+"lat": 12.93544
+},
+{
+"name": "New Horizon College",
+"trip_count": 1262,
+"night_trips": 88,
+"lon": 77.69063,
+"lat": 12.93516
+},
+{
+"name": "New Horizon School",
+"trip_count": 240,
+"night_trips": 10,
+"lon": 77.64142,
+"lat": 12.96897
+},
+{
+"name": "New Horizon School",
+"trip_count": 244,
+"night_trips": 13,
+"lon": 77.64129,
+"lat": 12.9689
+},
+{
+"name": "Nimhans Hospital",
+"trip_count": 1701,
+"night_trips": 91,
+"lon": 77.59775,
+"lat": 12.93989
+},
+{
+"name": "Nimhans Hospital",
+"trip_count": 1588,
+"night_trips": 99,
+"lon": 77.59824,
+"lat": 12.93871
+},
+{
+"name": "Ozone Apartment",
+"trip_count": 46,
+"night_trips": 3,
+"lon": 77.66376,
+"lat": 12.90839
+},
+{
+"name": "Ozone Apartment",
+"trip_count": 47,
+"night_trips": 3,
+"lon": 77.6637,
+"lat": 12.9083
+},
+{
+"name": "PAPAS Trading PVT LTD",
+"trip_count": 4,
+"night_trips": 0,
+"lon": 77.59422,
+"lat": 12.89154
+},
+{
+"name": "Panathuru",
+"trip_count": 10,
+"night_trips": 0,
+"lon": 77.70368,
+"lat": 12.93657
+},
+{
+"name": "Panathuru",
+"trip_count": 11,
+"night_trips": 0,
+"lon": 77.7037,
+"lat": 12.93652
+},
+{
+"name": "Panathuru Circle",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.7058,
+"lat": 12.93561
+},
+{
+"name": "Panathuru Circle",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.70582,
+"lat": 12.93554
+},
+{
+"name": "Parangipalya",
+"trip_count": 130,
+"night_trips": 7,
+"lon": 77.64929,
+"lat": 12.90868
+},
+{
+"name": "Parangipalya",
+"trip_count": 58,
+"night_trips": 5,
+"lon": 77.64934,
+"lat": 12.90873
+},
+{
+"name": "Parangipalya Cross",
+"trip_count": 14,
+"night_trips": 1,
+"lon": 77.65178,
+"lat": 12.90835
+},
+{
+"name": "Parangipalya Cross",
+"trip_count": 25,
+"night_trips": 1,
+"lon": 77.65182,
+"lat": 12.9084
+},
+{
+"name": "Passport Office Koramangala",
+"trip_count": 100,
+"night_trips": 11,
+"lon": 77.61899,
+"lat": 12.94558
+},
+{
+"name": "Passport Office Koramangala",
+"trip_count": 111,
+"night_trips": 4,
+"lon": 77.61863,
+"lat": 12.94595
+},
+{
+"name": "Petrol Bunk Koppa begur Road",
+"trip_count": 32,
+"night_trips": 1,
+"lon": 77.62713,
+"lat": 12.90351
+},
+{
 "name": "Petrol Bunk Koppa begur Road",
 "trip_count": 32,
 "night_trips": 0,
 "lon": 77.62709,
 "lat": 12.90356
+},
+{
+"name": "Philomenas Hospital",
+"trip_count": 228,
+"night_trips": 8,
+"lon": 77.61007,
+"lat": 12.96506
+},
+{
+"name": "Philomenas Hospital",
+"trip_count": 233,
+"night_trips": 3,
+"lon": 77.61005,
+"lat": 12.96481
+},
+{
+"name": "Pothalappa Garden",
+"trip_count": 165,
+"night_trips": 14,
+"lon": 77.60587,
+"lat": 12.94962
+},
+{
+"name": "Pothalappa Garden",
+"trip_count": 178,
+"night_trips": 8,
+"lon": 77.60597,
+"lat": 12.9498
+},
+{
+"name": "Prestige Apartment",
+"trip_count": 46,
+"night_trips": 3,
+"lon": 77.66171,
+"lat": 12.90332
+},
+{
+"name": "Prestige Apartment",
+"trip_count": 47,
+"night_trips": 3,
+"lon": 77.66172,
+"lat": 12.90341
 },
 {
 "name": "Prestige Jade Pavilion Apartment",
@@ -2709,6 +4123,62 @@
 "lat": 12.92122
 },
 {
+"name": "Primus Public School",
+"trip_count": 22,
+"night_trips": 1,
+"lon": 77.69605,
+"lat": 12.88849
+},
+{
+"name": "Primus Public School",
+"trip_count": 22,
+"night_trips": 1,
+"lon": 77.69595,
+"lat": 12.8884
+},
+{
+"name": "Radhareddy Layout",
+"trip_count": 383,
+"night_trips": 26,
+"lon": 77.6897,
+"lat": 12.90883
+},
+{
+"name": "Radhareddy Layout",
+"trip_count": 378,
+"night_trips": 20,
+"lon": 77.68985,
+"lat": 12.90869
+},
+{
+"name": "Ragigudda",
+"trip_count": 1,
+"night_trips": 0,
+"lon": 77.59261,
+"lat": 12.917
+},
+{
+"name": "Ragigudda Temple",
+"trip_count": 745,
+"night_trips": 64,
+"lon": 77.59349,
+"lat": 12.91678
+},
+{
+"name": "Ragigudda Temple",
+"trip_count": 743,
+"night_trips": 43,
+"lon": 77.59303,
+"lat": 12.91701
+},
+{
+"name": "Ramesh Nagara Cross",
+"trip_count": 14,
+"night_trips": 1,
+"lon": 77.67995,
+"lat": 12.95467
+},
+{
 "name": "Ramesh Nagara Cross",
 "trip_count": 18,
 "night_trips": 0,
@@ -2716,11 +4186,221 @@
 "lat": 12.95468
 },
 {
+"name": "Rameshnagara",
+"trip_count": 31,
+"night_trips": 3,
+"lon": 77.68217,
+"lat": 12.96409
+},
+{
+"name": "Rameshnagara",
+"trip_count": 61,
+"night_trips": 3,
+"lon": 77.68213,
+"lat": 12.96411
+},
+{
+"name": "Ravi Tent",
+"trip_count": 133,
+"night_trips": 5,
+"lon": 77.62138,
+"lat": 12.95166
+},
+{
+"name": "Ravi Tent",
+"trip_count": 116,
+"night_trips": 10,
+"lon": 77.62148,
+"lat": 12.95169
+},
+{
+"name": "Richmond Circle",
+"trip_count": 1313,
+"night_trips": 60,
+"lon": 77.59946,
+"lat": 12.96738
+},
+{
+"name": "Richmond Circle",
+"trip_count": 986,
+"night_trips": 56,
+"lon": 77.60433,
+"lat": 12.9658
+},
+{
+"name": "Richmond Circle",
+"trip_count": 364,
+"night_trips": 31,
+"lon": 77.5964,
+"lat": 12.96366
+},
+{
+"name": "Richmond Circle UFLY",
+"trip_count": 3,
+"night_trips": 0,
+"lon": 77.59661,
+"lat": 12.96485
+},
+{
+"name": "Roopena Agrahara",
+"trip_count": 965,
+"night_trips": 66,
+"lon": 77.62613,
+"lat": 12.91197
+},
+{
+"name": "Roopena Agrahara",
+"trip_count": 1257,
+"night_trips": 75,
+"lon": 77.62579,
+"lat": 12.91158
+},
+{
+"name": "Roopena Agrahara",
+"trip_count": 245,
+"night_trips": 16,
+"lon": 77.626,
+"lat": 12.91185
+},
+{
+"name": "Roopena Agrahara FLY",
+"trip_count": 197,
+"night_trips": 3,
+"lon": 77.62589,
+"lat": 12.91212
+},
+{
+"name": "Roopena Agrahara FLY",
+"trip_count": 157,
+"night_trips": 11,
+"lon": 77.62604,
+"lat": 12.9116
+},
+{
+"name": "Roopena Agrahara Toll",
+"trip_count": 208,
+"night_trips": 3,
+"lon": 77.62617,
+"lat": 12.91166
+},
+{
 "name": "Roopena Agrahara Toll (Volvo)",
 "trip_count": 2,
 "night_trips": 0,
 "lon": 77.62635,
 "lat": 12.91139
+},
+{
+"name": "SI Apartment HSR Layout",
+"trip_count": 1187,
+"night_trips": 105,
+"lon": 77.6294,
+"lat": 12.91668
+},
+{
+"name": "SI Apartment HSR Layout",
+"trip_count": 1140,
+"night_trips": 64,
+"lon": 77.62942,
+"lat": 12.91677
+},
+{
+"name": "SVR College",
+"trip_count": 33,
+"night_trips": 2,
+"lon": 77.65058,
+"lat": 12.90225
+},
+{
+"name": "SVR College",
+"trip_count": 38,
+"night_trips": 2,
+"lon": 77.65071,
+"lat": 12.90217
+},
+{
+"name": "Sagar Hospital",
+"trip_count": 9,
+"night_trips": 0,
+"lon": 77.59962,
+"lat": 12.92848
+},
+{
+"name": "Sagar Hospital",
+"trip_count": 10,
+"night_trips": 0,
+"lon": 77.59936,
+"lat": 12.92832
+},
+{
+"name": "Salarpuria Apartment",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.63254,
+"lat": 12.90692
+},
+{
+"name": "Salarpuria Apartment",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.63256,
+"lat": 12.90696
+},
+{
+"name": "Sanjay Gandhi Hospital",
+"trip_count": 390,
+"night_trips": 55,
+"lon": 77.59309,
+"lat": 12.92707
+},
+{
+"name": "Sanjay Gandhi Hospital",
+"trip_count": 405,
+"night_trips": 17,
+"lon": 77.59299,
+"lat": 12.927
+},
+{
+"name": "Sanjay Gandhi Hospital",
+"trip_count": 7,
+"night_trips": 1,
+"lon": 77.5936,
+"lat": 12.92687
+},
+{
+"name": "Sapthagiri Vidya Mandir Opp Carmelaram Station",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.70549,
+"lat": 12.90716
+},
+{
+"name": "Sarjapura Ring Road Junction",
+"trip_count": 1253,
+"night_trips": 92,
+"lon": 77.66825,
+"lat": 12.92203
+},
+{
+"name": "Sarjapura Ring Road Junction",
+"trip_count": 1327,
+"night_trips": 89,
+"lon": 77.66604,
+"lat": 12.92113
+},
+{
+"name": "Sarjapura Road Ibbaluru Junction",
+"trip_count": 180,
+"night_trips": 10,
+"lon": 77.66585,
+"lat": 12.9204
+},
+{
+"name": "Sarjapura Road Ibbaluru Junction",
+"trip_count": 86,
+"night_trips": 2,
+"lon": 77.66518,
+"lat": 12.92043
 },
 {
 "name": "Senior Officers Quaters",
@@ -2751,11 +4431,39 @@
 "lat": 12.95067
 },
 {
+"name": "Shoolay Circle Brigade Road",
+"trip_count": 435,
+"night_trips": 27,
+"lon": 77.6066,
+"lat": 12.96656
+},
+{
+"name": "Shoolay Circle Brigade Road",
+"trip_count": 223,
+"night_trips": 13,
+"lon": 77.60689,
+"lat": 12.96586
+},
+{
 "name": "Shrinivagilu Bus Stand",
 "trip_count": 1,
 "night_trips": 0,
 "lon": 77.63319,
 "lat": 12.93759
+},
+{
+"name": "Shrinivagilu Ejipura",
+"trip_count": 233,
+"night_trips": 12,
+"lon": 77.63291,
+"lat": 12.93842
+},
+{
+"name": "Shrinivagilu Ejipura",
+"trip_count": 240,
+"night_trips": 10,
+"lon": 77.63265,
+"lat": 12.93859
 },
 {
 "name": "Shrinivagilu Junction",
@@ -2772,11 +4480,235 @@
 "lat": 12.93917
 },
 {
+"name": "Siri Convention Hall",
+"trip_count": 32,
+"night_trips": 0,
+"lon": 77.61101,
+"lat": 12.89727
+},
+{
+"name": "Siri Convention Hall",
+"trip_count": 32,
+"night_trips": 1,
+"lon": 77.61105,
+"lat": 12.89729
+},
+{
+"name": "Somasandarpalya",
+"trip_count": 32,
+"night_trips": 2,
+"lon": 77.6513,
+"lat": 12.8988
+},
+{
+"name": "Somasandra Palya",
+"trip_count": 46,
+"night_trips": 2,
+"lon": 77.65121,
+"lat": 12.89881
+},
+{
+"name": "Somasandra palya  Lake",
+"trip_count": 3,
+"night_trips": 0,
+"lon": 77.64863,
+"lat": 12.89949
+},
+{
+"name": "Somasundra Palya Lake",
+"trip_count": 4,
+"night_trips": 0,
+"lon": 77.64881,
+"lat": 12.89955
+},
+{
+"name": "Sony World 100ft Road  Koramangala",
+"trip_count": 275,
+"night_trips": 15,
+"lon": 77.62659,
+"lat": 12.93685
+},
+{
+"name": "Sony World 100ft Road  Koramangala",
+"trip_count": 282,
+"night_trips": 14,
+"lon": 77.62766,
+"lat": 12.93793
+},
+{
+"name": "Sony World 80ft Road Koramangala",
+"trip_count": 201,
+"night_trips": 17,
+"lon": 77.62734,
+"lat": 12.93694
+},
+{
+"name": "Sony World 80ft Road Koramangala",
+"trip_count": 230,
+"night_trips": 6,
+"lon": 77.62639,
+"lat": 12.93782
+},
+{
+"name": "Srirama Reddy Layout",
+"trip_count": 39,
+"night_trips": 2,
+"lon": 77.68152,
+"lat": 12.97172
+},
+{
+"name": "Srirama Reddy Layout",
+"trip_count": 38,
+"night_trips": 3,
+"lon": 77.6815,
+"lat": 12.97176
+},
+{
+"name": "Srirangam Silk House HSR Layout",
+"trip_count": 112,
+"night_trips": 10,
+"lon": 77.63527,
+"lat": 12.9124
+},
+{
+"name": "Srirangam Silk House HSR Layout",
+"trip_count": 112,
+"night_trips": 10,
+"lon": 77.63521,
+"lat": 12.91245
+},
+{
+"name": "St Francis School",
+"trip_count": 197,
+"night_trips": 18,
+"lon": 77.62568,
+"lat": 12.88898
+},
+{
+"name": "St Francis School",
+"trip_count": 177,
+"night_trips": 4,
+"lon": 77.62563,
+"lat": 12.8888
+},
+{
+"name": "St Johns Hospital",
+"trip_count": 1231,
+"night_trips": 66,
+"lon": 77.61584,
+"lat": 12.92959
+},
+{
+"name": "St Johns Hospital",
+"trip_count": 989,
+"night_trips": 67,
+"lon": 77.61527,
+"lat": 12.92907
+},
+{
+"name": "St Johns Hospital",
+"trip_count": 228,
+"night_trips": 10,
+"lon": 77.61594,
+"lat": 12.92933
+},
+{
+"name": "St Johns Wood Apartment Tavarekere",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.60969,
+"lat": 12.93022
+},
+{
+"name": "St Joseph Boys High School Musuem Road",
+"trip_count": 365,
+"night_trips": 24,
+"lon": 77.60441,
+"lat": 12.97176
+},
+{
+"name": "St Joseph College",
+"trip_count": 1119,
+"night_trips": 44,
+"lon": 77.60368,
+"lat": 12.97036
+},
+{
+"name": "St Josephs Indian School/ Malya Hospital",
+"trip_count": 1388,
+"night_trips": 65,
+"lon": 77.5943,
+"lat": 12.97052
+},
+{
+"name": "St Patrick Church",
+"trip_count": 241,
+"night_trips": 20,
+"lon": 77.60512,
+"lat": 12.97029
+},
+{
+"name": "St francis College",
+"trip_count": 249,
+"night_trips": 9,
+"lon": 77.63086,
+"lat": 12.92441
+},
+{
+"name": "St francis College",
+"trip_count": 257,
+"night_trips": 10,
+"lon": 77.63124,
+"lat": 12.92432
+},
+{
+"name": "St joseph CBSE Gate-2",
+"trip_count": 2,
+"night_trips": 0,
+"lon": 77.59523,
+"lat": 12.97164
+},
+{
+"name": "State Bank India Garage",
+"trip_count": 363,
+"night_trips": 24,
+"lon": 77.60154,
+"lat": 12.97465
+},
+{
+"name": "Sudduguntepalya",
+"trip_count": 9,
+"night_trips": 0,
+"lon": 77.60988,
+"lat": 12.93123
+},
+{
+"name": "Sudduguntepalya",
+"trip_count": 12,
+"night_trips": 0,
+"lon": 77.60985,
+"lat": 12.9312
+},
+{
 "name": "Suncity Apartment ORR Road",
 "trip_count": 2,
 "night_trips": 0,
 "lon": 77.66535,
 "lat": 12.92379
+},
+{
+"name": "Swabhiman Park",
+"trip_count": 57,
+"night_trips": 5,
+"lon": 77.64151,
+"lat": 12.9122
+},
+{
+"name": "Swabiman Park",
+"trip_count": 57,
+"night_trips": 5,
+"lon": 77.6414,
+"lat": 12.91229
 },
 {
 "name": "Tavarekere Aladamara",
@@ -2793,6 +4725,90 @@
 "lat": 12.92211
 },
 {
+"name": "Tavarekere Mori",
+"trip_count": 8,
+"night_trips": 0,
+"lon": 77.60886,
+"lat": 12.92504
+},
+{
+"name": "Tavarekere Mori",
+"trip_count": 11,
+"night_trips": 0,
+"lon": 77.60886,
+"lat": 12.925
+},
+{
+"name": "The HSR Club",
+"trip_count": 56,
+"night_trips": 4,
+"lon": 77.64467,
+"lat": 12.90905
+},
+{
+"name": "The HSR Club",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.64464,
+"lat": 12.90907
+},
+{
+"name": "Thippasandra",
+"trip_count": 243,
+"night_trips": 18,
+"lon": 77.6469,
+"lat": 12.97371
+},
+{
+"name": "Thippasandra",
+"trip_count": 237,
+"night_trips": 10,
+"lon": 77.64689,
+"lat": 12.97361
+},
+{
+"name": "Thippasandra Market",
+"trip_count": 101,
+"night_trips": 5,
+"lon": 77.65099,
+"lat": 12.97249
+},
+{
+"name": "Thirumala Theatre",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.64899,
+"lat": 12.91946
+},
+{
+"name": "Trinity Circle",
+"trip_count": 166,
+"night_trips": 10,
+"lon": 77.61959,
+"lat": 12.97071
+},
+{
+"name": "Trinity Circle",
+"trip_count": 126,
+"night_trips": 6,
+"lon": 77.6197,
+"lat": 12.97093
+},
+{
+"name": "Trinity Metro Station",
+"trip_count": 85,
+"night_trips": 4,
+"lon": 77.61689,
+"lat": 12.97295
+},
+{
+"name": "Trinity Metro Station",
+"trip_count": 440,
+"night_trips": 14,
+"lon": 77.61685,
+"lat": 12.97315
+},
+{
 "name": "Udupi Garden Petrol Bunk",
 "trip_count": 8,
 "night_trips": 0,
@@ -2807,6 +4823,83 @@
 "lat": 12.91714
 },
 {
+"name": "Vannarapet",
+"trip_count": 94,
+"night_trips": 2,
+"lon": 77.6211,
+"lat": 12.95645
+},
+{
+"name": "Vannarapet",
+"trip_count": 104,
+"night_trips": 4,
+"lon": 77.62095,
+"lat": 12.95625
+},
+{
+"name": "Vasudev Adigas Hotel",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.63244,
+"lat": 12.91066
+},
+{
+"name": "Vasudev Adigas Hotel",
+"trip_count": 56,
+"night_trips": 5,
+"lon": 77.63247,
+"lat": 12.91069
+},
+{
+"name": "Vijaya Bank Colony Ayyappa Temple",
+"trip_count": 62,
+"night_trips": 0,
+"lon": 77.60631,
+"lat": 12.89125
+},
+{
+"name": "Vijaya Bank Colony Ayyappa Temple",
+"trip_count": 33,
+"night_trips": 2,
+"lon": 77.60629,
+"lat": 12.89128
+},
+{
+"name": "Vijaya Bank Layout Devarachikkanahalli",
+"trip_count": 83,
+"night_trips": 0,
+"lon": 77.61049,
+"lat": 12.89276
+},
+{
+"name": "Vijaya Bank Layout Devarachikkanahalli",
+"trip_count": 74,
+"night_trips": 4,
+"lon": 77.61046,
+"lat": 12.89283
+},
+{
+"name": "Vijaya Bank Layout Petrol Bunk",
+"trip_count": 102,
+"night_trips": 2,
+"lon": 77.61162,
+"lat": 12.89223
+},
+{
+"name": "Vijaya Bank Layout Petrol Bunk",
+"trip_count": 5,
+"night_trips": 0,
+"lon": 77.61167,
+"lat": 12.89229
+},
+{
+"name": "Vijaya Bank Layout Petrol Bunk",
+"trip_count": 45,
+"night_trips": 2,
+"lon": 77.61172,
+"lat": 12.89206
+},
+{
 "name": "Virat Nagara Cross",
 "trip_count": 26,
 "night_trips": 0,
@@ -2814,11 +4907,116 @@
 "lat": 12.90301
 },
 {
+"name": "Vivek Nagara",
+"trip_count": 20,
+"night_trips": 1,
+"lon": 77.62302,
+"lat": 12.95443
+},
+{
+"name": "Vivek Nagara",
+"trip_count": 16,
+"night_trips": 2,
+"lon": 77.62303,
+"lat": 12.95417
+},
+{
+"name": "Vivek Nagara Cross",
+"trip_count": 102,
+"night_trips": 4,
+"lon": 77.62074,
+"lat": 12.95469
+},
+{
+"name": "Vivek Nagara Cross",
+"trip_count": 98,
+"night_trips": 5,
+"lon": 77.62069,
+"lat": 12.95457
+},
+{
+"name": "Wilson Garden 10th Cross",
+"trip_count": 1075,
+"night_trips": 78,
+"lon": 77.59596,
+"lat": 12.94645
+},
+{
+"name": "Wilson Garden 12th Cross",
+"trip_count": 967,
+"night_trips": 51,
+"lon": 77.59794,
+"lat": 12.94725
+},
+{
+"name": "Wilson Garden 12th Cross",
+"trip_count": 114,
+"night_trips": 3,
+"lon": 77.59814,
+"lat": 12.94743
+},
+{
+"name": "Wilson Garden 14th Main",
+"trip_count": 114,
+"night_trips": 2,
+"lon": 77.60052,
+"lat": 12.94659
+},
+{
+"name": "Wilson Garden 7th Cross",
+"trip_count": 718,
+"night_trips": 34,
+"lon": 77.59436,
+"lat": 12.94699
+},
+{
+"name": "Wilson Garden 7th Cross",
+"trip_count": 734,
+"night_trips": 36,
+"lon": 77.59465,
+"lat": 12.94684
+},
+{
+"name": "Wilson Garden Police Station",
+"trip_count": 967,
+"night_trips": 50,
+"lon": 77.5951,
+"lat": 12.95141
+},
+{
+"name": "Wilson Garden Police Station",
+"trip_count": 1203,
+"night_trips": 85,
+"lon": 77.59558,
+"lat": 12.95064
+},
+{
+"name": "Wind Tunnel Road (Murugeshpalya)",
+"trip_count": 4,
+"night_trips": 1,
+"lon": 77.65427,
+"lat": 12.9592
+},
+{
 "name": "Wind Tunnel Road (Murugeshpalya)",
 "trip_count": 3,
 "night_trips": 0,
 "lon": 77.65417,
 "lat": 12.95911
+},
+{
+"name": "Wipro Park Koramangala",
+"trip_count": 163,
+"night_trips": 9,
+"lon": 77.63327,
+"lat": 12.92945
+},
+{
+"name": "Wipro Park Koramangala",
+"trip_count": 173,
+"night_trips": 5,
+"lon": 77.63319,
+"lat": 12.92897
 },
 {
 "name": "Yamalur",
@@ -2833,5 +5031,19 @@
 "night_trips": 0,
 "lon": 77.68069,
 "lat": 12.94846
+},
+{
+"name": "Yamalur Cross",
+"trip_count": 524,
+"night_trips": 43,
+"lon": 77.68829,
+"lat": 12.95525
+},
+{
+"name": "Yamalur Cross",
+"trip_count": 505,
+"night_trips": 20,
+"lon": 77.68756,
+"lat": 12.95498
 }
 ]

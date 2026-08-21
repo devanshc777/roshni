@@ -6,10 +6,20 @@ needs.
 
 **Rules before you paste anything.**
 
-1. **Generate against the fixture, never the live pipeline.** Give the tool
-   `out/segments.fixture.geojson` (ten features, `mvp.md` §The data contract).
+1. **Generate against the real generated files, never a made-up shape.** These
+   exist in `out/` right now — attach the relevant one to every prompt:
+
+   | File | Used by | What it is |
+   |---|---|---|
+   | `out/segments.fixture.geojson` | Prompts 1, 2 | 12 real segments spanning the whole score range, including one wide-confidence-band segment. Start here. |
+   | `out/segments.geojson` | Prompt 1's map | every scored segment, if a screen needs a full map |
+   | `out/routes.json` | Prompt 3 | precomputed safer + shortest routes |
+   | `out/curve.json` | Prompt 4 | the learning curve, targeted vs random |
+   | `out/telemetry.json` | optional | synthetic IUDX-shaped telemetry — render distinctly, it is not real |
+
    Generated UIs that invent their own data shape are worthless at integration
-   time.
+   time. Field names are in `docs/mvp.md` §The data contract and repeated in each
+   prompt below.
 2. **One screen per prompt.** Asking for all three at once produces three
    mediocre screens with inconsistent styling.
 3. **Generate the shell, hand-write the logic.** These tools are good at layout,
@@ -63,15 +73,26 @@ Keep the output. Paste it at the top of every prompt below.
 
 Build a single-page React component: a municipal streetlight repair queue for
 BBMP, Bengaluru. No backend, no auth, no localStorage. All data comes from a
-GeoJSON file loaded from ./segments.geojson — I am attaching a 10-feature sample;
-match its property names exactly.
+GeoJSON file loaded from ./segments.geojson — I am attaching a 12-feature sample
+from the real file. Match these property names EXACTLY, do not rename anything:
 
-Each feature is a road segment with:
-  segID, ward, roadClass, lengthM
-  darkness: { alpha, beta, mean, var }      // mean = P(dark) 0-1, var = uncertainty
-  exposure: { activity, structural, blended } // 0-1
-  repairPriority: number
-  evidence: { reports, osmLamps, litTag, wardComplaints2025 }
+Each feature is a road segment (LineString) with properties:
+  segID, name, ward, roadClass, lengthM
+  darkness:   { alpha, beta, mean, var }      // mean = P(dark) 0-1, var = uncertainty
+  exposure:   { activity, structural, blended } // each 0-1
+  confidence: number                          // 0-1, = 1 - rank(var). Drives the texture.
+  repairPriority: number                      // exposure.blended x darkness.mean x confidence
+  routePenalty:   number
+  reportValue:    number                      // exposure x variance: where a report is worth most
+  evidence: {
+    osmLampsWorking, osmLampsBroken, osmLampsUntagged,  // integer counts within 30 m
+    nightBusTrips,                                       // decayed night departures nearby
+    wardComplaints2025,                                  // streetlight complaints in this ward
+    reports                                              // citizen reports, 0 in the fixture
+  }
+
+Note `confidence` is a top-level property AND `darkness.var` exists — use
+`confidence` for the visual texture, it is already rank-normalised.
 
 Layout, in priority order:
 
@@ -156,8 +177,29 @@ a social feed.
 [paste design tokens from Prompt 0]
 
 Build a mobile-first React walking-directions screen for Bengaluru at night. No
-backend, no auth. Routes are precomputed and loaded from ./routes.json — two
-LineString features per query, tagged "safer" and "shortest".
+backend, no auth. Routes are precomputed and loaded from ./routes.json. Match
+this schema exactly — it is a real generated file, do not invent field names:
+
+{
+  "wideVarThreshold": 0.05,
+  "walkMetresPerMinute": 80,
+  "queries": [{
+    "id": "q1",
+    "label": "4th Main Road to Sarjapur Road",
+    "origin": { "name": "4th Main Road", "coordinates": [lon, lat] },
+    "dest":   { "name": "Sarjapur Road", "coordinates": [lon, lat] },
+    "detourM": 368, "detourMinutes": 4.6,
+    "wideBandAvoided": 3, "darkShareAvoided": 0.16,
+    "routes": [{
+      "kind": "safer",              // then a second entry, kind "shortest"
+      "geometry": { "type": "LineString", "coordinates": [[lon,lat], ...] },
+      "distanceM": 2101, "walkMinutes": 26.3,
+      "litShare": 0.73, "darkShare": 0.27, "unknownShare": 0.0,
+      "wideBandEdges": 0,
+      "segIDs": ["way123/0", ...]   // join to segments.geojson for per-segment darkness
+    }]
+  }]
+}
 
 Requirements, in order of importance:
 
@@ -197,10 +239,24 @@ darker, calmer, and honest about uncertainty in a way neither of them is.
 Build a small React panel with one chart and three small map thumbnails, for a
 pitch demo.
 
-Data (./curve.json): an array of { reports, ratio, targeted } where reports is
-the number of citizen reports collected, ratio is how many times better our
-repair ordering is than complaint order, and targeted is a boolean marking
-whether reports were selected by the system or collected at random.
+Data (./curve.json). Real generated file, match it exactly:
+
+{
+  "budget": 40,
+  "oracleRestored": 3115.4,
+  "points": [ { "reports": 0, "targeted": true, "ratio": 0.731 }, ... ]
+}
+
+`points` holds one entry per (reports, targeted) pair. `ratio` is 0-1: the share
+of a perfectly-informed ranking's restored exposure that the ranking available
+at that report count actually achieves. `targeted` true = reports the system
+asked for, false = reports collected at random.
+
+Plot ratio as a PERCENTAGE (73% to 95%), not a multiplier. And do not smooth the
+crossover: below about 50 reports the two lines sit on top of each other, and
+targeted only pulls away after that. That crossover is a real measured result
+and flattening it out would be dishonest. Annotate it: "directed reporting only
+starts paying off around 50 reports".
 
 Chart: reports on x, ratio on y, two lines — "reports we asked for" and "reports
 at random". The targeted line should read as clearly dominant. Annotate the point
