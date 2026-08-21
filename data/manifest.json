@@ -1,0 +1,219 @@
+{
+  "project": "roshni",
+  "checked": "2026-08-21",
+  "note": "Grades and caveats are documented in docs/data-sources.md. Read that before writing a loader - several files are not what their name suggests.",
+  "sources": [
+    {
+      "id": "streetlights_bellandur_hsr_kml",
+      "grade": "A",
+      "title": "Bengaluru streetlights - Bellandur & HSR Layout",
+      "format": "kml",
+      "out": "raw/streetlights_bellandur_hsr.kml",
+      "url": "https://data.opencity.in/dataset/68bab2e1-a94b-4ad5-b1b5-dc9658e462e4/resource/fe50a1be-dd38-49d4-8519-427061647da2/download/4a08fef1-b848-4aed-a53f-2c68d478fb34.kml",
+      "note": "Per-lamp Point placemarks. Names are OSM node IDs - this is an OSM export of non-functional lamps. Held-out test set, not training data."
+    },
+    {
+      "id": "streetlights_orr_kml",
+      "grade": "A",
+      "title": "Bengaluru streetlights - Silk Board to Marathahalli (ORR)",
+      "format": "kml",
+      "out": "raw/streetlights_orr.kml",
+      "url": "https://data.opencity.in/dataset/68bab2e1-a94b-4ad5-b1b5-dc9658e462e4/resource/e68dc178-f28c-4017-91ab-bb7bd16fb6ae/download/27023068-61ee-4550-90da-a7c92543054d.kml",
+      "note": "Per-lamp points along the ORR corridor. Strongest candidate demo bbox."
+    },
+    {
+      "id": "streetlights_vasanthanagar_2019",
+      "grade": "A",
+      "title": "Vasanthanagar streetlights database 2019 (citizen audit)",
+      "format": "csv",
+      "out": "raw/streetlights_vasanthanagar_2019.csv",
+      "url": "https://data.opencity.in/dataset/68bab2e1-a94b-4ad5-b1b5-dc9658e462e4/resource/e11baba7-6b8a-472b-98ab-944fa23fcab7/download/5fe35037-5957-4066-b3a5-3affa97f2bd0.csv",
+      "columns": [
+        "Zone & Location",
+        "Streetlight Code",
+        "Landmark",
+        "Type of Streetlight",
+        "Remarks",
+        "Condition on 17-June-19",
+        "Condition on 2-July-19"
+      ],
+      "note": "~800 individually coded lamps, TWO-DATE PANEL 15 days apart. ok->dead transitions give an empirical fortnightly failure rate. Blank code + 'NEW SL REQD' rows are pole-without-lamp gap records. No coordinates."
+    },
+    {
+      "id": "streetlights_by_ward",
+      "grade": "B",
+      "title": "Streetlight counts per BBMP ward (198 wards)",
+      "format": "csv",
+      "out": "raw/streetlights_by_ward.csv",
+      "url": "https://data.opencity.in/dataset/68bab2e1-a94b-4ad5-b1b5-dc9658e462e4/resource/17cafe43-76ac-47fb-b893-fd2d2f0ebd0c/download/4aad68d1-752a-4ca0-b075-c40f27582a0f.csv",
+      "columns": [
+        "Ward_No",
+        "Ward Name",
+        "Street lights#"
+      ],
+      "note": "Divide by ward road length from OSM for the lamps-per-km prior. This is what makes the map non-empty on day zero."
+    },
+    {
+      "id": "bbmp_grievances_2025",
+      "grade": "A",
+      "title": "BBMP grievances 2025 (to 19 June)",
+      "format": "csv",
+      "out": "raw/bbmp_grievances_2025.csv",
+      "url": "https://data.opencity.in/dataset/54344a76-a37a-4d05-961c-df9bac5494ad/resource/1342a93b-9a61-4766-9c34-c8357b7926c2/download/b0d6e9ff-5eef-48bf-ba86-985dbe8112d1.csv",
+      "columns": [
+        "Complaint ID",
+        "Category",
+        "Sub Category",
+        "Grievance Date",
+        "Ward Name",
+        "Grievance Status",
+        "Staff Remarks",
+        "Staff Name"
+      ],
+      "note": "THE BASELINE. Filter Sub Category == 'Street Light Not Working'. Sorted by Grievance Date this IS the first-come queue the problem statement criticises. No coordinates, one date column only - do not claim resolution-time analysis."
+    },
+    {
+      "id": "bbmp_grievances_2024",
+      "grade": "A",
+      "title": "BBMP grievances 2024",
+      "format": "csv",
+      "out": "raw/bbmp_grievances_2024.csv",
+      "url": "https://data.opencity.in/dataset/54344a76-a37a-4d05-961c-df9bac5494ad/resource/2a3f29ef-a7a1-4fc3-b125-cbcc958a89d1/download/82f88d50-71c5-4203-92ac-5ccb5cabc7a2.csv"
+    },
+    {
+      "id": "bbmp_grievances_2023",
+      "grade": "A",
+      "title": "BBMP grievances 2023",
+      "format": "csv",
+      "out": "raw/bbmp_grievances_2023.csv",
+      "url": "https://data.opencity.in/dataset/54344a76-a37a-4d05-961c-df9bac5494ad/resource/fae120ab-d95c-4281-aa86-5bf694712472/download/d4419a76-e2af-44b3-aa25-369c85126f0f.csv"
+    },
+    {
+      "id": "bbmp_grievances_2022",
+      "grade": "A",
+      "title": "BBMP grievances 2022",
+      "format": "csv",
+      "out": "raw/bbmp_grievances_2022.csv",
+      "url": "https://data.opencity.in/dataset/54344a76-a37a-4d05-961c-df9bac5494ad/resource/e44f1808-4923-4390-b62c-710d19ab876b/download/b4dd8dd1-1628-4f35-9247-ef5afaad214d.csv"
+    },
+    {
+      "id": "bbmp_grievances_2021",
+      "grade": "A",
+      "title": "BBMP grievances 2021",
+      "format": "csv",
+      "out": "raw/bbmp_grievances_2021.csv",
+      "url": "https://data.opencity.in/dataset/54344a76-a37a-4d05-961c-df9bac5494ad/resource/bada528d-f4f5-4ace-9dd1-8ac459fe350b/download/9e7e6892-06b6-4fdc-967a-e4787562f155.csv"
+    },
+    {
+      "id": "bbmp_grievances_2020",
+      "grade": "A",
+      "title": "BBMP grievances 2020",
+      "format": "csv",
+      "out": "raw/bbmp_grievances_2020.csv",
+      "url": "https://data.opencity.in/dataset/54344a76-a37a-4d05-961c-df9bac5494ad/resource/58808356-4b0a-4b02-9d70-75993b4dcd1c/download/413fa9ec-8d06-4ecb-884e-1436c5a0f5dd.csv"
+    },
+    {
+      "id": "bbmp_wards_2015_198",
+      "grade": "B",
+      "title": "BBMP ward boundaries 2015 (198 wards) - USE THIS ONE",
+      "format": "kml",
+      "out": "raw/bbmp_wards_2015.kml",
+      "url": "https://data.opencity.in/dataset/87b978d1-352e-4b90-aa2c-9991e55d3425/resource/a0329df6-2924-43f4-8fe4-7a6ffcc1d53d/download/806d6b9c-e8d9-4eb0-a3a3-b2ba68ec3cda.kml",
+      "note": "The 198-ward vintage matches both streetlights_by_ward and the grievance ward names. Do NOT mix vintages - see docs/risks.md section 1."
+    },
+    {
+      "id": "bbmp_wards_2022",
+      "grade": "C",
+      "title": "BBMP ward map 2022",
+      "format": "kml",
+      "out": "raw/bbmp_wards_2022.kml",
+      "url": "https://data.opencity.in/dataset/87b978d1-352e-4b90-aa2c-9991e55d3425/resource/9423dbca-db2b-47df-823e-8546f4fb8f2a/download/53418b48-c08d-43bd-be0e-31b46cd0f798.kml"
+    },
+    {
+      "id": "bbmp_wards_2023_final",
+      "grade": "C",
+      "title": "BBMP final wards map 2023 (243 wards)",
+      "format": "kml",
+      "out": "raw/bbmp_wards_2023.kml",
+      "url": "https://data.opencity.in/dataset/87b978d1-352e-4b90-aa2c-9991e55d3425/resource/4dd58225-3ad2-4a99-9003-4e8d71e7f99f/download/e56d21e8-0c44-4c35-9e5d-c732f6f59c97.kml",
+      "note": "Different ward count. Reference only. Joining across vintages is a rabbit hole."
+    },
+    {
+      "id": "bbmp_ward_info",
+      "grade": "B",
+      "title": "BBMP ward information",
+      "format": "csv",
+      "out": "raw/bbmp_ward_info.csv",
+      "url": "https://data.opencity.in/dataset/87b978d1-352e-4b90-aa2c-9991e55d3425/resource/01d485da-6509-4555-ab4c-036720ad0c51/download/3648198e-a595-4c6b-b76e-2ec180fc9f14.csv"
+    },
+    {
+      "id": "bmtc_gtfs",
+      "grade": "A",
+      "title": "BMTC GTFS (unofficial, scraped from Namma BMTC app)",
+      "format": "zip",
+      "out": "raw/bmtc_gtfs.zip",
+      "url": "https://raw.githubusercontent.com/Vonter/bmtc-gtfs/main/gtfs/bmtc.zip",
+      "note": "Maintainer warns timetables and stop timings are unreliable and only live-tracked routes are included. Use trip counts and service span, NOT scheduled arrival minutes."
+    },
+    {
+      "id": "bmtc_stops_geojson",
+      "grade": "A",
+      "title": "BMTC stops GeoJSON",
+      "format": "geojson",
+      "out": "raw/bmtc_stops.geojson",
+      "url": "https://raw.githubusercontent.com/Vonter/bmtc-gtfs/main/geojson/stops.geojson"
+    },
+    {
+      "id": "bmtc_stops_aggregated",
+      "grade": "A",
+      "title": "BMTC aggregated stops (carries trip_count per stop)",
+      "format": "csv",
+      "out": "raw/bmtc_stops_aggregated.csv",
+      "url": "https://raw.githubusercontent.com/Vonter/bmtc-gtfs/main/csv/aggregated.csv",
+      "note": "trip_count is your night-service intensity signal without parsing stop_times."
+    },
+    {
+      "id": "bmtc_routes_geojson",
+      "grade": "B",
+      "title": "BMTC routes GeoJSON",
+      "format": "geojson",
+      "out": "raw/bmtc_routes.geojson",
+      "url": "https://raw.githubusercontent.com/Vonter/bmtc-gtfs/main/geojson/routes.geojson"
+    },
+    {
+      "id": "btp_road_safety_2023",
+      "grade": "B",
+      "title": "Bengaluru Traffic Police road safety report 2023",
+      "format": "pdf",
+      "out": "raw/btp_road_safety_2023.pdf",
+      "url": "https://data.opencity.in/dataset/81336158-a834-4e79-a866-8196ea8b75d3/resource/2261ce08-a0cb-46e1-a1a1-1025ae1f0b72/download/6c425f17-b19b-402f-a638-6b9cae856025.pdf",
+      "note": "VALIDATOR, not an input. Want: pedestrian fatalities day/night split, named blackspots. Manual extraction."
+    },
+    {
+      "id": "btp_crashes_2024",
+      "grade": "B",
+      "title": "BTP press note with road crashes data 2024",
+      "format": "pdf",
+      "out": "raw/btp_crashes_2024.pdf",
+      "url": "https://data.opencity.in/dataset/03d4d85b-7743-4af8-bc08-2155705688f3/resource/9ecd5c73-045e-4b39-93b9-0c5c9e1378b7/download/92622f36-6abd-4ac7-a0cb-1b096eaeaa7f.pdf"
+    },
+    {
+      "id": "bmr_road_safety",
+      "grade": "B",
+      "title": "Road safety report - Bengaluru Metropolitan Region",
+      "format": "pdf",
+      "out": "raw/bmr_road_safety.pdf",
+      "url": "https://data.opencity.in/dataset/81336158-a834-4e79-a866-8196ea8b75d3/resource/65a9b2b1-f80e-4df7-9aeb-28713da44ad5/download/16d3b7ca-62e2-45dd-ae88-e89d2a2dd89c.pdf"
+    }
+  ],
+  "not_scripted": {
+    "osm": "See data/overpass.md. Run these FIRST - two load-bearing numbers depend on them.",
+    "google_places": "Needs an API key. See docs/data-sources.md C2. The move is filtering opening_hours to close after 22:00.",
+    "worldpop_hrsl": "Google Earth Engine catalog. Base layer only - residential population, not night activity.",
+    "viirs": "NASA/VIIRS/002/VNP46A2 or NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG in Earth Engine. 500m pixels. Cannot resolve a street. Context layer only.",
+    "smartcities_mohua": "Unauthenticated JSON API: https://smartcities.data.gov.in/backend/dmspublic/v1/resources?limit=100&offset=0&filters[domain_visibility]=777&query=street%20light -> total 93 streetlight resources, ~45 cities. ALL are the D24 indicator template (counts, LED vs conventional). No coordinates. File sizes 250B-133KB. One slide, not a data layer. See docs/national-data-landscape.md.",
+    "iudx": "catalogue.cos.iudx.org.in dataset 9b27c09f-1ec6-4acd-89f0-a27f23184017 'Streetlights Location Info in Electronic City, Bengaluru' - pole coordinates + companion hourly current/voltage resource. Marked Private, needs Request Resource approval. Public sample record: {\"deviceID\":\"L0302\",\"location\":{\"type\":\"Point\",\"coordinates\":[77.666046,12.841758]}}. THIS IS OUR DATA CONTRACT - build to it.",
+    "datameet": "https://github.com/datameet/Municipal_Spatial_Data/archive/master.zip - 5 cities, municipality boundary GeoJSON only, CC BY 4.0. No asset layers. Fallback for ward boundaries.",
+    "roboflow_exdark": "Named in the Medium 'AI Dark Spot Auditor' blueprint: Roboflow Universe has pre-labelled night streetlight datasets (lit/unlit fixture heads, YOLO-ready); ExDark is the academic low-light image dataset. NOT in MVP scope - see docs/mvp.md 'what we deliberately do not build'."
+  }
+}

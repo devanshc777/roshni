@@ -1,0 +1,79 @@
+{
+ "segments": 1164,
+ "waysIn": 788,
+ "lampsIn": 563,
+ "lampsWorkingYes": 257,
+ "lampsWorkingNo": 274,
+ "nightPOIs": 443,
+ "poisTotal": 1157,
+ "stopsWithNightService": 286,
+ "wardsTouched": [
+  "Agaram",
+  "BTM Layout",
+  "Bellanduru",
+  "Bommanahalli",
+  "Domlur",
+  "Ejipura",
+  "Gurappanapalya",
+  "HSR Layout",
+  "Jakkasandra",
+  "Jayanagar East",
+  "Konena Agrahara",
+  "Koramangala",
+  "Madivala"
+ ],
+ "graphNodes": 3411,
+ "graphEdges": 3620,
+ "giantComponent": 1890,
+ "spearman_activity_vs_structural": 0.031,
+ "spearman_activity_vs_nightbus": -0.135,
+ "segmentsWithLampEvidence": 176,
+ "priorOnlyShare": 0.849,
+ "totalCorridorKm": 160.9,
+ "roadDensityKmPerKm2": 10.68,
+ "lampsPerKmByWard": {
+  "Agaram": 9.2,
+  "BTM Layout": 108.1,
+  "Bellanduru": 17.6,
+  "Bommanahalli": 114.8,
+  "Domlur": 105.9,
+  "Ejipura": 90.7,
+  "HSR Layout": 63.0,
+  "Konena Agrahara": 104.7,
+  "Koramangala": 61.9,
+  "Madivala": 114.3
+ },
+ "darknessMean": 0.214,
+ "counterfactual": {
+  "20": {
+   "ours": 1583.2,
+   "baselineMean": 226.9,
+   "ratioMean": 6.98,
+   "ratioVsLuckiestDraw": 3.75,
+   "baselineSteelman": 773.1,
+   "ratioVsSteelman": 2.05,
+   "baselineP5": 158.1,
+   "baselineP95": 323.4
+  },
+  "40": {
+   "ours": 2582.1,
+   "baselineMean": 500.2,
+   "ratioMean": 5.16,
+   "ratioVsLuckiestDraw": 3.46,
+   "baselineSteelman": 1631.1,
+   "ratioVsSteelman": 1.58,
+   "baselineP5": 384.8,
+   "baselineP95": 636.1
+  },
+  "60": {
+   "ours": 3461.9,
+   "baselineMean": 780.4,
+   "ratioMean": 4.44,
+   "ratioVsLuckiestDraw": 3.27,
+   "baselineSteelman": 2382.6,
+   "ratioVsSteelman": 1.45,
+   "baselineP5": 650.8,
+   "baselineP95": 940.4
+  }
+ }
+}
