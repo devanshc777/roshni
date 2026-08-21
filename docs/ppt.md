@@ -443,6 +443,15 @@ Must be visible:
 **Caption:** Advisory, never a guarantee. The safer route refuses to path through
 segments we are not confident about.
 
+**The measured numbers for the demo route** (`out/routes.json`, query 1 —
+4th Main Road to Sarjapur Road):
+> Shortest: 1,733 m, **43% of it dark**, 6% of it ground we have no confidence in.
+> Safer: 2,101 m, **27% dark, 0% unknown** — it routes around three wide-band
+> segments. Cost of the choice: **+368 m, about five minutes.**
+
+Put those six numbers in the comparison strip. "Five minutes to halve the dark
+share" is a sentence a judge remembers.
+
 `[SAY]` Say the duality out loud here on real geography: **Haralur Road in
 Bellandur** carries the widest confidence band in our whole corridor — no mapped
 lamps, almost no night bus service, and zero streetlight complaints in the ward
@@ -473,7 +482,18 @@ show that.
 **Caption:** Day zero. No inventory, no reports — and the map is already useful,
 and already honest about where it isn't.
 
-`[SOURCE]` 176 of 1,164 segments carry any OSM lamp evidence. `out/stats.json`.
+**The learning curve, measured** (`out/curve.json`, simulation — label it as one):
+> With **zero reports**, the prior-only ranking already captures **73%** of what a
+> perfectly-informed ranking would restore. **400 targeted reports takes it to 94%.
+> 400 random reports only reach 82%.**
+>
+> And the honest wrinkle: below about **50 reports, targeted reporting is no better
+> than random** — early on it chases high-variance segments that turn out to be
+> low-exposure. The gain is real but it arrives late. Say that; it is the
+> difference between a plotted curve and an understood one.
+
+`[SOURCE]` 176 of 1,164 segments carry any OSM lamp evidence. `out/stats.json`,
+`out/curve.json`.
 
 `[SAY]` This slide pre-answers the hardest question we get — "what does it do on
 day one with no data" — before it is asked.
@@ -682,6 +702,7 @@ dropped.
 | 9 | **Route screenshot** | 11 | `docs/prompts.md` Prompt 3 | — |
 | 10 | **Report empty-state screenshot** | 12 | `docs/prompts.md` Prompt 2 | — |
 | 11 | ρ scatter plot | 13 | `out/segments.geojson`, activity vs structural | — |
+| 11b | Learning curve, two lines | 12 or 13 | `out/curve.json` — targeted vs random, annotate the ~50-report crossover | — |
 | 12 | IUDX page screenshot | 14 | iudx.org.in catalogue, dataset ID in slide 14 | — |
 | 13 | Night-street photograph, ours | 1 | someone's phone | optional |
 | 14 | Photo of the team counting pedestrians | 13 | one evening | optional, high value |
