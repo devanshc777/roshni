@@ -938,6 +938,14 @@ function drawLabels() {
   }
   labelHost.textContent = '';
   labelHost.appendChild(frag);
+  // Labels are centre-anchored, so a long ward name can extend past the edge
+  // that the fixed margin above already cleared. Measure once and drop the
+  // stragglers — cheaper than guessing a margin per label length, and it holds
+  // at any viewport width.
+  for (const el of labelHost.children) {
+    const b = el.getBoundingClientRect();
+    if (b.left < 2 || b.right > cw - 2) el.style.visibility = 'hidden';
+  }
 }
 let labelRAF = 0;
 const scheduleLabels = () => {
@@ -972,9 +980,22 @@ function render() {
     : `<b style="color:var(--text-1)">Below is the complaint queue's order.</b>
        Roshni's first ${state.budget} repairs restore ${$('ratio').textContent}
        the pedestrian exposure this list does.`;
-  $('cityNote').textContent = cf.ratio
-    ? `A complaint names a ward, never a street, so the comparison is averaged over 300 draws.`
-    : '';
+  const noCriteria = state.wD === 0 && state.wE === 0 && state.wC === 0;
+  if (noCriteria) {
+    // every exponent zero means every score is 1, so the "order" below is
+    // arbitrary. Reporting a ratio for it would dress noise as a result.
+    $('ratio').textContent = '—';
+    $('heroLab').innerHTML = `All three weights are zero, so nothing is being
+      ranked. Move one above zero to get an order.`;
+  }
+  // Simulated reports are set by the sequence and survive closing it, which is
+  // correct — the belief really did update — but it must not be invisible state.
+  $('cityNote').innerHTML = (state.reports > 0
+      ? `<b style="color:var(--brand)">Reflecting ${int(state.reports)} simulated
+         reports.</b> Reset to clear. &nbsp;` : '')
+    + (cf.ratio && !noCriteria
+      ? `A complaint names a ward, never a street, so the comparison is averaged
+         over 300 draws.` : '');
 
   // The queue, grouped by street. OSM splits one road into many short ways, so
   // the raw ranking put four separate 170 m pieces of the same service road in
@@ -1262,10 +1283,14 @@ function renderWalk() {
   // it stays true after reports arrive and change the routes.
   const extra = Math.round(S.mins - H.mins);
   const avoided = Math.max(0, Math.round((H.unknown * H.m) - (S.unknown * S.m)));
-  $('walkTrade').innerHTML = extra > 0
+  $('walkTrade').innerHTML = (extra > 0
     ? `<b>+${extra} min</b> · keeps you off <b>${avoided} m</b> of street we
        cannot vouch for.`
-    : 'Both ways are about the same tonight.';
+    : 'Both ways are about the same tonight.')
+    + (state.reports > 0
+      ? `<span style="display:block;margin-top:8px;font-size:12.5px;
+         color:var(--text-3)">Routed against ${int(state.reports)} simulated
+         reports.</span>` : '');
 
   // Endpoints first, always. The routing graph spans the whole snapshot while
   // PROPS only covers the scored demo subset, so most segments on a given walk
@@ -1362,13 +1387,31 @@ function renderReport() {
   // The result of the last report, which is the entire point of the screen.
   const r = myReports[0];
   if (!r) { $('res').innerHTML = ''; return; }
+  // Three different true things can happen, and the screen has to say the right
+  // one. Claiming a queue jump that did not happen is worse than saying nothing.
   const moved = r.after < r.before
     ? `<div class="mv">#${r.before} <i>→</i> <b>#${r.after}</b></div>` +
       `<p>Your report moved <b style="color:var(--text-1)">${r.name}</b> up
-       ${r.ward}'s repair queue.</p>`
-    : `<div class="mv"><b>#${r.before}</b></div><p><b style="color:var(--text-1)">
-       ${r.name}</b> is #${r.before} of ${r.of} in ${r.ward}. One report does not
-       move it alone — the model waits for corroboration.</p>`;
+       ${r.ward}'s repair queue.</p>` +
+      // A jump this big looks rigged unless we say why it happens. It is real:
+      // streets with no evidence sit almost tied on the same ward prior, so the
+      // first actual observation is decisive. That is also the argument for
+      // asking people to report where we are least sure.
+      (r.firstEvidence && r.before - r.after > 3
+        ? `<p style="font-size:12.5px;color:var(--text-3);margin-top:9px">Nobody
+           had ever checked this street. Streets with no evidence rank almost
+           identically on their ward's average, so the first real observation
+           moves a lot &mdash; and the next one will move it much less.</p>` : '')
+    : r.before === 1
+      // already top of its ward: the reward is evidence, not movement
+      ? `<div class="mv"><b>#1</b></div><p><b style="color:var(--text-1)">${r.name}</b>
+         was already top of ${r.ward}'s queue${r.firstEvidence
+           ? ', on an estimate nobody had ever checked' : ''}. Your report is
+         what turns that estimate into evidence — the crew can now be told it was
+         confirmed dark tonight.</p>`
+      : `<div class="mv">#${r.before}</div><p><b style="color:var(--text-1)">${r.name}</b>
+         holds at #${r.before} of ${r.of} streets in ${r.ward}. One report does not
+         move it alone — the model waits for corroboration.</p>`;
   const ask = r.state === 'fixed'
     ? `<div class="ask"><p>The city says this was fixed. Is it?</p><div>` +
       `<button data-a="yes">Yes</button><button data-a="no">Still dark</button>` +
@@ -1390,23 +1433,45 @@ function fileReport(segID) {
   const pr = PROPS.get(segID) || {};
   const o = SEGBY.get(segID);
   const ward = (o && o.s.ward) || '';
-  // Rank within the ward, before and after. A city-wide rank is a number
-  // nobody can feel; "moved up your ward's queue" is.
+  const myName = pr.name || 'this stretch';
+
+  // Rank STREETS within the ward, not segments.
+  //
+  // Ranking segments produced "#73 -> #1" from a single report, because a ward
+  // holds hundreds of prior-only segments whose scores sit within epsilon of
+  // each other, so any nudge leapfrogs dozens of ties at once. That reads as
+  // rigged, and it contradicts the app's own line about waiting for
+  // corroboration. Streets are genuinely differentiated, so the move is small
+  // and means something.
   const inWard = [...SEGBY.values()].filter(x => x.s.ward === ward);
-  const rankOf = (bonus) => inWard.map(x => {
-    let s = x.score;
-    if (x.s.segID === segID && bonus) {
-      const a = x.s.alpha, b = x.s.beta + 2.5;
-      const mean = b / (a + b);
-      s = Math.pow(mean, state.wD * 2) * Math.pow(x.s.exp, state.wE * 2)
-        * Math.pow(x.conf, state.wC * 2);
+  const nameOf = (x) => {
+    const p = PROPS.get(x.s.segID) || {};
+    return p.name || 'unnamed ' + (p.roadClass || 'road');
+  };
+  const rankOf = (bonus) => {
+    const best = new Map();
+    for (const x of inWard) {
+      let s = x.score;
+      if (x.s.segID === segID && bonus) {
+        const a = x.s.alpha, b = x.s.beta + 2.5;
+        const mean = b / (a + b);
+        s = Math.pow(mean, state.wD * 2) * Math.pow(x.s.exp, state.wE * 2)
+          * Math.pow(x.conf, state.wC * 2);
+      }
+      const k = nameOf(x);
+      if (!best.has(k) || s > best.get(k)) best.set(k, s);
     }
-    return { id: x.s.segID, s };
-  }).sort((m, q) => q.s - m.s).findIndex(x => x.id === segID) + 1;
+    return { rank: [...best.entries()].sort((m, q) => q[1] - m[1])
+      .findIndex(([k]) => k === myName) + 1, of: best.size };
+  };
+  const b4 = rankOf(false), af = rankOf(true);
 
   myReports.unshift({
-    segID, name: pr.name || 'this stretch', ward, state: 'open',
-    before: rankOf(false), after: rankOf(true), of: inWard.length,
+    segID, name: myName, ward, state: 'open',
+    before: b4.rank, after: af.rank, of: af.of,
+    // A street already at the top cannot move up, and the honest reward there
+    // is different in kind: the estimate becomes evidence.
+    firstEvidence: o ? (o.s.lampsBroken === 0) : false,
   });
   // one report advances to "the city says fixed" so the resolution loop is
   // visible in a demo without waiting for a municipality
@@ -1631,13 +1696,24 @@ document.addEventListener('keydown', (e) => {
 });
 
 render();
-// "about", to one significant figure, because scopePopulation is ward
-// population weighted by area overlap and not a count of anybody.
+// Two disclosures, both load-bearing.
+//
+// "about", to one significant figure, because scopePopulation is ward population
+// weighted by area overlap and not a count of anybody.
+//
+// And the drawn subset: data/pipeline.py writes the top 2,000 scored stretches
+// by priority, not a uniform sample. So this map is the model's own shortlist,
+// which is exactly why the corridor stands out — saying so is the difference
+// between a map and a sales pitch.
 $('mapScope').innerHTML =
   `Measured inside the outlined area &mdash; <b style="color:var(--text-2)">` +
   `${cityMeta.scopeWards} wards</b>, about <b style="color:var(--text-2)">` +
   `${Math.round(cityMeta.scopePopulation / 1e4) / 100} million people</b>. The other ` +
-  `${cityMeta.wards - cityMeta.scopeWards} wards of Bengaluru are drawn for context.`;
+  `${cityMeta.wards - cityMeta.scopeWards} wards of Bengaluru are drawn for context.` +
+  `<br><span style="color:var(--text-3)">Drawn here: the <b style="color:var(--text-2)">` +
+  `${GEOM.size.toLocaleString()}</b> stretches this model ranks highest, of ` +
+  `<b style="color:var(--text-2)">${SEGS.length.toLocaleString()}</b> scored. ` +
+  `Not a uniform sample &mdash; it is the shortlist.</span>`;
 setView('map');
 drawLabels();
 </script>
