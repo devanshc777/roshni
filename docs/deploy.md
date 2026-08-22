@@ -69,11 +69,57 @@ not a single absolute path, which is why the same files work unchanged at
 `localhost:8080/`, at `devanshc777.github.io/roshni/`, and from any other static
 host or subdirectory.
 
+## Cloudflare Pages, and why both
+
+Worth running alongside Pages rather than instead of it. Two live URLs is better
+insurance than picking a winner, and they cost nothing to keep.
+
+Setup, once: **Cloudflare dashboard → Workers & Pages → Create → Pages → Connect
+to Git → this repo.** Framework preset **None**, build command **empty**, output
+directory **`web`**. That is the whole configuration, because there is no build.
+
+Two things Cloudflare does better *for this specific demo*:
+
+**Latency where the judges are.** Cloudflare has Mumbai and Bengaluru points of
+presence. GitHub Pages fronts with Fastly, which is fine but further away. On
+conference wifi, opening a 1.6 MB page from a PoP in the same city is a
+noticeable difference.
+
+**`web/_headers` is honoured.** GitHub Pages ignores it, which is why shipping it
+costs nothing. On Cloudflare it does two jobs:
+
+- `/data/*` and `/vendor/*` are served `immutable` for a year. 7.8 MB of the 9.2
+  MB total is precomputed data that only changes when the pipeline is re-run, so
+  a second visit downloads almost nothing. `index.html` is `no-cache`, so a
+  deploy is never masked by a stale page — the hosted version of the cache trap
+  described above.
+- A **Content-Security-Policy** that is unusually strict because the app earns
+  it: no backend, no CDN, no analytics, no third-party anything, and zero network
+  requests at runtime. `connect-src 'self'` with nothing else would break most
+  sites; here nothing notices.
+
+The CSP was verified rather than assumed — injected as a `<meta>` tag into a copy
+of the app, loaded in a real browser, and every surface driven under it. It needs
+`'unsafe-inline'` for script and style, because the app is deliberately one file
+with an inline module and inline CSS, and `blob:` for `worker-src`, because
+MapLibre spawns its worker that way. `frame-ancestors` is ignored when delivered
+by `<meta>` but works as a real header, which is how `_headers` sends it.
+
+## What Cloudflare is not needed for here
+
+Worth stating, because the obvious comparison is misleading. LDR Jigsaw is on
+Cloudflare Workers for a real architectural reason — one Durable Object per room,
+matching one engine per room, plus R2 and WebSockets. **Roshni has no server, no
+state, no sockets and no uploads.** Every primitive that made Cloudflare the
+right call there is absent here, so this is a plain static-hosting decision and
+almost any host would do. Pick the host whose primitives match the architecture;
+do not carry a previous project's answer across.
+
 ## Other hosts
 
 Any static host works with zero changes, because there is nothing to configure:
 
-- **Netlify / Vercel / Cloudflare Pages** — publish directory `web`, no build command.
+- **Netlify / Vercel** — publish directory `web`, no build command.
 - **A USB stick and a laptop** — clone, run the Python server. This is the real
   disaster plan, and it needs no network at all.
 

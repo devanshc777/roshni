@@ -942,9 +942,18 @@ function drawLabels() {
   // that the fixed margin above already cleared. Measure once and drop the
   // stragglers — cheaper than guessing a margin per label length, and it holds
   // at any viewport width.
+  // Keep-out for the bottom-right furniture: the attribution and the zoom
+  // control. Attribution has to stay legible — it is the ODbL condition, not a
+  // style preference — and a route pin landed straight on top of it.
+  const host = labelHost.getBoundingClientRect();
+  const keepOut = { x: cw - 350, y: labelHost.clientHeight - 118 };
   for (const el of labelHost.children) {
     const b = el.getBoundingClientRect();
-    if (b.left < 2 || b.right > cw - 2) el.style.visibility = 'hidden';
+    const x = b.left - host.left, y = b.top - host.top;
+    if (b.left < 2 || b.right > cw - 2
+        || (x + b.width > keepOut.x && y + b.height > keepOut.y)) {
+      el.style.visibility = 'hidden';
+    }
   }
 }
 let labelRAF = 0;

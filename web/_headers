@@ -1,0 +1,26 @@
+# Cloudflare Pages reads this. GitHub Pages ignores it, which is why it is safe
+# to ship to both from the same directory.
+#
+# The point of this file is the data payload. 7.8 MB of the 9.2 MB total is
+# precomputed JSON and GeoJSON that only changes when the pipeline is re-run, so
+# a repeat visitor should never download it twice.
+
+/data/*
+  # Immutable in practice: a pipeline re-run produces a new deploy, and the demo
+  # never mutates these. A year is the conventional cap for immutable assets.
+  Cache-Control: public, max-age=31536000, immutable
+
+/vendor/*
+  # Vendored MapLibre, pinned by the commit it was vendored at.
+  Cache-Control: public, max-age=31536000, immutable
+
+/*
+  # index.html must revalidate or a stale build survives a deploy. This is the
+  # hosted version of the cache trap that made local fixes look like no-ops.
+  Cache-Control: no-cache
+  # The app makes no network requests at runtime, so it can be locked down hard
+  # and nothing breaks. Fonts and images are inline or same-origin; the only
+  # non-self source needed is blob:, which MapLibre uses for its web worker.
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' blob:; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
