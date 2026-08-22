@@ -420,8 +420,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border:0;
 
         <div class="hero">
           <div class="big" id="ratio">&mdash;</div>
-          <p class="biglab">more pedestrian exposure restored than the complaint
-            queue's first <span id="nRep">40</span> repairs</p>
+          <p class="biglab" id="heroLab"></p>
         </div>
 
         <div class="qlist" id="rows"></div>
@@ -726,6 +725,23 @@ function groupRows(list, n) {
   return [...groups.values()].sort((a, b) => a.rank - b.rank).slice(0, n);
 }
 
+// Where a street sits in the whole queue, by its best-scoring stretch. Same
+// grouping the City list uses, so the two surfaces cannot disagree.
+function streetRank(o) {
+  const key = (x) => {
+    const pr = PROPS.get(x.s.segID) || {};
+    return (pr.name || 'unnamed ' + (pr.roadClass || 'road')) + '|' + x.s.ward;
+  };
+  const best = new Map();
+  for (const x of SEGBY.values()) {
+    const k = key(x);
+    if (!best.has(k) || x.score > best.get(k)) best.set(k, x.score);
+  }
+  const mine = key(o);
+  return [...best.entries()].sort((a, b) => b[1] - a[1])
+    .findIndex(([k]) => k === mine) + 1;
+}
+
 // On the public map the same quantity is said in words, because a percentile is
 // not something anybody standing on a street can act on. Cut points are fixed
 // at load from the exposure distribution, so they do not move as reports land.
@@ -947,7 +963,15 @@ function render() {
 
   const cf = counterfactual(scored, state.budget);
   $('ratio').textContent = cf.ratio ? fmt(cf.ratio, 1) + '×' : '—';
-  $('nRep').textContent = $('budgetOut').textContent = state.budget;
+  $('budgetOut').textContent = state.budget;
+  // While the complaint order is on screen, "more than the complaint queue" is
+  // describing the list you are looking at. Say which list is which instead.
+  $('heroLab').innerHTML = state.ordering === 'ours'
+    ? `more pedestrian exposure restored than the complaint queue's first
+       ${state.budget} repairs`
+    : `<b style="color:var(--text-1)">Below is the complaint queue's order.</b>
+       Roshni's first ${state.budget} repairs restore ${$('ratio').textContent}
+       the pedestrian exposure this list does.`;
   $('cityNote').textContent = cf.ratio
     ? `A complaint names a ward, never a street, so the comparison is averaged over 300 draws.`
     : '';
@@ -997,8 +1021,10 @@ function select(id, fly) {
   const o = SEGBY.get(state.selected);
   if (!o) { $('card').classList.add('hidden'); render(); return; }
   const pr = PROPS.get(o.s.segID) || {};
-  const rank = [...SEGBY.values()].sort((a, b) => b.score - a.score)
-    .findIndex(x => x.s.segID === o.s.segID) + 1;
+  // Rank the STREET, not the segment, so the card agrees with the City list.
+  // Ranking segments put Sarjapura Road at #275 on the card while the queue
+  // called it #3 — both true, and impossible to reconcile out loud.
+  const rank = streetRank(o);
   $('cName').textContent = pr.name || 'unnamed ' + (pr.roadClass || 'road');
   $('cWard').textContent = `${o.s.ward} · ${Math.round(o.s.lengthM)} m`;
   // Plain words, and only numbers somebody can act on. The posterior lives

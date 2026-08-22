@@ -323,6 +323,23 @@ wards, versus the centroid estimate of 788,462 across 21. Close enough to be
 reassuring; defensible now. It still assumes even population density inside a
 ward, which is why it is quoted as "about".
 
+### Two more found by rehearsing the demo
+
+Driving the actual demo end-to-end surfaced two inconsistencies that reading the
+code would not have.
+
+**The map card and the City queue disagreed about rank.** The card reported a
+*segment* rank while the list reported a *street* rank, so Sarjapura Road showed
+as #275 on the card and #3 in the queue. Both were true and impossible to
+reconcile out loud. The card now ranks streets, using the same grouping the list
+does.
+
+**The hero label described the wrong list.** Toggling to Complaint order left
+"more pedestrian exposure restored than the complaint queue's first 40 repairs"
+sitting above the complaint queue itself. It now switches to name which list is
+on screen: *"Below is the complaint queue's order. Roshni's first 40 repairs
+restore 7.8× the pedestrian exposure this list does."*
+
 ---
 
 ## What is still open
