@@ -21,7 +21,9 @@ four, so it is the production-integration story and not the demo geography.
 
 **Verified**: 39,847 of 126,974 = **31.38%**, recomputed from the raw CSV.
 Electrical closure rate **96.4%** confirmed exactly. The counterfactual is
-computed: **5.2×** at a 40-repair budget, **1.58×** against a steelman baseline.
+computed: **7.73×** at a 40-repair budget, **1.89×** against a steelman
+baseline, and **5.42×** with every lamp label deleted. (The earlier 5.2× / 1.58×
+figures predate the full-bbox pipeline rebuild — see `measured-2026-08-22.md` §10.)
 
 **Two claims died on measurement** and must not reach a slide: the
 office-hours-timestamp argument (the grievance clock is 12-hour with AM/PM
@@ -47,6 +49,9 @@ that street at 11pm. Roshni re-sorts the queue by pedestrian exposure.
 | `docs/measured-2026-08-22.md` | **Authority on every number.** Confirmed / corrected / dead, plus the counterfactual and the infrastructure gotchas. Read before quoting anything. |
 | `docs/ps-adherence.md` | **Audit against the problem-statement text**, not our narrative. What the PS names vs what exists, the generality claim as an input ladder, the product story, and why the citizen screens must be plain. |
 | `docs/positioning.md` | Positioning via competitive alternatives. The category is "repair-prioritisation layer for street lighting" — a layer, not a replacement. Carries the one-liner and the pitch opening. |
+| `docs/reimagine-report.md` | **What is built now**, screen by screen, with screenshots and the provenance of every on-screen number. Start here for the current state. |
+| `docs/reimagine-demo.md` | **The demo script.** Four clicks, what to say per beat, the questions you will get, and the traps. |
+| `docs/reimagined-plan.md` | The presentation rebuild: the diagnosis, the plan, and what a three-lens review round changed before and during the build. |
 | `docs/mvp-plan.md` · `docs/mvp-plan-log.md` | The build plan and the four verification passes behind it, including the two places building it overruled the plan. |
 | `web/index.html` | **The working app.** Four tabs — Live feed, Walk home, Report, City queue. Vanilla, one file, offline, responsive. `python -m http.server 8080 --directory web`. |
 | `PRODUCT.md` | Product truth: the two sides (customer vs user), the use scene that decides the design, the surface table, and the product rules. |
