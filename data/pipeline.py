@@ -500,6 +500,80 @@ def main():
     json.dump({"type": "FeatureCollection", "features": [feature(s) for s in picks]},
               open(OUT/"segments.fixture.geojson", "w"), indent=1)
 
+    # ---- two files the frontend needs ------------------------------------
+    # basemap.geojson: every road in the locked bbox, geometry only. The demo
+    # draws its own basemap rather than fetching raster tiles, because a tile
+    # request is a network call and the demo has to survive the wifi dying.
+    bm = []
+    for w in ways:
+        geo = w.get("geometry") or []
+        if len(geo) < 2:
+            continue
+        c = (geo[len(geo)//2]["lat"], geo[len(geo)//2]["lon"])
+        if not (LOCK_S <= c[0] <= LOCK_N and LOCK_W <= c[1] <= LOCK_E):
+            continue
+        pts = [(g["lat"], g["lon"]) for g in geo]
+        if sum(hav(pts[i], pts[i+1]) for i in range(len(pts)-1)) < 20:
+            continue
+        bm.append({"type": "Feature", "properties": {},
+                   "geometry": {"type": "LineString",
+                                "coordinates": [[round(g["lon"], 5), round(g["lat"], 5)]
+                                                for g in geo]}})
+    json.dump({"type": "FeatureCollection", "features": bm},
+              open(OUT/"basemap.geojson", "w"))
+
+    # graph.json: routing graph keyed on OSM NODE IDS, not coordinates. Keying
+    # on rounded coordinates fragments it to 8% connected -- the same bug that
+    # wrecked betweenness earlier. On node ids it is 98%.
+    RG = nx.Graph()
+    seg_of = {}
+    for sg in segs:
+        for a, b in zip(sg["nodes"], sg["nodes"][1:]):
+            # coord only holds walkable nodes; motorway segments are scored for
+            # repair but must never be offered as a walking route.
+            if a == b or a not in coord or b not in coord:
+                continue
+            RG.add_edge(a, b, length=max(1.0, hav(coord[a], coord[b])))
+            seg_of[frozenset((a, b))] = sg["segID"]
+    rgiant = max(nx.connected_components(RG), key=len)
+    json.dump({
+        "nodes": {str(n): [round(coord[n][1], 6), round(coord[n][0], 6)] for n in rgiant},
+        "edges": [[str(a), str(b), round(d["length"], 1),
+                   seg_of.get(frozenset((a, b)))]
+                  for a, b, d in RG.subgraph(rgiant).edges(data=True)],
+        "note": "routing graph over scored segments, keyed on OSM node ids, "
+                "largest connected component only. edge[3] is the segID whose "
+                "penalty applies, or null for an unscored connector.",
+    }, open(OUT/"graph.json", "w"))
+    print(f"basemap.geojson {len(bm)} roads | graph.json {len(rgiant)} of "
+          f"{RG.number_of_nodes()} nodes ({len(rgiant)/RG.number_of_nodes():.0%} connected), "
+          f"{RG.subgraph(rgiant).number_of_edges()} edges", flush=True)
+
+    # scoring.json: columnar, geometry-free, ALL scored segments. The frontend
+    # renders the 2,117-feature demo subset but must compute the counterfactual
+    # over the whole set -- scoring a subset that was itself selected by
+    # priority inflates our side and produces a ratio that disagrees with the
+    # deck. Geometry is what makes GeoJSON big, so dropping it costs little.
+    cols = {
+      "segID": [s["segID"] for s in segs],
+      "ward": [s["ward"] for s in segs],
+      "lengthM": [round(s["lengthM"], 1) for s in segs],
+      "mean": [s["darkness"]["mean"] for s in segs],
+      "var": [s["darkness"]["var"] for s in segs],
+      "alpha": [s["darkness"]["alpha"] for s in segs],
+      "beta": [s["darkness"]["beta"] for s in segs],
+      "expBlended": [s["exposure"]["blended"] for s in segs],
+      "expActivity": [s["exposure"]["activity"] for s in segs],
+      "conf": [s["confidence"] for s in segs],
+      "wardComplaints": [cw(s["ward"]) for s in segs],
+      "lampsBroken": [s["lampsNo"] for s in segs],
+    }
+    json.dump({"n": len(segs), "columns": cols,
+               "note": "geometry-free scoring table for the client. Order matches "
+                       "nothing in particular; join on segID."},
+              open(OUT/"scoring.json", "w"))
+    print(f"scoring.json    {len(segs)} segments, geometry-free", flush=True)
+
     with_ev = sum(1 for s in segs if s["lampsYes"]+s["lampsNo"]+s["lampsUntagged"] > 0)
     scored_wards = {s["ward"] for s in segs}
     stats = {

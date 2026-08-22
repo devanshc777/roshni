@@ -1,0 +1,600 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Roshni — Repair Prioritisation</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="./vendor/maplibre-gl.css">
+<style>
+  :root{
+    --bg-0:#0B0F14; --bg-1:#121820; --bg-2:#1B232E; --bg-3:#232B36;
+    --text-0:#fff; --text-1:#E6EAF0; --text-2:#B1BAC6; --text-3:#7A8696;
+    --brand:#FFC107; --brand-2:#FFB300;
+    --blue:#40A3FF; --teal:#26C6A6; --indigo:#7C9BFF; --error:#FF6B6B;
+    --d0:#FDE9C4; --d1:#FFC107; --d2:#C77E33; --d3:#7E5A63; --d4:#3B4A7A; --d5:#232B54;
+    --line:#232B36;
+    font-synthesis:none;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg-0);color:var(--text-1);
+    font:14px/1.45 "Segoe UI",Inter,system-ui,sans-serif;overflow:hidden}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  /* layout */
+  #app{display:grid;grid-template-rows:56px 1fr 64px;height:100%}
+  header{display:flex;align-items:center;gap:18px;padding:0 18px;
+    border-bottom:1px solid var(--line);background:var(--bg-1)}
+  .lamp{width:22px;height:22px;flex:0 0 22px}
+  .brand{font-weight:600;letter-spacing:.06em;font-size:15px}
+  .sub{color:var(--text-3);font-size:12px}
+  .grow{flex:1}
+  .seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .seg button{padding:7px 14px;font-size:12.5px;color:var(--text-2)}
+  .seg button[aria-pressed=true]{background:var(--bg-3);color:var(--brand);font-weight:600}
+  main{display:grid;grid-template-columns:392px 1fr;min-height:0}
+  #panel{border-right:1px solid var(--line);background:var(--bg-1);
+    display:flex;flex-direction:column;min-height:0}
+  #map{position:relative}
+  footer{display:flex;align-items:center;gap:20px;padding:0 18px;
+    border-top:1px solid var(--line);background:var(--bg-1)}
+  /* hero */
+  .hero{padding:14px 18px;border-bottom:1px solid var(--line)}
+  .ratio{font-size:58px;font-weight:700;color:var(--brand);line-height:.95;
+    font-variant-numeric:tabular-nums}
+  .heroline{font-size:13px;color:var(--text-1);margin-top:5px}
+  .heroline strong{color:var(--brand)}
+  .hero p{margin:7px 0 0;color:var(--text-2);font-size:12px}
+  /* controls */
+  .ctl{padding:12px 18px;border-bottom:1px solid var(--line)}
+  .ctl h4{margin:0 0 9px;font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--text-3);font-weight:600}
+  .row{display:grid;grid-template-columns:74px 1fr 40px;align-items:center;
+    gap:10px;margin:7px 0}
+  .row label{font-size:12.5px;color:var(--text-2)}
+  .row output{font-size:12.5px;color:var(--brand);text-align:right;
+    font-variant-numeric:tabular-nums}
+  input[type=range]{-webkit-appearance:none;appearance:none;height:4px;border-radius:3px;
+    background:var(--bg-3);outline:none}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;
+    border-radius:50%;background:var(--brand);cursor:pointer;border:0}
+  input[type=range]:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+  /* worklist */
+  #listwrap{flex:1;overflow:auto;min-height:0}
+  table{width:100%;border-collapse:collapse}
+  thead th{position:sticky;top:0;background:var(--bg-1);text-align:left;
+    font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);
+    font-weight:600;padding:8px 6px;border-bottom:1px solid var(--line);z-index:1}
+  tbody tr{border-bottom:1px solid #1a212b;cursor:pointer}
+  tbody tr:hover{background:var(--bg-2)}
+  tbody tr[aria-selected=true]{background:var(--bg-3);
+    box-shadow:inset 3px 0 0 var(--brand)}
+  td{padding:7px 6px;font-size:12.5px;vertical-align:middle}
+  td.rank{color:var(--text-3);font-variant-numeric:tabular-nums;width:26px}
+  td.st{color:var(--text-1)}
+  td.st small{display:block;color:var(--text-3);font-size:10.5px}
+  .bar{height:5px;border-radius:3px;background:var(--bg-3);width:44px;overflow:hidden}
+  .bar i{display:block;height:100%}
+  .conf{display:inline-block;width:34px;height:9px;border-radius:2px}
+  /* legends */
+  .legend{padding:11px 18px;border-top:1px solid var(--line);
+    display:flex;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--text-3)}
+  .legend b{display:block;color:var(--text-2);font-weight:600;margin-bottom:5px;
+    font-size:10.5px;letter-spacing:.07em;text-transform:uppercase}
+  .swatches{display:flex;gap:3px;align-items:center}
+  .sw{width:22px;height:9px;border-radius:2px}
+  .btn{border:1px solid var(--brand);color:var(--brand);border-radius:8px;
+    padding:8px 14px;font-size:12.5px;font-weight:600}
+  .btn:hover{background:rgba(255,193,7,.1)}
+  .ghost{border-color:var(--line);color:var(--text-2);font-weight:400}
+  .ghost:hover{background:var(--bg-2)}
+  /* detail popover */
+  #detail{position:absolute;z-index:5;right:14px;top:14px;width:266px;background:var(--bg-1);
+    border:1px solid var(--line);border-radius:10px;padding:14px;display:none;
+    box-shadow:0 10px 34px rgba(0,0,0,.5)}
+  #detail h5{margin:0 0 2px;font-size:14px;color:var(--text-0)}
+  #detail .w{color:var(--text-3);font-size:11.5px;margin-bottom:10px}
+  #detail dl{display:grid;grid-template-columns:1fr auto;gap:5px 10px;margin:0;
+    font-size:12px}
+  #detail dt{color:var(--text-3)}
+  #detail dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+  #detail .close{position:absolute;right:9px;top:7px;color:var(--text-3);font-size:16px}
+  .note{font-size:11px;color:var(--text-3);margin:8px 0 0}
+  #status{position:absolute;z-index:5;left:14px;bottom:14px;background:rgba(11,15,20,.86);
+    border:1px solid var(--line);border-radius:8px;padding:7px 11px;font-size:11.5px;
+    color:var(--text-3)}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:3px 9px;font-size:11px;
+    color:var(--text-3)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div id="app">
+  <header>
+    <svg class="lamp" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 3h3v18H7z" fill="#FFB300" opacity=".55"/>
+      <circle cx="14" cy="5" r="4.2" fill="#FFC107"/>
+    </svg>
+    <div>
+      <div class="brand">ROSHNI</div>
+      <div class="sub">Repair Prioritisation · Municipal Engineer Console</div>
+    </div>
+    <span class="grow"></span>
+    <div class="seg" role="group" aria-label="Ordering">
+      <button id="ordOurs" aria-pressed="true">Our order</button>
+      <button id="ordCmp" aria-pressed="false">Complaint order</button>
+    </div>
+    <span class="pill" id="srcPill">local files · offline</span>
+  </header>
+
+  <main>
+    <section id="panel">
+      <div class="hero">
+        <div class="ratio" id="ratio">—</div>
+        <div class="heroline">the exposed pedestrian-kilometres that the complaint
+          queue's first <strong id="nRep">40</strong> repairs would have restored.</div>
+        <p id="ratioNote"></p>
+      </div>
+
+      <div class="ctl">
+        <h4>Repair budget</h4>
+        <div class="row"><label for="budget">repairs</label>
+          <input id="budget" type="range" min="5" max="120" step="5" value="40">
+          <output id="budgetOut">40</output></div>
+      </div>
+
+      <div class="ctl">
+        <h4>Municipal priorities <span style="text-transform:none;letter-spacing:0;font-weight:400">— 0.50 is our default weighting</span></h4>
+        <div class="row"><label for="wD">Darkness</label>
+          <input id="wD" type="range" min="0" max="1" step="0.05" value="0.5">
+          <output id="wDOut">0.50</output></div>
+        <div class="row"><label for="wE">Exposure</label>
+          <input id="wE" type="range" min="0" max="1" step="0.05" value="0.5">
+          <output id="wEOut">0.50</output></div>
+        <div class="row"><label for="wC">Confidence</label>
+          <input id="wC" type="range" min="0" max="1" step="0.05" value="0.5">
+          <output id="wCOut">0.50</output></div>
+      </div>
+
+      <div id="listwrap">
+        <table>
+          <thead><tr><th>#</th><th>Road / ward</th><th>Dark</th><th>Exp</th>
+            <th>Conf</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+
+      <div class="legend">
+        <div><b>Darkness P(dark)</b>
+          <div class="swatches">
+            <span class="sw" style="background:var(--d0)"></span>
+            <span class="sw" style="background:var(--d1)"></span>
+            <span class="sw" style="background:var(--d2)"></span>
+            <span class="sw" style="background:var(--d3)"></span>
+            <span class="sw" style="background:var(--d4)"></span>
+            <span class="sw" style="background:var(--d5)"></span>
+          </div>
+        </div>
+        <div><b>Confidence = texture</b>
+          <div style="display:flex;gap:9px;align-items:center">
+            <svg width="112" height="30" aria-hidden="true">
+              <line x1="2" y1="6" x2="110" y2="6" stroke="#B1BAC6" stroke-width="3"/>
+              <line x1="2" y1="14" x2="110" y2="14" stroke="#B1BAC6" stroke-width="3"
+                stroke-dasharray="9 5"/>
+              <line x1="2" y1="22" x2="110" y2="22" stroke="#B1BAC6" stroke-width="3"
+                stroke-dasharray="2 5"/>
+            </svg>
+            <span>solid&nbsp;high<br>dashed&nbsp;medium<br>dotted&nbsp;low</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="map">
+      <div id="detail" role="dialog" aria-label="Segment detail">
+        <button class="close" id="detClose" aria-label="Close">×</button>
+        <h5 id="dName">—</h5><div class="w" id="dWard"></div>
+        <dl id="dList"></dl>
+        <p class="note" id="dNote"></p>
+      </div>
+      <div id="status">loading…</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="row" style="grid-template-columns:118px 190px 52px;margin:0">
+      <label for="reports">Simulated reports</label>
+      <input id="reports" type="range" min="0" max="400" step="10" value="0">
+      <output id="reportsOut">0</output>
+    </div>
+    <div class="seg" role="group" aria-label="Report simulation mode">
+      <button id="modeArrive" aria-pressed="true">as they arrive</button>
+      <button id="modeAsk" aria-pressed="false">we asked for</button>
+    </div>
+    <span class="sub" id="simNote">Reports arrive where people already report — biased
+      toward commercial, app-literate streets.</span>
+    <span class="grow"></span>
+    <button class="btn ghost" id="reset">Reset</button>
+    <button class="btn" id="csv">Download work order (CSV)</button>
+  </footer>
+</div>
+
+<script type="module">
+// v6 ships named exports only, no default
+import * as maplibregl from './vendor/maplibre-gl.mjs';
+
+const $ = (id) => document.getElementById(id);
+const fmt = (n, d = 2) => Number(n).toFixed(d);
+
+// ---------------------------------------------------------------- data
+const [segFC, baseFC, stats, sc] = await Promise.all([
+  fetch('./data/segments.demo.geojson').then(r => r.json()),
+  fetch('./data/basemap.geojson').then(r => r.json()),
+  fetch('./data/stats.json').then(r => r.json()),
+  fetch('./data/scoring.json').then(r => r.json()),
+]);
+
+// Maths runs over ALL scored segments; only the demo subset carries geometry.
+// Scoring the render subset instead would inflate our own side — that subset
+// was selected by priority — and produce a ratio that disagrees with the deck.
+const c = sc.columns;
+const SEGS = Array.from({ length: sc.n }, (_, i) => ({
+  segID: c.segID[i], ward: c.ward[i], lengthM: c.lengthM[i],
+  alpha: c.alpha[i], beta: c.beta[i], mean0: c.mean[i], var0: c.var[i],
+  exp: c.expBlended[i], act: c.expActivity[i], conf0: c.conf[i],
+  wardComplaints: c.wardComplaints[i], lampsBroken: c.lampsBroken[i],
+}));
+const GEOM = new Map(segFC.features.map(f => [f.properties.segID, f.geometry]));
+// "Wide band" has to be an ABSOLUTE variance cut, fixed at load. Confidence is
+// rank-normalised, so counting segments below a confidence percentile counts a
+// fixed fraction of the network by construction — the number could never fall
+// as reports arrive, which made the readout meaningless.
+const WIDE_CUT = (() => {
+  const v = SEGS.map(s => s.var0).sort((a, b) => a - b);
+  return v[Math.floor(0.8 * (v.length - 1))];
+})();
+const PROPS = new Map(segFC.features.map(f => [f.properties.segID, f.properties]));
+
+// beta is dark. One sign convention, asserted once — getting it backwards
+// silently inverts the whole product.
+console.assert(SEGS.every(s =>
+  Math.abs(s.beta / (s.alpha + s.beta) - s.mean0) < 1e-3),
+  'darkness.mean is not beta/(alpha+beta)');
+
+// Sliders are EXPONENTS, mapped w -> 2w, so 0.5 means exponent 1 and the
+// default objective is exactly the pipeline's repairPriority
+// (exposure x P(dark) x confidence). That is why the ratio here matches the
+// number on the deck instead of drifting from it.
+const state = {
+  budget: 40, wD: 0.5, wE: 0.5, wC: 0.5,
+  reports: 0, mode: 'arrive', ordering: 'ours', selected: null,
+};
+
+// Seeded RNG. Math.random made the headline ratio drift between renders, and a
+// number that changes on its own while a judge watches is worse than a number
+// that is slightly wrong.
+function rng(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6D2B79F5) >>> 0;
+    let x = Math.imul(a ^ (a >>> 15), 1 | a);
+    x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
+    return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+// ---------------------------------------------------------------- model
+// Which segments the simulated reports land on. The two modes are the whole
+// argument: reports as they actually arrive cluster where people already
+// report; reports we ask for go where a report would change a decision.
+function pickReported(n, mode) {
+  if (n === 0) return new Map();
+  const scored = SEGS.map((s, i) => {
+    const sd = Math.sqrt(s.var0);
+    const weight = mode === 'ask'
+      // upper confidence bound: streets that could plausibly enter the queue.
+      // Ranking by variance alone asks about streets no crew would visit and
+      // measurably loses to random sampling.
+      ? s.exp * Math.min(1, s.mean0 + 1.5 * sd) * s.lengthM
+      // activity-weighted: commercial, app-literate streets report themselves
+      : Math.pow(s.act, 3) * s.lengthM;
+    return { i, weight };
+  }).sort((a, b) => b.weight - a.weight);
+  const out = new Map();
+  for (const { i } of scored.slice(0, n)) out.set(i, true);
+  return out;
+}
+
+function scoreAll() {
+  const reported = pickReported(state.reports, state.mode);
+  const out = SEGS.map((s, i) => {
+    let { alpha, beta } = s;
+    if (reported.has(i)) {
+      // a report resolves the segment toward the estimate we already hold,
+      // with 2.5 units of evidence
+      alpha += 2.5 * (1 - s.mean0); beta += 2.5 * s.mean0;
+    }
+    const mean = beta / (alpha + beta);
+    const vari = (alpha * beta) / ((alpha + beta) ** 2 * (alpha + beta + 1));
+    return { s, mean, vari, reported: reported.has(i) };
+  });
+  // confidence is rank-normalised variance, recomputed so it stays comparable
+  const order = [...out].sort((a, b) => a.vari - b.vari);
+  order.forEach((o, k) => { o.conf = 1 - k / (order.length - 1); });
+  const eD = state.wD * 2, eE = state.wE * 2, eC = state.wC * 2;
+  for (const o of out) {
+    o.score = Math.pow(o.mean, eD) * Math.pow(o.s.exp, eE) * Math.pow(o.conf, eC);
+    o.value = o.s.exp * o.mean * o.s.lengthM;   // exposure-metres restored
+  }
+  return out;
+}
+
+// Complaint order names a ward, never a segment — the grievance file has no
+// coordinates. So the baseline draws a target inside the ward at random and we
+// average. 60 draws in the browser; the pipeline does 300.
+function counterfactual(scored, budget) {
+  const ours = [...scored].sort((a, b) => b.score - a.score).slice(0, budget)
+    .reduce((t, o) => t + o.value, 0);
+  const byWard = new Map();
+  for (const o of scored) {
+    const w = o.s.ward;
+    if (!byWard.has(w)) byWard.set(w, { n: o.s.wardComplaints, segs: [] });
+    byWard.get(w).segs.push(o);
+  }
+  const wards = [...byWard.entries()].filter(([, v]) => v.n > 0)
+    .sort((a, b) => b[1].n - a[1].n);
+  if (!wards.length) return { ratio: null, base: 0 };
+  const draws = [];
+  const rand = rng(17);
+  for (let d = 0; d < 60; d++) {
+    let total = 0, i = 0, taken = new Set();
+    while (taken.size < budget && i < budget * 20) {
+      const pool = wards[i % wards.length][1].segs;
+      const pick = pool[(rand() * pool.length) | 0];
+      if (pick && !taken.has(pick)) { taken.add(pick); total += pick.value; }
+      i++;
+    }
+    draws.push(total);
+  }
+  draws.sort((a, b) => a - b);
+  const base = draws.reduce((a, b) => a + b, 0) / draws.length;
+  return {
+    ratio: base ? ours / base : null, base,
+    p5: draws[Math.floor(draws.length * 0.05)],
+    p95: draws[Math.floor(draws.length * 0.95)],
+  };
+}
+
+// ---------------------------------------------------------------- map
+const D = ['#FDE9C4', '#FFC107', '#C77E33', '#7E5A63', '#3B4A7A', '#232B54'];
+const map = new maplibregl.Map({
+  container: 'map',
+  style: { version: 8, sources: {}, layers: [
+    { id: 'bg', type: 'background', paint: { 'background-color': '#0B0F14' } }] },
+  center: [77.652, 12.932], zoom: 12.4, attributionControl: false,
+});
+map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
+map.addControl(new maplibregl.AttributionControl({
+  compact: true, customAttribution: '© OpenStreetMap contributors (ODbL) · BBMP · BMTC',
+}));
+
+await new Promise(r => map.on('load', r));
+
+// Our own basemap. Drawing the road network we already hold means the demo
+// makes no network call at all — hackathon wifi fails at exactly the wrong
+// moment, and a tile request is the only thing that would have needed it.
+map.addSource('base', { type: 'geojson', data: baseFC });
+map.addLayer({ id: 'base', type: 'line', source: 'base',
+  paint: { 'line-color': '#18202a', 'line-width': ['interpolate', ['linear'], ['zoom'],
+    11, 0.4, 15, 1.6] } });
+
+map.addSource('segs', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+// Confidence is carried by TEXTURE, not hue. A hatched or dotted line is an
+// extrinsic overlay — the uncertainty stays separable from the value beneath —
+// and texture survives colour blindness, which a light-to-dark ramp does not.
+for (const [id, filter, dash] of [
+  ['segs-solid', ['>=', ['get', 'conf'], 0.66], null],
+  ['segs-dash', ['all', ['<', ['get', 'conf'], 0.66], ['>=', ['get', 'conf'], 0.33]], [2.4, 1.4]],
+  ['segs-dot', ['<', ['get', 'conf'], 0.33], [0.6, 1.8]],
+]) {
+  map.addLayer({
+    id, type: 'line', source: 'segs', filter,
+    layout: { 'line-cap': 'round' },
+    paint: {
+      'line-color': ['step', ['get', 'dark'], D[0], 0.17, D[1], 0.34, D[2],
+        0.5, D[3], 0.67, D[4], 0.84, D[5]],
+      // width and opacity both rise with darkness: a lit street should recede,
+      // a dark one should shout. Colour alone left the map reading as an
+      // ordinary road atlas.
+      // zoom must sit directly under interpolate, so the darkness factor lives
+      // in the stop outputs rather than multiplying the whole expression.
+      'line-width': ['interpolate', ['linear'], ['zoom'],
+        11, ['case', ['get', 'picked'], 3.0, ['+', 0.5, ['*', 1.5, ['get', 'dark']]]],
+        13, ['case', ['get', 'picked'], 5.0, ['+', 0.9, ['*', 2.6, ['get', 'dark']]]],
+        16, ['case', ['get', 'picked'], 11.0, ['+', 1.8, ['*', 5.5, ['get', 'dark']]]]],
+      'line-opacity': ['case', ['get', 'picked'], 1,
+        ['+', 0.28, ['*', 0.62, ['get', 'dark']]]],
+      ...(dash ? { 'line-dasharray': dash } : {}),
+    },
+  });
+}
+map.addLayer({
+  id: 'segs-sel', type: 'line', source: 'segs',
+  filter: ['==', ['get', 'sel'], true],
+  paint: { 'line-color': '#fff', 'line-width': 6, 'line-opacity': 0.9, 'line-blur': 0.4 },
+});
+map.addLayer({
+  id: 'reported', type: 'circle', source: 'segs',
+  filter: ['==', ['get', 'reported'], true],
+  paint: { 'circle-radius': 3.2, 'circle-color': '#7C9BFF', 'circle-opacity': 0.85 },
+});
+
+// ---------------------------------------------------------------- render
+let last = [];
+function render() {
+  const scored = scoreAll();
+  const ranked = [...scored].sort((a, b) => b.score - a.score);
+  const cmp = [...scored].sort((a, b) =>
+    (b.s.wardComplaints - a.s.wardComplaints) || (b.value - a.value));
+  const shown = (state.ordering === 'ours' ? ranked : cmp).slice(0, state.budget);
+  last = shown;
+  const pickedIds = new Set(shown.map(o => o.s.segID));
+
+  const cf = counterfactual(scored, state.budget);
+  $('ratio').textContent = cf.ratio ? fmt(cf.ratio, 1) + '×' : '—';
+  $('nRep').textContent = $('budgetOut').textContent = state.budget;
+  $('ratioNote').textContent = cf.ratio
+    ? `Complaint order restores ${Math.round(cf.base)} exposure-metres on average `
+      + `(90% of draws ${Math.round(cf.p5)}–${Math.round(cf.p95)}). `
+      + `A complaint names a ward, never a street, so the baseline is simulated.`
+    : '';
+
+  // worklist
+  const tb = $('rows'); tb.textContent = '';
+  shown.forEach((o, i) => {
+    const tr = document.createElement('tr');
+    tr.setAttribute('aria-selected', state.selected === o.s.segID);
+    tr.onclick = () => select(o.s.segID, true);
+    const pr = PROPS.get(o.s.segID) || {};
+    const nm = pr.name || `<span style="color:#7A8696">unnamed ${pr.roadClass || 'road'}</span>`;
+    tr.innerHTML =
+      `<td class="rank">${i + 1}</td>` +
+      `<td class="st">${nm}<small>${o.s.ward} · ${Math.round(o.s.lengthM)} m` +
+        `${o.reported ? ' · reported' : ''}</small></td>` +
+      `<td><div class="bar"><i style="width:${(o.mean * 100).toFixed(0)}%;` +
+        `background:var(--brand)"></i></div></td>` +
+      `<td><div class="bar"><i style="width:${(o.s.exp * 100).toFixed(0)}%;` +
+        `background:var(--teal)"></i></div></td>` +
+      `<td><span class="conf" style="background:${o.conf >= 0.66 ? 'var(--text-2)' :
+        'transparent'};border:1px ${o.conf >= 0.66 ? 'solid' : o.conf >= 0.33 ? 'dashed' :
+        'dotted'} var(--text-3)"></span></td>`;
+    tb.appendChild(tr);
+  });
+
+  map.getSource('segs').setData({
+    type: 'FeatureCollection',
+    features: scored.filter(o => GEOM.has(o.s.segID)).map(o => ({
+      type: 'Feature', geometry: GEOM.get(o.s.segID),
+      properties: {
+        segID: o.s.segID, dark: o.mean, conf: o.conf,
+        picked: pickedIds.has(o.s.segID),
+        sel: state.selected === o.s.segID,
+        reported: o.reported,
+      },
+    })),
+  });
+
+  const wide = scored.filter(o => o.vari > WIDE_CUT).length;
+  const wideExposed = scored.filter(o => o.vari > WIDE_CUT && o.s.exp > 0.6).length;
+  $('status').innerHTML =
+    `<b style="color:var(--text-1)">${wide.toLocaleString()}</b> segments still `
+    + `wide-band &nbsp;·&nbsp; <b style="color:var(--brand)">${wideExposed}</b> of them `
+    + `busy after dark &nbsp;·&nbsp; ${state.reports} reports &nbsp;·&nbsp; `
+    + `all maths in this browser, no network`;
+}
+
+function select(id, fly) {
+  state.selected = state.selected === id ? null : id;
+  const o = last.find(x => x.s.segID === state.selected)
+    || scoreAll().find(x => x.s.segID === state.selected);
+  const d = $('detail');
+  if (!state.selected || !o) { d.style.display = 'none'; render(); return; }
+  const pr = PROPS.get(o.s.segID) || {};
+  const ev = pr.evidence || {};
+  $('dName').textContent = pr.name || 'unnamed ' + (pr.roadClass || 'road');
+  $('dWard').textContent =
+    `${o.s.ward} · ${pr.roadClass || '—'} · ${Math.round(o.s.lengthM)} m`;
+  $('dList').innerHTML = [
+    ['P(dark)', fmt(o.mean)], ['Uncertainty (var)', fmt(o.vari, 3)],
+    ['Confidence', fmt(o.conf)],
+    ['Exposure — commuter', pr.exposure ? fmt(pr.exposure.structural) : '—'],
+    ['Exposure — activity', fmt(o.s.act)],
+    ['OSM lamps working', ev.osmLampsWorking ?? '—'],
+    ['OSM lamps broken', o.s.lampsBroken],
+    ['Night bus departures', ev.nightBusTrips != null ? fmt(ev.nightBusTrips, 0) : '—'],
+    ["Ward's 2025 complaints", o.s.wardComplaints],
+  ].map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
+  $('dNote').textContent = o.conf < 0.33
+    ? 'Wide confidence band. The router avoids this stretch and the report screen sends people to it.'
+    : o.s.lampsBroken > 0
+      ? `${o.s.lampsBroken} lamps here are tagged not working in OpenStreetMap.`
+      : 'No lamp evidence on this stretch — the score is the ward prior plus exposure.';
+  d.style.display = 'block';
+  const g = GEOM.get(o.s.segID);
+  if (fly && g) map.flyTo({ center: g.coordinates[Math.floor(g.coordinates.length / 2)],
+    zoom: Math.max(map.getZoom(), 14.4), duration: 550 });
+  render();
+}
+
+map.on('click', 'segs-solid', e => select(e.features[0].properties.segID, false));
+map.on('click', 'segs-dash', e => select(e.features[0].properties.segID, false));
+map.on('click', 'segs-dot', e => select(e.features[0].properties.segID, false));
+for (const l of ['segs-solid', 'segs-dash', 'segs-dot']) {
+  map.on('mouseenter', l, () => map.getCanvas().style.cursor = 'pointer');
+  map.on('mouseleave', l, () => map.getCanvas().style.cursor = '');
+}
+$('detClose').onclick = () => { state.selected = null; $('detail').style.display = 'none'; render(); };
+
+// ---------------------------------------------------------------- controls
+const bind = (id, key, out, dp) => $(id).addEventListener('input', e => {
+  state[key] = +e.target.value;
+  if (out) $(out).textContent = dp === 0 ? state[key] : fmt(state[key], dp);
+  render();
+});
+bind('budget', 'budget', 'budgetOut', 0);
+bind('wD', 'wD', 'wDOut', 2);
+bind('wE', 'wE', 'wEOut', 2);
+bind('wC', 'wC', 'wCOut', 2);
+bind('reports', 'reports', 'reportsOut', 0);
+
+const pair = (aId, bId, set) => {
+  const a = $(aId), b = $(bId);
+  a.onclick = () => { a.setAttribute('aria-pressed', 'true');
+    b.setAttribute('aria-pressed', 'false'); set(0); render(); };
+  b.onclick = () => { b.setAttribute('aria-pressed', 'true');
+    a.setAttribute('aria-pressed', 'false'); set(1); render(); };
+};
+pair('ordOurs', 'ordCmp', v => state.ordering = v ? 'complaint' : 'ours');
+pair('modeArrive', 'modeAsk', v => {
+  state.mode = v ? 'ask' : 'arrive';
+  $('simNote').textContent = v
+    ? 'Reports we asked for — chosen where a report would change a repair decision.'
+    : 'Reports arrive where people already report — biased toward commercial, app-literate streets.';
+});
+
+$('reset').onclick = () => {
+  Object.assign(state, { budget: 40, wD: 0.5, wE: 0.5, wC: 0.5, reports: 0,
+    mode: 'arrive', ordering: 'ours', selected: null });
+  for (const [id, v] of [['budget', 40], ['wD', 0.5], ['wE', 0.5], ['wC', 0.5],
+    ['reports', 0]]) $(id).value = v;
+  $('budgetOut').textContent = 40; $('wDOut').textContent = '0.50';
+  $('wEOut').textContent = '0.50'; $('wCOut').textContent = '0.50';
+  $('reportsOut').textContent = 0;
+  $('ordOurs').setAttribute('aria-pressed', 'true');
+  $('ordCmp').setAttribute('aria-pressed', 'false');
+  $('modeArrive').setAttribute('aria-pressed', 'true');
+  $('modeAsk').setAttribute('aria-pressed', 'false');
+  $('detail').style.display = 'none';
+  render();
+};
+
+// The output that makes this a tool rather than a dashboard: a work order a
+// municipal engineer can act on. Civic dashboards fail by being looked at.
+$('csv').onclick = () => {
+  const head = ['rank', 'segID', 'ward', 'road', 'roadClass', 'lengthM', 'pDark',
+    'confidence', 'exposureCommuter', 'exposureActivity', 'lampsBroken',
+    'wardComplaints2025', 'restoredExposureM'];
+  const rows = last.map((o, i) => {
+    const pr = PROPS.get(o.s.segID) || {};
+    return [i + 1, o.s.segID, o.s.ward,
+      (pr.name || 'unnamed ' + (pr.roadClass || 'road')).replaceAll(',', ' '),
+      pr.roadClass || '', Math.round(o.s.lengthM), fmt(o.mean), fmt(o.conf),
+      pr.exposure ? fmt(pr.exposure.structural) : '', fmt(o.s.act),
+      o.s.lampsBroken, o.s.wardComplaints, Math.round(o.value)];
+  });
+  const csv = [head, ...rows].map(r => r.join(',')).join('\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+  a.download = `roshni-work-order-${state.budget}-repairs.csv`;
+  a.click(); URL.revokeObjectURL(a.href);
+};
+
+render();
+$('srcPill').textContent =
+  `${stats.segments.toLocaleString()} segments · ${stats.totalCorridorKm} km · offline`;
+</script>
