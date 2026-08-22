@@ -60,7 +60,7 @@ d = ImageDraw.Draw(im)
 
 d.text((90, 74), "One estimate. Two decisions.", font=f(B, 62), fill=TEXT)
 d.text((92, 152), "Everything on this diagram runs from a single darkness estimate "
-                  "per 200 m of street.", font=f(R, 30), fill=DIM)
+                  "per 150 m of street.", font=f(R, 30), fill=DIM)
 
 COL1, COL2, COL3 = 90, 900, 1620
 TOP = 250
@@ -92,7 +92,7 @@ d.text((COL1 + 34, TOP + 600), "GPS and a timestamp. No account, and no\n"
 card(d, (COL2, TOP + 90, COL2 + 560, TOP + 560), stroke=INDIGO)
 d.text((COL2 + 40, TOP + 126), "ROSHNI", font=f(B, 34), fill=INDIGO)
 d.text((COL2 + 40, TOP + 182),
-       "One darkness estimate per\n200 m of street, each with\na confidence band.",
+       "One darkness estimate per\n150 m of street, each with\na confidence band.",
        font=f(R, 31), fill=TEXT, spacing=12)
 d.line((COL2 + 40, TOP + 330, COL2 + 520, TOP + 330), fill=HAIR, width=2)
 for i, (k, v) in enumerate([
