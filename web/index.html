@@ -10,6 +10,9 @@
      stopped being the thing you look at. -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Inline, so it costs no request. Without it the browser asks for
+     /favicon.ico on every load and logs a 404 in anyone's devtools. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%230B0F14'/%3E%3Cpath d='M7 3h3v18H7z' fill='%23FFB300' opacity='.5'/%3E%3Ccircle cx='14' cy='5' r='4.2' fill='%23FFC107'/%3E%3C/svg%3E">
 <title>Roshni — dark streets, reordered by who walks</title>
 <link rel="stylesheet" href="./vendor/maplibre-gl.css">
 <style>
@@ -311,6 +314,24 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border:0;
   border-left:2px solid var(--brand);font-size:13.5px;color:var(--text-2)}
 .limit b{color:var(--text-1)}
 
+/* ---------------------------------------------------------------- boot */
+/* Cold first load pulls ~1.6 MB gzipped and parses about 9 MB of JSON, which
+   took ~9 s over the network in testing. The markup renders in 150 ms, so
+   without this the visitor sits looking at a header and an empty black square
+   and concludes the thing is broken. Second load is ~1.1 s from cache. */
+#boot{position:absolute;inset:0;z-index:30;background:var(--bg-0);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;text-align:center;padding:24px}
+#boot.gone{display:none}
+#boot .bl{width:26px;height:26px;border-radius:50%;background:var(--brand);
+  box-shadow:0 0 0 10px rgba(255,193,7,.12),0 0 34px 8px rgba(255,193,7,.35);
+  animation:bpulse 1.6s ease-in-out infinite}
+@keyframes bpulse{0%,100%{opacity:.45;transform:scale(.9)}50%{opacity:1;transform:scale(1.05)}}
+#boot b{font-size:15px;font-weight:600;letter-spacing:-.01em}
+#boot span{font-size:13px;color:var(--text-3);max-width:34ch;line-height:1.5}
+#boot .err{color:var(--brand)}
+@media (prefers-reduced-motion:reduce){#boot .bl{animation:none;opacity:.9}}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
 /* ---------------------------------------------------------------- narrow */
@@ -361,6 +382,16 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border:0;
 
   <div id="stage">
     <div id="map"></div>
+
+    <!-- Removed by the module script once the first render lands. If the script
+         throws, the error handler below rewrites this instead of leaving a
+         spinner running forever. -->
+    <div id="boot">
+      <div class="bl"></div>
+      <b>Reading Bengaluru's street network</b>
+      <span id="bootMsg">Eleven thousand street segments, all computed in this
+        browser. First visit takes a few seconds; after that it is instant.</span>
+    </div>
 
     <!-- MAP: the public dark-zone risk map. The problem statement's first
          deliverable, and the default screen. -->
@@ -542,6 +573,21 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border:0;
   </div>
 </div>
 
+<script>
+// Plain script, deliberately before the module: a module that fails to parse or
+// throws at top level would otherwise leave the boot screen pulsing forever with
+// no explanation. Anything that reaches here is fatal, so say so plainly.
+window.addEventListener('error', (e) => {
+  const b = document.getElementById('boot');
+  if (!b || b.classList.contains('gone')) return;
+  const m = document.getElementById('bootMsg');
+  if (m) {
+    m.className = 'err';
+    m.textContent = 'Could not load: ' + (e.message || 'unknown error')
+      + '. A hard reload usually fixes it.';
+  }
+});
+</script>
 <script type="module">
 // v6 ships named exports only, no default
 import * as maplibregl from './vendor/maplibre-gl.mjs';
@@ -1725,4 +1771,5 @@ $('mapScope').innerHTML =
   `Not a uniform sample &mdash; it is the shortlist.</span>`;
 setView('map');
 drawLabels();
+$('boot').classList.add('gone');
 </script>
