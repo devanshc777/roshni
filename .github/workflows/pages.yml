@@ -1,0 +1,82 @@
+# Deploy the app to GitHub Pages.
+#
+# Only web/ is published. Everything else in this repo — the pipeline, the raw
+# sources, the docs, the deck — stays out of the deployed site, which keeps the
+# payload at what the app actually needs (9.2 MB raw, ~1.6 MB gzipped; Pages
+# gzips text automatically).
+#
+# The app has no build step. index.html is hand-written, MapLibre is vendored in
+# web/vendor, and every data file is precomputed into web/data, so "build" here
+# is just uploading a directory.
+#
+# One-time manual step: repo Settings -> Pages -> Source -> "GitHub Actions".
+# Until that is set, this workflow runs and fails at the deploy step.
+name: pages
+
+on:
+  push:
+    branches: [main, reimagine]
+    paths:
+      - 'web/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+# Least privilege: read the repo, write a Pages deployment, and nothing else.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race. Queue rather than cancel, so a demo-day push is
+# not silently dropped by a later one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Fail loudly here rather than shipping a site that loads and then dies on
+      # a missing fetch. The app needs every one of these at runtime.
+      - name: Check the app has everything it needs
+        run: |
+          set -euo pipefail
+          required=(
+            web/index.html
+            web/vendor/maplibre-gl.mjs
+            web/vendor/maplibre-gl.css
+            # imported by the bundle itself, so index.html never names it and
+            # the reference check below cannot see it
+            web/vendor/maplibre-gl-shared.mjs
+            web/vendor/maplibre-gl-worker.mjs
+            web/data/segments.demo.geojson
+            web/data/basemap.geojson
+            web/data/scoring.json
+            web/data/graph.json
+            web/data/routes.json
+            web/data/stats.json
+            web/data/city.geojson
+            web/data/city_labels.json
+          )
+          for f in "${required[@]}"; do
+            test -s "$f" || { echo "MISSING OR EMPTY: $f"; exit 1; }
+          done
+          # every ./data and ./vendor reference in the page must resolve
+          grep -oE "\./(data|vendor)/[A-Za-z0-9._-]+" web/index.html \
+            | sort -u | while read -r ref; do
+              test -e "web/${ref#./}" || { echo "BROKEN REF: $ref"; exit 1; }
+            done
+          echo "payload: $(du -sh web | cut -f1)"
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - id: deploy
+        uses: actions/deploy-pages@v4

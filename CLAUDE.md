@@ -49,6 +49,7 @@ that street at 11pm. Roshni re-sorts the queue by pedestrian exposure.
 | `docs/measured-2026-08-22.md` | **Authority on every number.** Confirmed / corrected / dead, plus the counterfactual and the infrastructure gotchas. Read before quoting anything. |
 | `docs/ps-adherence.md` | **Audit against the problem-statement text**, not our narrative. What the PS names vs what exists, the generality claim as an input ladder, the product story, and why the citizen screens must be plain. |
 | `docs/positioning.md` | Positioning via competitive alternatives. The category is "repair-prioritisation layer for street lighting" — a layer, not a replacement. Carries the one-liner and the pitch opening. |
+| `docs/deploy.md` | **How to run and deploy it.** Local server is the demo path; GitHub Pages is the backup, with the one manual settings step. |
 | `docs/reimagine-report.md` | **What is built now**, screen by screen, with screenshots and the provenance of every on-screen number. Start here for the current state. |
 | `docs/reimagine-demo.md` | **The demo script.** Four clicks, what to say per beat, the questions you will get, and the traps. |
 | `docs/reimagined-plan.md` | The presentation rebuild: the diagnosis, the plan, and what a three-lens review round changed before and during the build. |
