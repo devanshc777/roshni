@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "product-positioning": {
+      "source": "assimovt/productskills",
+      "sourceType": "github",
+      "skillPath": "skills/product-positioning/SKILL.md",
+      "computedHash": "fa2261bf1bdd9188d1ae1dff5e66892532ad0bde0b5159680dab966e06ef3b1a"
+    }
+  }
+}
