@@ -48,7 +48,9 @@ that street at 11pm. Roshni re-sorts the queue by pedestrian exposure.
 | `docs/ps-adherence.md` | **Audit against the problem-statement text**, not our narrative. What the PS names vs what exists, the generality claim as an input ladder, the product story, and why the citizen screens must be plain. |
 | `docs/positioning.md` | Positioning via competitive alternatives. The category is "repair-prioritisation layer for street lighting" — a layer, not a replacement. Carries the one-liner and the pitch opening. |
 | `docs/mvp-plan.md` · `docs/mvp-plan-log.md` | The build plan and the four verification passes behind it, including the two places building it overruled the plan. |
-| `web/index.html` | **The working app.** Three tabs — Walk home, Report, City queue. Vanilla, one file, offline. `python -m http.server 8080 --directory web`. |
+| `web/index.html` | **The working app.** Four tabs — Live feed, Walk home, Report, City queue. Vanilla, one file, offline, responsive. `python -m http.server 8080 --directory web`. |
+| `PRODUCT.md` | Product truth: the two sides (customer vs user), the use scene that decides the design, the surface table, and the product rules. |
+| `assets/diagrams.py` | Renders the two deck diagrams from `out/stats.json` so they cannot drift. |
 | `docs/deck-start-here.md` | **Onboarding for the non-developers.** Setup, read order, build order, who-does-what, the eight key takeaways, the six traps that get you caught, definition of done. Point deck teammates here first. |
 | `docs/ppt.md` | **Build the deck from this.** Verbatim slide copy for all 16 slides, visual system, per-slide do/do-not notes, asset checklist, number provenance, generator prompts, QA pass. Non-developer can finish the deck from this file alone. |
 | `docs/deck-outline.md` | The reasoning behind the deck — why each slide exists. `ppt.md` is the buildable version. |

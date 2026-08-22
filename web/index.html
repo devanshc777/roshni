@@ -104,14 +104,17 @@
   /* citizen views. Deliberately sparse: one decision per screen, no jargon,
      no number the user cannot act on. The console next door is dense because
      its user is an engineer at a desk; these are for someone alone at 23:00. */
-  .cit{padding:20px 18px;overflow:auto;min-height:0;flex:1}
+  .cit{padding:18px;overflow:auto;min-height:0;flex:1}
   .cit h2{margin:0 0 4px;font-size:21px;font-weight:600;color:var(--text-0)}
   .cit .lede{color:var(--text-2);font-size:13px;margin:0 0 18px}
   .big{width:100%;border:0;border-radius:14px;background:var(--brand);
     color:#241a00;font-size:19px;font-weight:700;padding:20px;margin:2px 0 8px;
     box-shadow:0 0 0 6px rgba(255,193,7,.1)}
   .big:hover{background:var(--brand-2)}
-  .meta{display:flex;gap:14px;color:var(--text-3);font-size:11.5px;margin-bottom:22px}
+  .meta{display:flex;gap:16px;color:var(--text-3);font-size:11.5px;margin-bottom:22px}
+  .meta span{display:inline-flex;align-items:center;gap:5px}
+  .meta svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.4;
+    stroke-linecap:round;stroke-linejoin:round}
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:11px}
   .card{border:1px solid var(--line);border-radius:12px;padding:13px;background:var(--bg-0)}
   .card.sel{border-color:var(--teal);background:rgba(38,198,166,.06)}
@@ -152,9 +155,76 @@
   .impact{margin-top:14px;border:1px solid var(--teal);border-radius:11px;padding:12px;
     background:rgba(38,198,166,.07);font-size:12.5px;color:var(--text-1)}
   .disc{margin-top:18px;font-size:11px;color:var(--text-3);line-height:1.45}
+  /* live feed */
+  .transport{display:flex;align-items:center;gap:9px;margin:4px 0 14px}
+  .tbtn{border:1px solid var(--brand);color:var(--brand);border-radius:9px;
+    padding:9px 20px;font-size:13px;font-weight:600;min-width:86px}
+  .tbtn:hover{background:rgba(255,193,7,.1)}
+  .tbtn.ghost{border-color:var(--line);color:var(--text-2);font-weight:400;min-width:0}
+  .tbtn.ghost:hover{background:var(--bg-2)}
+  .speeds{display:flex;margin-left:auto;border:1px solid var(--line);border-radius:8px;
+    overflow:hidden}
+  .speeds button{padding:7px 11px;font-size:11.5px;color:var(--text-3)}
+  .speeds button[aria-pressed=true]{background:var(--bg-3);color:var(--text-1)}
+  #feedScrub{width:100%}
+  .tmeta{display:flex;align-items:baseline;gap:9px;margin-top:7px;
+    font-size:12px;color:var(--text-3)}
+  .tmeta b{font-size:19px;color:var(--text-0);font-weight:700;
+    font-variant-numeric:tabular-nums}
+  .tmeta span{margin-left:auto;color:var(--brand);font-size:11.5px}
+  /* Capped height rather than a row count, so the consequence block below can
+     never be pushed under the fold by a taller feed. */
+  .ticker{list-style:none;margin:0;padding:0;border:1px solid var(--line);
+    border-radius:12px;overflow:hidden;max-height:150px}
+  .ticker li{display:flex;align-items:center;gap:10px;padding:9px 12px;
+    border-bottom:1px solid var(--line);font-size:12.5px}
+  .ticker li:last-child{border-bottom:0}
+  .ticker li:nth-child(n+4){opacity:.45}
+  .ticker .dot{width:6px;height:6px;flex:0 0 6px;border-radius:50%;
+    background:var(--text-3)}
+  .ticker .fresh .dot{background:var(--brand);box-shadow:0 0 0 4px rgba(255,193,7,.16)}
+  .ticker .fresh{animation:land .42s cubic-bezier(.16,1,.3,1)}
+  @keyframes land{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:none}}
+  .ticker .nm{flex:1;color:var(--text-1)}
+  .ticker .wd{color:var(--text-3);font-size:11.5px}
+  .ticker .idle .nm{color:var(--text-3)}
+  .conseq{display:grid;gap:14px}
+  .conseq>div+div{border-top:1px solid var(--line);padding-top:14px}
+  .who{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--text-3);font-weight:600;margin-bottom:7px}
+  .conseq p{margin:0 0 8px;font-size:13.5px;line-height:1.5;color:var(--text-1)}
+  .conseq em{font-style:normal;color:var(--teal)}
+  .conseq b{color:var(--brand);font-weight:700;font-variant-numeric:tabular-nums}
   .hidden{display:none!important}
+  /* narrow: the panel becomes the whole screen and the map sits above it */
+  /* Narrow. body has overflow:hidden, so anything too wide is silently clipped
+     rather than scrolling — every element here has to actually fit. */
+  @media (max-width:900px){
+    main{grid-template-columns:1fr;grid-template-rows:36vh 1fr}
+    #map{order:-1}
+    #panel,.cit{border-right:0}
+    .conseq{gap:14px}
+    footer{flex-wrap:wrap;height:auto;padding:10px 14px;gap:10px}
+    #app{grid-template-rows:52px 1fr auto}
+    header{gap:10px;padding:0 12px}
+    .brand{font-size:13px}
+    .sub,.pill,#status{display:none}
+    .seg button{padding:7px 10px;font-size:12px}
+    .cit{padding:16px 14px}
+    .cit h2{font-size:19px}
+    .ticker .wd{max-width:40%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .transport{flex-wrap:wrap}
+    .speeds{margin-left:0}
+    .tbtn{min-width:0;flex:1}
+    #detail{right:8px;left:8px;width:auto}
+  }
+  /* very narrow: the wordmark alone, tabs get the rest */
+  @media (max-width:430px){
+    header>div:first-of-type{display:none}
+    .seg button{padding:7px 8px;font-size:11.5px}
+  }
   h3.sec{font-size:11px;letter-spacing:.09em;text-transform:uppercase;
-    color:var(--text-3);margin:22px 0 9px;font-weight:600}
+    color:var(--text-3);margin:18px 0 8px;font-weight:600}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
@@ -169,6 +239,7 @@
       <div class="sub" id="subtitle">Repair Prioritisation · Municipal Engineer Console</div>
     </div>
     <div class="seg" role="group" aria-label="View">
+      <button id="tabFeed" aria-pressed="false">Live feed</button>
       <button id="tabWalk" aria-pressed="false">Walk home</button>
       <button id="tabReport" aria-pressed="false">Report</button>
       <button id="tabCity" aria-pressed="true">City queue</button>
@@ -244,6 +315,44 @@
       </div>
     </section>
 
+    <section id="viewFeed" class="cit hidden">
+      <h2>One report, two decisions</h2>
+      <p class="lede">Reports arrive the way they really do: busy, commercial,
+        app-literate streets first.</p>
+
+      <div class="transport">
+        <button class="tbtn" id="feedPlay" aria-pressed="false">Play</button>
+        <button class="tbtn ghost" id="feedReset">Reset</button>
+        <div class="speeds" role="group" aria-label="Speed">
+          <button data-speed="2" aria-pressed="false">1×</button>
+          <button data-speed="8" aria-pressed="true">4×</button>
+          <button data-speed="24" aria-pressed="false">12×</button>
+        </div>
+      </div>
+      <input id="feedScrub" type="range" min="0" max="1200" step="10" value="0"
+        aria-label="Reports received">
+      <div class="tmeta"><b id="feedCount">0</b> reports received
+        <span id="feedStage">day zero</span></div>
+
+      <h3 class="sec">Arriving now</h3>
+      <ul class="ticker" id="tick"></ul>
+
+      <h3 class="sec">What that changes</h3>
+      <div class="conseq">
+        <div>
+          <div class="who">Someone walking home</div>
+          <p id="walkLine"></p>
+        </div>
+        <div>
+          <div class="who">The city</div>
+          <p id="cityLine1"></p>
+          <p id="cityLine2"></p>
+        </div>
+      </div>
+      <p class="disc">Same numbers as the other two tabs — they read one shared
+        estimate, so nothing here is staged separately.</p>
+    </section>
+
     <section id="viewWalk" class="cit hidden">
       <h2>Get home with better light</h2>
       <p class="lede">Two ways to walk it. You choose.</p>
@@ -258,8 +367,11 @@
       <h2>Is this stretch dark?</h2>
       <p class="lede">One tap. No account, no lamp number to find.</p>
       <button class="big" id="tapDark">This stretch is dark</button>
-      <div class="meta"><span>📍 Location ready</span><span>🕘 23:11</span>
-        <span>📷 Photo optional</span></div>
+      <div class="meta">
+        <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14.5s5-4.6 5-8a5 5 0 1 0-10 0c0 3.4 5 8 5 8Z"/><circle cx="8" cy="6.4" r="1.9"/></svg>Location ready</span>
+        <span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.4V8l2.6 1.6"/></svg>23:11</span>
+        <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.2 5.4h2.4l1-1.6h4.8l1 1.6h2.4v7.2H2.2z"/><circle cx="8" cy="9" r="2.2"/></svg>Photo optional</span>
+      </div>
 
       <h3 class="sec">Streets worth checking tonight</h3>
       <div class="worth" id="worth"></div>
@@ -283,7 +395,7 @@
   <footer id="cityFooter">
     <div class="row" style="grid-template-columns:118px 190px 52px;margin:0">
       <label for="reports">Simulated reports</label>
-      <input id="reports" type="range" min="0" max="400" step="10" value="0">
+      <input id="reports" type="range" min="0" max="1200" step="10" value="0">
       <output id="reportsOut">0</output>
     </div>
     <div class="seg" role="group" aria-label="Report simulation mode">
@@ -384,8 +496,12 @@ function pickReported(n, mode) {
   return out;
 }
 
-function scoreAll() {
-  const reported = pickReported(state.reports, state.mode);
+const scoreAt = (n) => scoreAll(n, 'arrive');
+
+function scoreAll(nOverride, modeOverride) {
+  const nRep = nOverride === undefined ? state.reports : nOverride;
+  const mode = modeOverride === undefined ? state.mode : modeOverride;
+  const reported = pickReported(nRep, mode);
   const out = SEGS.map((s, i) => {
     let { alpha, beta } = s;
     if (reported.has(i)) {
@@ -987,25 +1103,194 @@ $('tapDark').onclick = () => {
   if (best) fileReport(best);
 };
 
+
+/* ==========================================================================
+   Live feed. The surface whose job is comprehension: one report goes in here,
+   and you can watch it become two different outputs. Every number on it is the
+   same number the other tabs show, because the whole point is that the
+   connection is provable rather than asserted.
+   ========================================================================== */
+const FEED_MAX = 1200;
+const feed = { playing: false, t: 0, speed: 8, timer: null,
+               baseTop: null, baseRoute: null, baseWide: null };
+
+// Arrival order, biased by activity: reports come from commercial, app-literate
+// streets first. That bias is the thesis, so the demo has to reproduce it
+// rather than sprinkle reports uniformly and look fair.
+let ARRIVAL = null;
+function arrivalOrder() {
+  if (ARRIVAL) return ARRIVAL;
+  ARRIVAL = SEGS.map((s, i) => ({ i, w: Math.pow(s.act, 3) * s.lengthM }))
+    .filter(o => GEOM.has(SEGS[o.i].segID))
+    .sort((a, b) => b.w - a.w).map(o => o.i);
+  return ARRIVAL;
+}
+
+function feedBaselines() {
+  if (feed.baseTop) return;
+  const at0 = scoreAt(0);
+  feed.baseTop = new Set([...at0].sort((a, b) => b.score - a.score).slice(0, 40)
+    .map(o => o.s.segID));
+  feed.baseRoute = routeUnknownShare(at0);
+  feed.baseWide = at0.filter(o => o.vari > WIDE_CUT && o.s.exp > 0.6).length;
+}
+
+// Unknown share on tonight's first journey, given a belief state. This is the
+// number the walker actually feels, so it is the walker-side readout.
+function routeUnknownShare(scored) {
+  const by = new Map(scored.map(o => [o.s.segID, o]));
+  const J = JOURNEYS[0];
+  const a = nearestNode(J.from[0], J.from[1]), b = nearestNode(J.to[0], J.to[1]);
+  const saveSeg = new Map(SEGBY);
+  SEGBY.clear(); for (const [k, v] of by) SEGBY.set(k, v);
+  const p = dijkstra(a, b, (len) => len);
+  const st = p ? pathStats(p) : { unknown: 0 };
+  SEGBY.clear(); for (const [k, v] of saveSeg) SEGBY.set(k, v);
+  return st.unknown;
+}
+
+function setFeed(t) {
+  feed.t = Math.max(0, Math.min(FEED_MAX, Math.round(t)));
+  state.reports = feed.t;
+  state.mode = 'arrive';
+  render();                       // the console recomputes; SEGBY is refilled
+  renderFeed();
+  if (state.view === 'walk') renderWalk();
+}
+
+function renderFeed() {
+  feedBaselines();
+  const order = arrivalOrder();
+  const n = feed.t;
+
+  // ticker: the most recent arrivals, newest first
+  const recent = [];
+  for (let k = Math.max(0, n - 6); k < n; k++) {
+    const s = SEGS[order[k]];
+    const pr = PROPS.get(s.segID);
+    // Real reports land on unnamed stretches too, but "unnamed stretch" in a
+    // ticker reads as a bug. Name it by what it is instead.
+    const label = (pr && pr.name) || ((pr && pr.roadClass)
+      ? pr.roadClass.replace('_', ' ') + ', unnamed' : 'unnamed stretch');
+    recent.unshift({ name: label, ward: s.ward, k });
+  }
+  $('tick').innerHTML = recent.length
+    ? recent.map((r, idx) => '<li' + (idx === 0 ? ' class="fresh"' : '') + '>' +
+        '<span class="dot"></span><span class="nm">' + r.name + '</span>' +
+        '<span class="wd">' + r.ward + '</span></li>').join('')
+    : '<li class="idle"><span class="nm">Nothing yet. Press play.</span></li>';
+
+  // consequences, both computed from the same belief state
+  const now = [...SEGBY.values()];
+  const top = [...now].sort((a, b) => b.score - a.score).slice(0, 40);
+  const swapped = top.filter(o => !feed.baseTop.has(o.s.segID)).length;
+  const unk = routeUnknownShare(now);
+  const wide = now.filter(o => o.vari > WIDE_CUT && o.s.exp > 0.6).length;
+
+  const down = feed.baseRoute != null && unk < feed.baseRoute - 0.005;
+  const wide0 = feed.baseWide;
+  $('walkLine').innerHTML = '<b>' + Math.round(unk * 100) + '%</b> of tonight’s shortest '
+    + 'way home crosses ground we cannot vouch for'
+    + (down ? ', down from <b>' + Math.round(feed.baseRoute * 100) + '%</b>' : '') + '.';
+  $('cityLine1').innerHTML = n === 0
+    ? '<b>' + wide.toLocaleString() + '</b> busy-after-dark streets are unknown. The '
+      + 'worklist already works anyway — it runs on the road network and ward priors alone.'
+    : '<b>' + wide.toLocaleString() + '</b> busy-after-dark streets are still unknown, '
+      + 'down from <b>' + wide0.toLocaleString() + '</b>.';
+  // The interesting thing is what does NOT move. Saying so in words beats a
+  // number that sits at 1 and reads like a broken counter.
+  $('cityLine2').innerHTML = n === 0 ? ''
+    : 'The worklist barely moved — <b>' + swapped + '</b> street'
+      + (swapped === 1 ? '' : 's') + ' changed. These reports came from places we '
+      + 'already knew. <em>That is the bias we exist to correct</em> — '
+      + 'which is why the app asks for reports instead of waiting.';
+
+  $('feedCount').textContent = n.toLocaleString();
+  $('feedScrub').value = n;
+  $('feedPlay').textContent = feed.playing ? 'Pause' : 'Play';
+  $('feedPlay').setAttribute('aria-pressed', String(feed.playing));
+  $('feedStage').textContent = n === 0 ? 'day zero'
+    : n < 120 ? 'first evening' : n < 500 ? 'first week' : 'first month';
+
+  map.getSource('pulse').setData({
+    type: 'FeatureCollection',
+    features: recent.slice(0, 5).map((r, idx) => {
+      const g = GEOM.get(SEGS[order[r.k]].segID);
+      if (!g) return null;
+      return { type: 'Feature', properties: { age: idx },
+        geometry: { type: 'Point',
+          coordinates: g.coordinates[Math.floor(g.coordinates.length / 2)] } };
+    }).filter(Boolean),
+  });
+}
+
+function feedTick() {
+  if (!feed.playing) return;
+  if (feed.t >= FEED_MAX) { feedToggle(false); return; }
+  setFeed(feed.t + feed.speed);
+}
+
+function feedToggle(on) {
+  feed.playing = on !== undefined ? on : !feed.playing;
+  clearInterval(feed.timer);
+  if (feed.playing) feed.timer = setInterval(feedTick, 420);
+  renderFeed();
+}
+
+// the pulse layer: one authored moment. A report lands, a ring expands once and
+// fades. Nothing else on this surface animates.
+map.addSource('pulse', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+map.addLayer({
+  id: 'pulse', type: 'circle', source: 'pulse',
+  paint: {
+    'circle-radius': ['interpolate', ['linear'], ['get', 'age'], 0, 13, 4, 3],
+    'circle-color': '#FFC107',
+    'circle-opacity': ['interpolate', ['linear'], ['get', 'age'], 0, 0.85, 4, 0.12],
+    'circle-stroke-width': ['case', ['==', ['get', 'age'], 0], 2, 0],
+    'circle-stroke-color': '#FFC107',
+    'circle-stroke-opacity': 0.55,
+  },
+});
+
+$('feedPlay').onclick = () => feedToggle();
+$('feedScrub').oninput = (e) => { const v = +e.target.value; feedToggle(false); setFeed(v); };
+$('feedReset').onclick = () => { feedToggle(false); setFeed(0); };
+[...document.querySelectorAll('[data-speed]')].forEach(b => {
+  b.onclick = () => {
+    feed.speed = +b.dataset.speed;
+    document.querySelectorAll('[data-speed]').forEach(x =>
+      x.setAttribute('aria-pressed', String(x === b)));
+  };
+});
+
 /* ---------------- view switching ---------------- */
 function setView(v) {
   state.view = v;
   $('panel').classList.toggle('hidden', v !== 'city');
+  $('viewFeed').classList.toggle('hidden', v !== 'feed');
   $('viewWalk').classList.toggle('hidden', v !== 'walk');
   $('viewReport').classList.toggle('hidden', v !== 'report');
   $('cityFooter').classList.toggle('hidden', v !== 'city');
   $('ordGroup').classList.toggle('hidden', v !== 'city');
-  for (const [id, val] of [['tabWalk', 'walk'], ['tabReport', 'report'], ['tabCity', 'city']]) {
+  for (const [id, val] of [['tabFeed', 'feed'], ['tabWalk', 'walk'],
+                           ['tabReport', 'report'], ['tabCity', 'city']]) {
     $(id).setAttribute('aria-pressed', String(v === val));
   }
-  $('subtitle').textContent = v === 'walk' ? 'Night walking · Bengaluru'
+  $('subtitle').textContent = v === 'feed' ? 'How the three screens connect'
+    : v === 'walk' ? 'Night walking · Bengaluru'
     : v === 'report' ? 'Report a dark street · Bengaluru'
     : 'Repair Prioritisation · Municipal Engineer Console';
   map.setLayoutProperty('route-line', 'visibility', v === 'walk' ? 'visible' : 'none');
+  map.setLayoutProperty('pulse', 'visibility', v === 'feed' ? 'visible' : 'none');
+  if (v !== 'feed' && feed.playing) feedToggle(false);
+  if (v === 'feed') renderFeed();
   if (v === 'walk') renderWalk();
   if (v === 'report') renderReport();
-  if (v === 'city') map.easeTo({ center: [77.652, 12.932], zoom: 12.4, duration: 500 });
+  if (v === 'city' || v === 'feed') {
+    map.easeTo({ center: [77.652, 12.932], zoom: 12.4, duration: 500 });
+  }
 }
+$('tabFeed').onclick = () => setView('feed');
 $('tabWalk').onclick = () => setView('walk');
 $('tabReport').onclick = () => setView('report');
 $('tabCity').onclick = () => setView('city');
